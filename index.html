@@ -1,0 +1,3034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vignau Studio | Branding Agency & AI Visuals</title>
+<meta name="description" content="Vignau Studio creates premium AI visuals and brand systems for beauty, DNVB, wellness and modern brands seeking stronger perception, coherence and desirability.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --dark:     #06070f;
+  --dark2:    #0a0c1a;
+  --blue1:    #0d1235;
+  --blue2:    #111a4a;
+  --blue3:    #1a2860;
+  --glow:     #1e3a8a;
+  --accent:   #22c55e;
+  --white:    #ffffff;
+  --off:      rgba(255,255,255,.06);
+  --muted:    rgba(255,255,255,.5);
+  --faint:    rgba(255,255,255,.25);
+  --line:     rgba(255,255,255,.08);
+  --pad:      48px;
+  --space-1:  12px;
+  --space-2:  24px;
+  --space-3:  32px;
+  --space-4:  48px;
+  --space-5:  72px;
+  --max:      1660px;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: var(--dark);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar { display: none; }
+* { -ms-overflow-style: none; scrollbar-width: none; }
+
+img { display: block; width: 100%; }
+a   { color: inherit; text-decoration: none; }
+
+.c {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+/* ========================
+   GRADIENT BG 
+   dégradé bleu profond en haut
+======================== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 100vh;
+  background:
+    radial-gradient(ellipse 140% 100% at 50% -10%,
+      rgba(30,58,138,1) 0%,
+      rgba(17,26,74,.85) 35%,
+      rgba(11,18,55,.4) 60%,
+      transparent 80%),
+    radial-gradient(ellipse 70% 60% at 85% 5%,
+      rgba(34,197,94,.35) 0%,
+      transparent 55%),
+    radial-gradient(ellipse 50% 40% at 15% 15%,
+      rgba(30,58,138,.25) 0%,
+      transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Dégradé persistant sur le body pour les sections basses */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 50vh;
+  background: radial-gradient(ellipse 100% 80% at 50% 120%,
+    rgba(17,26,74,.45) 0%,
+    transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ========================
+   NAV
+======================== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none;
+  transition: transform .28s ease, opacity .28s ease;
+}
+.nav.is-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 18px 18px 0;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.nav-logo img { width: 150px; height: auto; display: block; }
+.nav-links {
+  display: flex; gap: 80px;
+  font-size: 13px; font-weight: 400; color: var(--muted);
+}
+.nav-links a { color: var(--muted); text-decoration: none; cursor: pointer; transition: color .2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-links a { transition: color .2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-pill {
+  display: flex; align-items: center; gap: 7px;
+  background: transparent;
+  border: none;
+  border-radius: 0; padding: 0;
+  font-size: 11.5px; font-weight: 500; color: var(--muted);
+  white-space: nowrap;
+}
+@media (min-width: 961px) {
+  .nav-pill {
+    display: none;
+  }
+}
+.dot-green {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #22c55e; flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(34,197,94,.2);
+  animation: pulse 2.2s ease infinite;
+}
+.dot-red {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #B84A4A;
+  flex-shrink: 0;
+  box-shadow:
+    0 0 0 4px rgba(184,74,74,.08),
+    0 0 8px rgba(184,74,74,.05);
+  animation: pulse 2.1s ease infinite;
+}
+@media (min-width: 961px) {
+  .nav-inner {
+    padding-top: 0px;
+    align-items: center;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links {
+    align-items: center;
+  }
+
+  .lang-btn,
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-logo img {
+    width: 122px;
+    height: auto;
+  }
+}
+@media (min-width: 961px) {
+  .nav-links {
+    transform: translateX(30px);
+  }
+}
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 0 3px rgba(34,197,94,.18); }
+  50%      { box-shadow: 0 0 0 6px rgba(34,197,94,.05); }
+}
+.nav-cta {
+  background: var(--white); color: var(--dark);
+  font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px;
+  padding: 10px 22px; border-radius: 999px; transition: opacity .2s;
+  white-space: nowrap;
+}
+.nav-cta:hover { opacity: .88; }
+
+/* Language switch */
+.lang-btn {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: var(--muted);
+  font-family: 'Raleway', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .1em;
+  padding: 0;
+  cursor: pointer;
+  transition: color .2s, border-color .2s;
+  white-space: nowrap;
+}
+.lang-btn:hover { color: var(--white); border-color: rgba(255,255,255,.2); }
+
+
+/* ========================
+   HERO — centré
+======================== */
+.hero {
+  padding: 190px var(--pad) 90px;
+  max-width: var(--max); margin: 0 auto;
+  text-align: center; position: relative; z-index: 1;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  font-size: 12px; font-weight: 500; color: var(--muted);
+  margin-bottom: 50px;
+  opacity: 0; animation: up .55s .05s ease forwards;
+}
+.hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 7.5vw, 100px);
+  font-weight: 500; line-height: .93; letter-spacing: -.025em;
+  color: var(--white); margin-bottom: 14px;
+  opacity: 0; animation: up .6s .15s ease forwards;
+}
+.hero-h1 em { font-style: italic; font-weight: 400; opacity: .65; }
+.hero-sub {
+  font-size: 15px; font-weight: 300; line-height: 1.75;
+  color: var(--muted); max-width: 480px; margin: 0 auto 32px;
+  opacity: 0; animation: up .6s .25s ease forwards;
+}
+.hero-sub strong { color: var(--white); font-weight: 500; font-size: 12px; letter-spacing: .06em; }
+.hero-btns {
+  display: flex; gap: 12px; justify-content: center; align-items: center;
+  opacity: 0; animation: up .6s .35s ease forwards;
+}
+.btn-primary {
+  background: var(--white); color: var(--dark);
+  font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 14px;
+  padding: 15px 32px; border-radius: 999px; transition: opacity .2s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { opacity: .88; }
+.btn-ghost {
+  background: var(--off); color: var(--white);
+  border: 1px solid var(--line);
+  font-family: 'Raleway', sans-serif; font-weight: 500; font-size: 14px;
+  padding: 15px 28px; border-radius: 999px; transition: background .2s;
+}
+.btn-ghost:hover { background: rgba(255,255,255,.1); }
+
+/* HERO STATS */
+.hero-stats {
+  display: flex; justify-content: center; align-items: center;
+  gap: 0; margin-top: 64px; flex-wrap: wrap;
+  opacity: 0; animation: up .6s .45s ease forwards;
+}
+.hstat {
+  padding: 20px 44px; text-align: center;
+  border-right: 1px solid var(--line);
+}
+.hstat:last-child { border-right: none; }
+.hero-stats .hstat:nth-child(3) { border-right: none; }
+.hstat-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600; font-size: 32px; letter-spacing: -.03em;
+  display: block; margin-bottom: 4px; color: var(--white);
+}
+.hstat-l { font-size: 11.5px; font-weight: 400; color: var(--muted); letter-spacing: .02em; }
+
+/* ========================
+   MARQUEE
+======================== */
+.marquee-wrap {
+  overflow: hidden;
+  padding: 18px 0;
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  min-width: max-content;
+  animation: scroll 38s linear infinite;
+  will-change: transform;
+  transform: translate3d(0,0,0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.marquee-track:hover {
+ animation-play-state: paused;
+}
+
+.mn {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: .3;
+  padding: 0 40px;
+  white-space: nowrap;
+  transition: opacity .2s;
+}
+
+.mn:hover { opacity: .8; }
+
+.mn-logo {
+  height: 24px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  opacity: .95;
+  flex-shrink: 0;
+  margin: 0 14px;
+}
+
+.mn-logo.is-tall { height: 30px; }
+.mn-logo.is-wide { height: 20px; }
+.mn-logo.is-small { height: 18px; }
+
+.md { display: none; }
+
+@keyframes scroll {
+  from { transform: translate3d(0,0,0); }
+  to   { transform: translate3d(-50%,0,0); }
+}
+
+/* ========================
+   RÉALISATIONS 
+======================== */
+.section { padding: 120px 0; position: relative; z-index: 1; }
+
+.section-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--faint);
+  margin-bottom: 16px; display: block;
+}
+.section-h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 4.5vw, 58px);
+  font-weight: 500; line-height: 1.05; letter-spacing: -.02em;
+  margin-bottom: 16px;
+}
+.section-h2 em { font-style: italic; opacity: .6; font-weight: 400; }
+.section-p {
+  font-size: 16px; font-weight: 300; line-height: 1.78;
+  color: var(--muted); max-width: 540px; margin-bottom: 56px;
+}
+
+/* GRID réalisations — style: 2 rangées de scrolling images */
+.real-grid-top {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.real-grid-top .card:first-child {
+  grid-column: auto;
+}
+
+.real-grid-bot {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 12px;
+}
+@media (min-width: 961px) {
+  .real-grid-bot {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 961px) {
+  .real-grid-bot {
+    width: min(420px, 100%) !important;
+    max-width: 420px !important;
+    margin: 0 auto !important;
+    gap: 8px !important;
+  }
+
+  .real-grid-bot .card {
+    aspect-ratio: 4 / 5 !important;
+  }
+
+  .real-grid-bot .card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    aspect-ratio: auto !important;
+  }
+}
+
+.card {
+  border-radius: 4px; 
+  overflow: hidden;
+  background: var(--off); 
+  position: relative; 
+  cursor: pointer;
+}
+@media (min-width: 961px) {
+  .real-grid-bot .card,
+  .real-grid-bot .card img {
+    border-radius: 4px !important;
+  }
+}
+.card img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+.card:hover img { transform: scale(1.04); }
+.card.wide img  { aspect-ratio: 16/9; }
+.card.sq   img  { aspect-ratio: 1; }
+.card.rect img  { aspect-ratio: 4/3; }
+.card-badge {
+  position: absolute; bottom: 12px; left: 12px;
+  background: rgba(6,7,15,.75); backdrop-filter: blur(8px);
+  border-radius: 8px; padding: 5px 11px;
+  font-size: 11px; font-weight: 600; color: var(--white);
+  opacity: 0; transform: translateY(4px);
+  transition: opacity .22s, transform .22s;
+}
+.card:hover .card-badge { opacity: 1; transform: translateY(0); }
+
+/* ========================
+   CONFIANCE — grande section
+======================== */
+.trust {
+  padding: 56px 0 92px;
+  background: transparent;
+  border-top: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  position: relative;
+  z-index: 1;
+}
+
+.trust .c {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.trust-shell {
+  position: relative;
+  padding-bottom: 120px;
+}
+
+.trust-viewport {
+  overflow: hidden;
+}
+
+.trust-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  min-height: 320px;
+}
+
+.trust-card {
+  flex: 0 0 min(720px, 62vw);
+  opacity: .18;
+  transform: scale(.90);
+  filter: blur(0);
+  transition:
+    transform .45s ease,
+    opacity .55s ease;
+  pointer-events: none;
+}
+
+.trust-card.is-active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+}
+
+
+.trust-card-inner {
+  min-height: 100%;
+  border-radius: 30px;
+  padding: 24px 26px 22px;
+  background: linear-gradient(180deg, rgba(18,23,56,.78) 0%, rgba(10,12,26,.72) 100%);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 20px 60px rgba(0,0,0,.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow: hidden;
+}
+
+.trust-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.trust-person {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.trust-av {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+}
+
+.trust-av img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.trust-meta {
+  min-width: 0;
+}
+
+.trust-name {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+
+.trust-role {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.trust-stars {
+  color: #f59e0b;
+  font-size: 22px;
+  letter-spacing: 3px;
+  flex-shrink: 0;
+}
+
+.trust-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 3.2vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -.02em;
+  margin-bottom: 18px;
+}
+
+.trust-quote em {
+  font-style: italic;
+  opacity: .72;
+  font-weight: 400;
+}
+
+.trust-text {
+  font-size: 18px;
+  line-height: 1.72;
+  color: rgba(255,255,255,.78);
+  max-width: 92%;
+}
+
+.trust-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(16,22,54,.38);
+  color: rgba(255,255,255,.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 5;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: opacity .25s ease, border-color .25s ease, background .25s ease, transform .25s ease;
+}
+
+.trust-arrow:hover {
+  background: rgba(20,26,62,.58);
+  border-color: rgba(255,255,255,.16);
+}
+
+.trust-arrow:hover {
+  background: rgba(28,32,64,.82);
+}
+
+.trust-arrow-prev {
+  left: calc(50% - 70px);
+  top: auto;
+  bottom: -52px;
+  transform: none;
+}
+
+.trust-arrow-next {
+  right: calc(50% - 70px);
+  top: auto;
+  bottom: -52px;
+  transform: none;
+}
+
+@media (max-width: 960px) {
+  .trust {
+    padding: 4px 0 18px;
+  }
+
+  .trust .c {
+    padding: 0 18px;
+  }
+
+  .trust-shell {
+    padding-bottom: 0px;
+  }
+
+  .trust-viewport {
+    overflow: visible;
+  }
+
+  .trust-track {
+    justify-content: flex-start;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 6px 8px;
+    transition: none;
+    transform: none !important;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .trust-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .trust-card {
+  flex: 0 0 92vw;
+  opacity: .18;
+  transform: scale(.90);
+  pointer-events: none;
+  scroll-snap-align: center;
+}
+
+.trust-card.is-active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.trust-card.is-left,
+.trust-card.is-right {
+  opacity: .22;
+  transform: scale(.90);
+}
+
+.trust-card.is-hidden {
+  opacity: .10;
+  transform: scale(.86);
+}
+
+ .trust-card-inner {
+  min-height: 370px;
+  border-radius: 24px;
+  padding: 24px 22px 22px;
+}
+
+  .trust-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+ .trust-person {
+  gap: 8px;
+  align-items: center;
+}
+
+ .trust-av {
+  width: 40px;
+  height: 40px;
+}
+
+ .trust-name {
+  font-size: 14px;
+  line-height: 1.05;
+  margin-bottom: 2px;
+}
+
+ .trust-role {
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+  .trust-stars {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .trust-quote {
+    font-size: clamp(22px, 6.2vw, 34px);
+    Line-height: 1.02;
+    margin-bottom: 12px;
+  }
+
+  .trust-text {
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .trust-arrow {
+  top: auto;
+  bottom: 24px;
+  transform: none;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(16,22,54,.22);
+  color: rgba(255,255,255,.82);
+  box-shadow: none;
+}
+
+.trust-arrow-prev {
+  left: calc(50% - 48px);
+}
+
+.trust-arrow-next {
+  right: calc(50% - 48px);
+}
+}
+
+/* ========================
+   MÉTHODE — 3 étapes empilées
+   style: grand visuel + texte côte à côte
+======================== */
+.method-step {
+  padding: 80px 0;
+  border-top: 1px solid var(--line);
+  position: relative; z-index: 1;
+}
+.method-step:first-child { border-top: none; }
+
+.step-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.step-grid.reverse { direction: rtl; }
+.step-grid.reverse > * { direction: ltr; }
+
+.step-eyebrow {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--faint); margin-bottom: 20px;
+  display: block;
+}
+.step-h {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 500; line-height: 1.0; letter-spacing: -.02em;
+  margin-bottom: 20px;
+}
+.step-h em { font-style: italic; font-weight: 400; opacity: .6; }
+.step-p {
+  font-size: 15.5px; font-weight: 300; line-height: 1.82;
+  color: var(--muted); margin-bottom: 28px;
+}
+.step-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font-size: 12px; font-weight: 500; color: var(--muted);
+  background: var(--off); border: 1px solid var(--line);
+  padding: 6px 14px; border-radius: 999px;
+}
+
+/* Visuel côté — card stylée */
+.step-visual {
+  border-radius: 18px; overflow: hidden;
+  background: var(--off);
+  border: 1px solid var(--line);
+  padding: 32px;
+}
+.step-visual-inner {
+  background: var(--dark2);
+  border-radius: 12px; padding: 28px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.step-card-item {
+  display: flex; align-items: flex-start; gap: 0;
+  padding: 16px 18px; border-radius: 10px;
+  background: rgba(10,12,26,.42);
+  border: 1px solid rgba(255,255,255,.08);
+}
+.step-card-ico { display: none; }
+.step-card-title { font-weight: 600; font-size: 13.5px; margin-bottom: 3px; }
+.step-card-sub { font-size: 12px; font-weight: 300; color: var(--muted); }
+
+/* Before/After card */
+.baf { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.baf-col { border-radius: 10px; padding: 16px 14px; }
+.baf-col.bad  { background: rgba(239,68,68,.08); }
+.baf-col.good { background: rgba(34,197,94,.08); }
+.baf-h {
+  font-size: 9.5px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; margin-bottom: 10px;
+}
+.baf-h.bad  { color: #ef4444; }
+.baf-h.good { color: #22c55e; }
+.baf-li { font-size: 12.5px; font-weight: 300; color: var(--muted); line-height: 1.9; }
+
+/* ========================
+   OFFRES — 3 cartes côte à côte
+======================== */
+.offers-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 14px;
+  margin-top: 52px; align-items: stretch;
+}
+.offer-card {
+  background: #0a0d1a;
+  background-image: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(18,25,65,.9) 0%, transparent 70%);
+  border: 1px solid var(--line);
+  border-radius: 20px; padding: 36px 30px;
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+  opacity: 1;
+  transition: border-color .3s ease, transform .3s ease;
+}
+.offer-card:hover { border-color: rgba(255,255,255,.2); transform: translateY(-4px); opacity: 1; }
+.offer-card.featured {
+  background: #0a0d1a;
+  background-image: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(18,25,65,.9) 0%, transparent 70%);
+  border-color: rgba(34,197,94,.25);
+  box-shadow: 0 10px 40px rgba(0,0,0,.4), 0 0 0 1px rgba(34,197,94,.15);
+  transform: scale(1.02);
+  opacity: 1;
+}
+.offer-card.featured:hover { transform: scale(1.02) translateY(-4px); border-color: rgba(34,197,94,.4); }
+.offer-badge {
+  position: absolute; top: 20px; right: 20px;
+  font-size: 9.5px; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; padding: 4px 10px; border-radius: 999px;
+  background: rgba(255,255,255,.06); border: none;
+  backdrop-filter: blur(6px); color: rgba(255,255,255,.7); opacity: .7;
+}
+.offer-tier {
+  font-size: 10px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--faint); margin-bottom: 24px;
+}
+.offer-vol {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(33px, 4.2vw, 46px); font-weight: 500;
+  letter-spacing: .02em; line-height: 1.1;
+  margin-bottom: 12px;
+}
+.offer-vol-s {
+  font-size: 11px; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--faint); margin-bottom: 28px;
+}
+.offer-name {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px; font-weight: 700; line-height: 1.2;
+  margin-bottom: 12px; letter-spacing: .01em; text-transform: uppercase;
+}
+.offer-desc {
+  font-size: 13.5px; font-weight: 300; line-height: 1.75;
+  color: var(--muted); flex: 1; margin-bottom: 28px;
+}
+.offer-list {
+  display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px;
+  padding-top: 20px; border-top: 1px solid var(--line);
+}
+.offer-li {
+  font-size: 13px; font-weight: 300; color: var(--muted);
+  display: flex; align-items: center; gap: 8px;
+}
+.offer-li::before {
+  content: ''; width: 4px; height: 4px; border-radius: 50%;
+  background: var(--faint); flex-shrink: 0;
+}
+.offer-cta {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  background: var(--white); color: var(--dark);
+  font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px;
+  height: 46px; border-radius: 999px; transition: opacity .2s;
+}
+.offer-cta:hover { opacity: .88; }
+.offer-card:not(.featured) .offer-cta {
+  background: rgba(255,255,255,.1); color: var(--white);
+}
+.offer-card:not(.featured) .offer-cta:hover { background: rgba(255,255,255,.18); }
+.badge-limited {
+  display: inline-flex;
+  width: fit-content;
+  max-width: max-content;
+  position: absolute;
+  top: 18px; right: 18px;
+  padding: 4px 10px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  background: rgba(255,255,255,.05);
+  border: none;
+  color: rgba(255,255,255,.68);
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .badge-limited {
+    top: 16px; right: 16px;
+    font-size: 8.5px;
+    padding: 4px 9px;
+  }
+}
+.card-top { flex: 1; display: flex; flex-direction: column; }
+.card-cta { margin-top: auto; padding-top: 0; }
+.card-divider { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
+@media (max-width: 768px) {
+  .hero {
+  padding: 110px 20px 56px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-tag {
+  order: 3;
+  margin: 10px auto 18px;
+  font-size: 11px;
+  gap: 8px;
+  color: rgba(255,255,255,.72);
+}
+
+.dot-red {
+  width: 5px;
+  height: 5px;
+  box-shadow: 0 0 0 2px rgba(255,77,79,.14);
+}
+
+.hero-stats {
+  order: 5;
+  margin-top: 26px;
+  gap: 0;
+}
+   .hero-tag {
+    margin-top: 0px;
+  }
+
+  .hero-h1 {
+    font-size: clamp(42px, 11vw, 64px);
+    line-height: .96;
+    letter-spacing: -.02em;
+    margin-bottom: 0px;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    line-height: 1.65;
+    max-width: 320px;
+    margin: 0 auto 30px;
+  }
+
+  .hero-btns {
+  order: 4;
+  gap: 10px;
+}
+  .btn-primary,
+  .btn-ghost {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 22px;
+    font-size: 15px;
+  }
+
+  .hero-stats {
+    margin-top: 42px;
+    gap: 0;
+  }
+
+  .hstat {
+    padding: 18px 20px;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+ .select-section {
+  padding-bottom: 28px;
+
+ }
+
+ .process-section {
+  padding-bottom: 28px;
+
+ }
+
+ .baf-section {
+  padding-top: 12px;
+
+ }
+
+ .c {
+    padding: 0 28px;
+  }
+
+  .section-h2,
+  .trust-h2,
+  .step-h {
+    font-size: clamp(34px, 9vw, 50px);
+    line-height: 1.06;
+    letter-spacing: -.02em;
+  }
+
+  .section-p,
+  .step-p {
+    font-size: 15px;
+    line-height: 1.72;
+    margin-bottom: 34px;
+  }
+
+  .real-grid-top,
+  .real-grid-bot {
+    gap: 10px;
+  }
+
+  .real-grid-top {
+  display: none;
+  }
+
+  .card {
+    border-radius: 4px;
+  }
+
+.card.wide img { aspect-ratio: 16/10; }
+.card.sq img { aspect-ratio: 4/5 }
+.card.rect img { aspect-ratio: 1; }
+
+  .marquee-wrap {
+    padding: 14px 0;
+  }
+
+  .mn-logo {
+    height: 18px;
+    margin: 0 22px;
+  }
+
+  .trust-sub {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+
+  .offer-card,
+  .offer-card.featured {
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .offer-name {
+    font-size: 15px;
+  }
+
+  .offer-tier {
+    font-size: 11px;
+  }
+
+  .offer-vol {
+    font-size: 56px;
+    line-height: 1;
+  }
+
+  .offer-vol-s {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .offer-li {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .offer-cta {
+    padding: 15px 20px;
+    font-size: 15px;
+  }
+
+  .select-inner,
+  .step-grid {
+    gap: 28px;
+  }
+
+  .select-quote {
+    font-size: clamp(34px, 9vw, 50px);
+    line-height: 1.08;
+  }
+
+  .select-text {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+@media (max-width: 768px){
+  #trust .trust-card{
+    padding-top: 28px;
+  }
+}
+@media (min-width: 961px) {
+  .real-grid-top,
+  .real-grid-bot {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ========================
+   FAQ
+======================== */
+.faq-list { margin-top: 52px; }
+.faq-item {
+  border-top: 1px solid var(--line);
+  background: transparent;
+}
+.faq-item:last-child { border-bottom: 1px solid var(--line); }
+.faq-q {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 0; cursor: pointer; background: transparent; border: none;
+  font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 15.5px;
+  color: var(--white); text-align: left; gap: 20px; transition: opacity .18s;
+}
+.faq-q:hover { opacity: .75; }
+.faq-ico {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 1.5px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 19px; font-weight: 300; color: var(--muted);
+  flex-shrink: 0; transition: transform .28s, background .2s, border-color .2s;
+}
+.faq-item.open .faq-ico {
+  transform: rotate(45deg);
+  background: var(--white); border-color: var(--white); color: var(--dark);
+}
+.faq-a {
+  max-height: 0; overflow: hidden; transition: max-height .38s ease, padding .28s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; padding-bottom: 22px; }
+.faq-a p { font-size: 14.5px; font-weight: 300; color: var(--muted); line-height: 1.74; }
+
+/* ========================
+   CTA FINAL
+======================== */
+.final {
+  padding: 140px 0; text-align: center;
+  position: relative; z-index: 1;
+}
+.final::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 50%,
+    rgba(30,58,138,.3) 0%, transparent 70%);
+  pointer-events: none;
+}
+.final-label {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--faint);
+  margin-bottom: 28px; display: block; position: relative;
+}
+.final-h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 8vw, 112px);
+  font-weight: 500; line-height: .92; letter-spacing: -.025em;
+  margin-bottom: 24px; position: relative;
+}
+.final-h2 em { font-style: italic; opacity: .55; font-weight: 400; }
+.final-sub {
+  font-size: 16px; font-weight: 300; color: var(--muted);
+  margin-bottom: 48px; line-height: 1.75; position: relative;
+}
+.final-note {
+  margin-top: 20px; font-size: 10.5px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--faint);
+  position: relative;
+}
+
+/* ========================
+   FOOTER
+======================== */
+footer {
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  position: relative; z-index: 1;
+}
+.footer-inner {
+  max-width: var(--max); margin: 0 auto; padding: 0 var(--pad);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-logo img { height: 40px; width: auto; }
+.footer-links { display: flex; gap: 28px; font-size: 12.5px; color: var(--muted); }
+.footer-links a:hover { color: var(--white); }
+.footer-copy { font-size: 12px; color: var(--faint); }
+.footer-insta { color: var(--muted); display: flex; align-items: center; transition: color .2s; }
+.footer-insta:hover { color: var(--white); }
+.footer-insta-mobile { display: none; }
+@media (max-width: 960px) {
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    text-align: center;
+  }
+
+  .footer-logo-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    width: 100%;
+  }
+
+  .footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+  .footer-insta-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -40px;
+  }
+
+  .footer-links .footer-insta {
+    display: none;
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+  }
+
+    .footer-copy {
+    width: 100%;
+    text-align: center;
+    line-height: 1.5;
+    display: block;
+    margin: 0;
+  }
+
+  .footer-logo-wrap { order: 1; }
+  .footer-insta-mobile { order: 2; }
+  .lang-btn { order: 3; }
+  .footer-links { order: 4; }
+  .footer-copy { order: 5; }
+  [data-en="Legal notice"] { order: 6; }
+}
+
+/* ========================
+   REVEAL
+======================== */
+.r { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+.r.in { opacity: 1; transform: none; }
+.r.d1 { transition-delay: .1s; }
+.r.d2 { transition-delay: .2s; }
+.r.d3 { transition-delay: .3s; }
+@keyframes up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 960px) {
+  :root { --pad: 22px; }
+  .nav-links { display: none; }
+  .nav-pill { display: none; }
+  .nav-logo { margin-top: -34px; }
+  .nav-logo img { width: 120px; }
+  .hero {
+    padding-top: 130px;
+    padding-bottom: 52px;
+  }
+
+  .hero-h1 {
+    font-size: clamp(42px, 10.2vw, 72px);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+  }
+
+ .hero-btns { flex-direction: column; align-items: center; }
+ .btn-primary, .btn-ghost {
+  width: auto;
+  min-width: 280px;
+  justify-content: center;
+  padding: 8px 26px;
+  font-size: 13px;
+}
+  .hero-stats {
+  flex-direction: column;
+  gap: 0;
+  margin-top: 34px;
+}
+  .hstat { border-right: none; border-bottom: 1px solid var(--line); padding: 10px 24px; width: 100%; }
+  .hstat:last-child { border-bottom: none; }
+  .real-grid-top { grid-template-columns: 1fr 1fr; }
+  .real-grid-top .card:first-child { grid-column: 1/3; }
+  .real-grid-bot { grid-template-columns: 1fr 1fr 1fr; }
+  .step-grid, .step-grid.reverse { grid-template-columns: 1fr; direction: ltr; gap: 40px; }
+  .offers-grid { grid-template-columns: 1fr; }
+  .trust-h2 { font-size: clamp(26px,5vw,44px); }
+    .footer-inner { flex-direction: column; gap: 18px; text-align: center; }
+  .footer-links { justify-content: center; flex-wrap: wrap; }
+  .footer-copy { order: 99; }
+}
+@media (max-width: 520px) {
+  .real-grid-top { grid-template-columns: 1fr 1fr; }
+  .real-grid-top .card:first-child { grid-column: 1 / 3; }
+  .real-grid-bot { grid-template-columns: 1fr 1fr 1fr; }
+  .baf { grid-template-columns: 1fr; }
+}
+
+/* ── DIAGNOSTIC INVISIBLE ── */
+.diag-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 52px;
+}
+.diag-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--line);
+  border-radius: 18px; padding: 36px 30px;
+  transition: background .25s, border-color .25s, transform .25s;
+}
+.diag-card:hover {
+  background: rgba(255,255,255,.07);
+  border-color: rgba(34,197,94,.3);
+  transform: translateY(-3px);
+}
+.diag-ico {
+  font-size: 28px; margin-bottom: 20px;
+}
+.diag-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 500; letter-spacing: -.01em;
+  margin-bottom: 12px; line-height: 1.2;
+}
+.diag-text {
+  font-size: 14px; font-weight: 300; line-height: 1.78; color: var(--muted);
+}
+
+/* ── AVANT/APRÈS MENTAL ── */
+.mental-baf {
+  display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center;
+}
+.mb-col {
+  border-radius: 18px; padding: 36px 32px;
+  border: 1px solid var(--line);
+}
+.bad-col  { background: rgba(239,68,68,.06);  border-color: rgba(239,68,68,.15); }
+.good-col { background: rgba(34,197,94,.08); border-color: rgba(34,197,94,.25); }
+.mb-label {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; margin-bottom: 24px;
+}
+.mb-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse 2.2s ease infinite;
+}
+
+.bad-dot {
+  background: #B84A4A;
+  box-shadow:
+    0 0 0 4px rgba(184,74,74,.08),
+    0 0 10px rgba(184,74,74,.05);
+}
+
+.good-dot {
+  background: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34,197,94,.2);
+}
+.mb-items { display: flex; flex-direction: column; gap: 12px; }
+.mb-item {
+  font-size: 14.5px; font-weight: 400; color: var(--muted); line-height: 1.5;
+  padding-left: 16px; position: relative;
+}
+.mb-item::before {
+  content: ''; position: absolute; left: 0; top: 8px;
+  width: 4px; height: 4px; border-radius: 50%; background: var(--faint);
+}
+.bad-col  .mb-item::before { background: rgba(239,68,68,.5); }
+.good-col .mb-item          { color: rgba(255,255,255,.75); }
+.good-col .mb-item::before  { background: rgba(34,197,94,.7); }
+.mb-arrow {
+  font-size: 28px; color: var(--faint); text-align: center; flex-shrink: 0;
+}
+
+/* ── SÉLECTIVITÉ ── */
+@media (min-width: 961px) {
+  .section.select-section {
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-2);
+  }
+}
+
+.select-inner {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: var(--space-2);
+  max-width: 860px;
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-4);
+  background: #06070f;
+  background-image: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(13,18,53,.9) 0%, transparent 70%);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 24px;
+}
+.select-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 500; line-height: 1.05; letter-spacing: -.02em;
+}
+.select-right { display: flex; flex-direction: column; align-items: center; gap: 28px; max-width: 580px; }
+.select-text {
+  font-size: 15px; font-weight: 300; line-height: 1.85;
+  color: var(--muted); margin-bottom: 0;
+}
+.btn-select {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--white); color: var(--dark);
+  font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px;
+  padding: 14px 28px; border-radius: 999px; transition: opacity .2s;
+}
+.btn-select:hover { opacity: .88; }
+
+@media (max-width: 960px) {
+  .diag-grid { grid-template-columns: 1fr; }
+  .mental-baf { grid-template-columns: 1fr; gap: 16px; }
+  .mb-arrow { transform: rotate(90deg); text-align: center; }
+  .select-inner { grid-template-columns: 1fr; gap: 32px; padding: 40px 28px; }
+}
+@media (min-width: 961px) {
+  .hero {
+    padding-top: 140px;
+  }
+}
+
+/* ── BURGER + MOBILE MENU ── */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+}
+.burger span {
+  display: block; width: 18px; height: 1.5px;
+  background: var(--white); border-radius: 2px;
+  transition: transform .25s, opacity .25s;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 200;
+  background: #06070f;
+  background-image: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(13,18,53,.8) 0%, transparent 70%);
+  flex-direction: column;
+  padding: 72px 20px 24px;
+}
+ .mobile-menu.open { display: flex; }
+ .mobile-menu-close {
+  position: absolute; top: 24px; right: 24px;
+  width: auto; height: auto; border-radius: 0;
+  background: transparent; border: none;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 22px; color: var(--white);
+  padding: 0;
+}
+.mobile-menu-logo { margin-bottom: 48px; }
+.mobile-menu-logo img { height: 48px; }
+.mobile-menu-links {
+  display: flex; flex-direction: column; gap: 0;
+  flex: 1;
+}
+.mobile-menu-links a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 500; color: var(--white);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  letter-spacing: -.02em;
+  line-height: 1.05;
+  transition: opacity .2s;
+}
+.mobile-menu-links a:hover { opacity: .6; }
+
+.mobile-menu .lang-btn {
+  order: 2 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: 10px !important;
+  padding: 13px 18px !important;
+  min-height: auto !important;
+  height: auto !important;
+  background: rgba(255,255,255,.06) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 999px !important;
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  color: var(--white) !important;
+  text-align: center !important;
+}
+
+.mobile-menu-cta {
+  order: 1 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: auto !important;
+  padding: 13px 18px !important;
+  min-height: auto !important;
+  height: auto !important;
+  background: var(--white) !important;
+  color: var(--dark) !important;
+  border: none !important;
+  border-radius: 999px !important;
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+  transition: opacity .2s !important;
+}
+
+.mobile-menu-cta:hover { opacity: .88; }
+
+/* CTA secondaire dans sections */
+.section-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  color: var(--white);
+  font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 13px;
+  padding: 12px 24px; border-radius: 999px;
+  transition: background .2s; margin-top: 32px;
+  display: inline-flex;
+}
+.section-cta:hover { background: rgba(255,255,255,.14); }
+
+.desktop-only { }
+
+@media (max-width: 960px) {
+  .burger { display: flex; }
+  .desktop-only { display: none !important; }
+  .nav-links { display: none; }
+}
+
+
+/* ── HORIZONTAL IMAGE SCROLLER ── */
+.img-scroll-wrap {
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+.img-scroll-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  animation: hscroll 56s linear infinite;
+  padding: 0 var(--pad);
+}
+.img-scroll-track:hover { animation-play-state: paused; }
+.img-scroll-track.reverse { animation: hscroll-rev 60s linear infinite; }
+.img-scroll-track.reverse:hover { animation-play-state: paused; }
+
+.img-scroll-card {
+  flex: 0 0 auto;
+  width: 220px;
+  aspect-ratio: 4/5;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255,255,255,.05);
+  border: 1px solid var(--line);
+  position: relative;
+  cursor: pointer;
+}
+.img-scroll-card img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .6s ease;
+}
+.img-scroll-card:hover img { transform: scale(1.04); }
+
+/* Placeholder quand pas d'image */
+.img-scroll-card .ph {
+  width: 100%; height: 100%;
+  background: linear-gradient(145deg, rgba(17,26,74,.8), rgba(30,58,138,.4));
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+  padding: 20px;
+}
+.ph-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-weight: 500; color: rgba(255,255,255,.6);
+  text-align: center; letter-spacing: -.01em;
+}
+.ph-type {
+  font-size: 9px; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: rgba(255,255,255,.25);
+  text-align: center;
+}
+
+@keyframes hscroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-50% - 6px)); }
+}
+@keyframes hscroll-rev {
+  from { transform: translateX(calc(-50% - 6px)); }
+  to   { transform: translateX(0); }
+}
+
+
+/* ── SECTION RÉALISATIONS INTÉGRÉE ── */
+.wf-btn {
+  font-size: 12px; font-weight: 600; letter-spacing: .05em;
+  color: rgba(255,255,255,.5); background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08); border-radius: 999px;
+  padding: 8px 18px; cursor: pointer; transition: all .2s;
+  font-family: 'Raleway', sans-serif;
+}
+.wf-btn:hover, .wf-btn.active {
+  background: var(--white); color: var(--dark); border-color: var(--white);
+}
+.wmasonry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.wi {
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  cursor: pointer;
+  transition: transform .3s;
+}
+.wi:hover { transform: translateY(-3px); }
+.wi img {
+  width: 100%;
+  display: block;
+  transition: transform .6s ease;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.wi:hover img { transform: scale(1.04); }
+.wi.hidden { display: none; }
+.wi-info {
+  padding: 14px 16px; display: flex;
+  justify-content: space-between; align-items: flex-start;
+}
+.wi-title { font-size: 13px; font-weight: 600; margin-bottom: 3px; }
+.wi-type  { font-size: 11px; color: rgba(255,255,255,.45); }
+.wi-loc   { font-size: 11px; color: rgba(255,255,255,.25); text-align: right; flex-shrink: 0; }
+
+@media (max-width: 760px) {
+  .wmasonry {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .wmasonry {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ── PROCESS VERTICAL — style metro ── */
+.process-section { padding: 96px 0; position: relative; z-index: 1; }
+.process-rail {
+  display: flex; flex-direction: column; align-items: center; position: relative;
+}
+.process-rail::before {
+  content: ''; position: absolute;
+  top: 28px; bottom: 28px; left: 50%; transform: translateX(-50%);
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(255,255,255,.35) 0%, rgba(255,255,255,.1) 100%);
+}
+.rail-stop {
+  position: relative; z-index: 2;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #22c55e; border: 1.5px solid #22c55e;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 22px;
+  box-shadow: 0 0 0 5px rgba(34,197,94,.1);
+  animation: metro-pulse 2.8s ease infinite;
+}
+.rail-stop:nth-child(2) { animation-delay: .9s; }
+.rail-stop:nth-child(3) { animation-delay: 1.8s; }
+@keyframes metro-pulse {
+  0%,100% { box-shadow: 0 0 0 5px rgba(34,197,94,.1); }
+  50%      { box-shadow: 0 0 0 9px rgba(34,197,94,.04); }
+}
+.rail-stop-inner { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,.6); }
+.rail-spacer { flex: 1; }
+.process-cards { display: flex; flex-direction: column; gap: 16px; padding-left: 24px; }
+.pcard {
+  background: rgba(10,12,26,.42);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px; padding: 28px 32px;
+  transition: background .25s, border-color .25s;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.pcard:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.16); }
+.pcard-index { font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.28); margin-bottom: 12px; display: block; }
+.pcard-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 2.8vw, 32px); font-weight: 500; letter-spacing: -.02em; line-height: 1.05; margin-bottom: 10px; }
+.pcard-desc { font-size: 14.5px; font-weight: 300; color: rgba(255,255,255,.48); line-height: 1.72; }
+@media (max-width: 760px) {
+  .process-section .r.d1 {
+    grid-template-columns: 34px 1fr !important;
+    max-width: 100% !important;
+  }
+
+  .process-cards { padding-left: 10px; }
+  .rail-stop { width: 24px; height: 24px; }
+  .rail-stop-inner { width: 7px; height: 7px; }
+}
+
+</style>
+<script>
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  window.scrollTo(0, 0);
+
+  document.addEventListener('DOMContentLoaded', function () {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  });
+
+  window.addEventListener('load', function () {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  });
+
+  window.addEventListener('pageshow', function () {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  });
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="https://vignaustudio.com" class="nav-logo">
+      <img src="images/logo-footer.svg" alt="Vignau Studio">
+    </a>
+    <nav class="nav-links">
+      <a href="#realisations" data-en="Work" data-fr="Réalisations">Work</a>
+      <a href="#processus" data-en="Process" data-fr="Processus">Process</a>
+      <a href="#offres" data-en="Services" data-fr="Offres">Services</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="nav-pill">
+        <span class="dot-red"></span>
+        <span data-en="Only 3 spots this week" data-fr="Plus que 3 places disponibles cette semaine">Only 3 spots this week</span>
+      </div>
+      <button class="lang-btn desktop-only" onclick="switchLang()" id="lang-toggle">FR</button>
+      <a href="https://calendly.com/vignaustudio/new-meeting" class="nav-cta desktop-only" data-en="Free brand audit" data-fr="Diagnostic stratégique">Free brand audit</a>
+      <button class="burger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">
+  <span class="dot-red"></span>
+  <span data-en="Only 3 spots this week" data-fr="Plus que 3 places cette semaine">Only 3 spots this week</span>
+</div>
+  <h1 class="hero-h1">
+    <span data-en="Your brand sells" data-fr="Votre image vend">Your brand sells</span><br>
+    <em><span data-en="before you say a word." data-fr="avant vos mots.">before you say a word.</span></em>
+  </h1>
+  <p class="hero-sub">
+  <span data-en="Premium brand visuals, delivered fast, with strategy behind every image." data-fr="Des visuels premium, livrés rapidement, avec une vraie stratégie derrière chaque image.">Premium brand visuals, delivered fast with strategy behind every image.</span>
+</p>
+  <div class="hero-btns">
+  <a href="https://calendly.com/vignaustudio/new-meeting" class="btn-primary">
+    <span data-en="Start your project →" data-fr="Démarrer votre projet →">Start your project &rarr;</span>
+  </a>
+  <a href="#offres" class="btn-ghost" data-en="View pricing" data-fr="Voir les offres">View pricing</a>
+</div>
+  <div class="hero-stats">
+    <div class="hstat">
+      <span class="hstat-n">Worldwide</span>
+      <span class="hstat-l">Paris &middot; New York &middot; Los Angeles</span>
+    </div>
+    <div class="hstat">
+      <span class="hstat-n">4 Sectors</span>
+      <span class="hstat-l">Beauty &middot; DNVB &middot; Luxury &middot; Wellness</span>
+    </div>
+    <div class="hstat">
+      <span class="hstat-n">+15</span>
+      <span class="hstat-l">Projects delivered</span>
+    </div>
+  </div>
+</section>
+
+<!-- SCROLLER HERO — images 4:5 -->
+<div class="img-scroll-wrap" style="padding:10px 0 0">
+  <div class="img-scroll-track">
+    <div class="img-scroll-card"><img src="images/hero-01.png" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-02.jpg" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-03.jpeg" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-04.jpg" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-05.jpeg" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-06.png" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-07.jpeg" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-08.jpg" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-09.png" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-10.png" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-11.png" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-12.1.png" alt=""></div>
+<div class="img-scroll-card"><img src="images/hero-12.png" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-13.png" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-14.png" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-15.png" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-16.png" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-17.png" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-18.png" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-19.png" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-20.png" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-21.png" alt=""></div>
+    <div class="img-scroll-card"><img src="images/hero-22.png" alt=""></div>
+  </div>
+</div>
+
+<!-- RÉALISATIONS -->
+<section class="section" id="realisations">
+  <div class="c">
+    <div class="r real-copy-center">
+      <span class="section-eyebrow" data-en="&#10022; Our work" data-fr="&#10022; Nos réalisations">&#10022; Our work</span>
+      <h2 class="section-h2">
+        <span data-en="Your brand" data-fr="Votre marque">Your brand</span><br><em><span data-en="should feel this coherent." data-fr="devrait être aussi cohérente."> should feel this coherent.</span></em>
+      </h2>
+      <p class="section-p">
+        <span data-en="Premium visuals and brand coherence that create desire and drive conversion." data-fr="Des visuels premium et une cohérence de marque qui créent le désir et favorisent la conversion.">Premium visuals and brand coherence that create desire and drive conversion.</span>
+      </p>
+    </div>
+
+    <div class="real-grid-bot r d2">
+      <div class="card sq"><img src="images/merilou.png" alt="" loading="lazy"></div>
+      <div class="card sq"><img src="images/blanc.png" alt="" loading="lazy"></div>
+      <div class="card sq"><img src="images/fille-wave.png" alt="" loading="lazy"></div>
+
+      <div class="card sq"><img src="images/main-salt.png" alt="" loading="lazy"></div>
+      <div class="card sq"><img src="images/montre-b.png" alt="" loading="lazy"></div>
+      <div class="card sq"><img src="images/gouttes.jpg" alt="" loading="lazy"></div>
+
+      <div class="card sq"><img src="images/pince-bonne.jpg" alt="" loading="lazy"></div>
+      <div class="card sq"><img src="images/byredo-beauty.png" alt="" loading="lazy"></div>
+      <div class="card sq"><img src="images/patch-colla.jpg" alt="" loading="lazy"></div>
+
+      <div class="card sq"><img src="images/eau-main.jpg" alt="" loading="lazy"></div>
+      <div class="card sq"><img src="images/clef-mac.png" alt="" loading="lazy"></div>
+      <div class="card sq"><img src="images/lips.jpg" alt="" loading="lazy"></div>
+    </div>
+    <div style="text-align:center;margin-top:36px" class="r d3">
+      <a href="#realisations-all" onclick="openWork();return false;" class="section-cta">
+        <span data-en="View all work →" data-fr="Voir toutes les réalisations →">View all work &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- MARQUEE -->
+<div class="marquee-wrap" style="display:none;">
+  <div class="marquee-track">
+    <img class="mn-logo" src="images/birushi-logo.png" alt="Birushi"><span class="md"></span>
+<img class="mn-logo is-tall" src="images/duniya-logo.png" alt="Duniya"><span class="md"></span>
+<img class="mn-logo is-wide" src="images/elle-logo.png" alt="ELLE Luxembourg"><span class="md"></span>
+<img class="mn-logo is-wide" src="images/flying-solo.png" alt="Flying Solo"><span class="md"></span>
+<img class="mn-logo is-wide" src="images/harper-logo.png" alt="Harper's Bazaar"><span class="md"></span>
+<img class="mn-logo" src="images/house-logo.png" alt="House of Freia"><span class="md"></span>
+<img class="mn-logo is-tall" src="images/tribe-logo.png" alt="Tribe Management"><span class="md"></span>
+<img class="mn-logo" src="images/birushi-logo.png" alt="Birushi"><span class="md"></span>
+<img class="mn-logo is-tall" src="images/duniya-logo.png" alt="Duniya"><span class="md"></span>
+<img class="mn-logo is-wide" src="images/elle-logo.png" alt="ELLE Luxembourg"><span class="md"></span>
+<img class="mn-logo is-wide" src="images/flying-solo.png" alt="Flying Solo"><span class="md"></span>
+<img class="mn-logo is-wide" src="images/harper-logo.png" alt="Harper's Bazaar"><span class="md"></span>
+<img class="mn-logo" src="images/house-logo.png" alt="House of Freia"><span class="md"></span>
+<img class="mn-logo is-tall" src="images/tribe-logo.png" alt="Tribe Management"><span class="md"></span>
+<img class="mn-logo" src="images/birushi-logo.png" alt="Birushi"><span class="md"></span>
+<img class="mn-logo is-tall" src="images/duniya-logo.png" alt="Duniya"><span class="md"></span>
+<img class="mn-logo is-wide" src="images/elle-logo.png" alt="ELLE Luxembourg"><span class="md"></span>
+<img class="mn-logo is-wide" src="images/flying-solo.png" alt="Flying Solo"><span class="md"></span>
+<img class="mn-logo is-wide" src="images/harper-logo.png" alt="Harper's Bazaar"><span class="md"></span>
+<img class="mn-logo" src="images/house-logo.png" alt="House of Freia"><span class="md"></span>
+<img class="mn-logo is-tall" src="images/tribe-logo.png" alt="Tribe Management"><span class="md"></span>
+<img class="mn-logo" src="images/birushi-logo.png" alt="Birushi"><span class="md"></span>
+<img class="mn-logo is-tall" src="images/duniya-logo.png" alt="Duniya"><span class="md"></span>
+<img class="mn-logo is-wide" src="images/elle-logo.png" alt="ELLE Luxembourg"><span class="md"></span>
+<img class="mn-logo is-wide" src="images/flying-solo.png" alt="Flying Solo"><span class="md"></span>
+<img class="mn-logo is-wide" src="images/harper-logo.png" alt="Harper's Bazaar"><span class="md"></span>
+<img class="mn-logo" src="images/house-logo.png" alt="House of Freia"><span class="md"></span>
+<img class="mn-logo is-tall" src="images/tribe-logo.png" alt="Tribe Management"><span class="md"></span>
+<img class="mn-logo" src="images/birushi-logo.png" alt="Birushi"><span class="md"></span>
+<img class="mn-logo is-tall" src="images/duniya-logo.png" alt="Duniya"><span class="md"></span>
+<img class="mn-logo is-wide" src="images/elle-logo.png" alt="ELLE Luxembourg"><span class="md"></span>
+<img class="mn-logo is-wide" src="images/flying-solo.png" alt="Flying Solo"><span class="md"></span>
+<img class="mn-logo is-wide" src="images/harper-logo.png" alt="Harper's Bazaar"><span class="md"></span>
+<img class="mn-logo" src="images/house-logo.png" alt="House of Freia"><span class="md"></span>
+<img class="mn-logo is-tall" src="images/tribe-logo.png" alt="Tribe Management"><span class="md"></span>
+  </div>
+</div>
+
+
+<!-- CONFIANCE -->
+<section class="trust" id="trust">
+  <div class="c">
+    <div class="trust-shell">
+      <button class="trust-arrow trust-arrow-prev" type="button" aria-label="Previous testimonial">‹</button>
+
+      <div class="trust-viewport">
+        <div class="trust-track" id="trustTrack">
+
+          <article class="trust-card is-active" data-index="0">
+            <div class="trust-card-inner">
+              <div class="trust-head">
+                <div class="trust-person">
+                  <div class="trust-av"><img src="images/melanie.png" alt="Mélanie Lange"></div>
+                  <div class="trust-meta">
+                    <div class="trust-name">Mélanie Lange</div>
+                    <div class="trust-role">Founder &amp; CEO @Tribe Mgmt<br>Creative Director · Luxembourg</div>
+                  </div>
+                </div>
+                <div class="trust-stars">★★★★★</div>
+              </div>
+              <div class="trust-quote">Reliable. <em>Powerful.</em></div>
+              <div class="trust-text">Loïc is a talented, responsive and extremely reliable professional. He perfectly understands the creative vision and translates it into powerful visual concepts. He brings both sensitivity and precision to the process, which makes collaboration feel smooth, efficient and genuinely elevated.</div>
+            </div>
+          </article>
+
+          <article class="trust-card" data-index="1">
+            <div class="trust-card-inner">
+              <div class="trust-head">
+                <div class="trust-person">
+                  <div class="trust-av"><img src="images/jelizaveta.png" alt="Jelizaveta Hagleitner"></div>
+                  <div class="trust-meta">
+                    <div class="trust-name">Jelizaveta Hagleitner</div>
+                    <div class="trust-role">Founder · RDxOS · Vienna<br>Digital Week Paris · NY</div>
+                  </div>
+                </div>
+                <div class="trust-stars">★★★★★</div>
+              </div>
+              <div class="trust-quote">Refined. <em>International.</em></div>
+              <div class="trust-text">Working with Loïc feels fluid, sharp and deeply aligned. He brings concepts to life with a refined eye and a strong creative instinct. He understands how to turn references, ideas and creative direction into visuals that feel cohesive, intentional and internationally relevant.</div>
+            </div>
+          </article>
+
+          <article class="trust-card" data-index="2">
+            <div class="trust-card-inner">
+              <div class="trust-head">
+                <div class="trust-person">
+                  <div class="trust-av"><img src="images/rahel.png" alt="Rahel Tadesse"></div>
+                  <div class="trust-meta">
+                    <div class="trust-name">Rahel Tadesse</div>
+                    <div class="trust-role">Brand Director · New York<br>Flying Solo New York · NYFW</div>
+                  </div>
+                </div>
+                <div class="trust-stars">★★★★★</div>
+              </div>
+              <div class="trust-quote">Strategic. <em>Captivating.</em></div>
+              <div class="trust-text">Loïc transforms brand visions into strategically and visually captivating narratives. He has a rare ability to balance aesthetics with clarity, and to shape ideas into images that feel desirable, premium and instantly compelling. His approach is thoughtful, precise and creatively strong.</div>
+            </div>
+          </article>
+
+          <article class="trust-card" data-index="3">
+            <div class="trust-card-inner">
+              <div class="trust-head">
+                <div class="trust-person">
+                  <div class="trust-av"><img src="images/vivia.png" alt="Vivia Ferragamo"></div>
+                  <div class="trust-meta">
+                    <div class="trust-name">Vivia Ferragamo</div>
+                    <div class="trust-role">Founder &amp; Creative Director<br>@Vivia Resort · Italy</div>
+                  </div>
+                </div>
+                <div class="trust-stars">★★★★★</div>
+              </div>
+              <div class="trust-quote">Elegant. <em>Memorable.</em></div>
+              <div class="trust-text">Loved working with Loïc. He has a natural eye, a calm and professional approach, and delivers beautiful, authentic results every time.</div>
+            </div>
+          </article>
+          <article class="trust-card" data-index="4">
+            <div class="trust-card-inner">
+              <div class="trust-head">
+                <div class="trust-person">
+                  <div class="trust-av"><img src="images/rick.png" alt="Rick David"></div>
+                  <div class="trust-meta">
+                    <div class="trust-name">Rick David</div>
+                    <div class="trust-role">Director at BK Style Foundation &amp; @FWBK · New York</div>
+                  </div>
+                </div>
+                <div class="trust-stars">★★★★★</div>
+              </div>
+              <div class="trust-quote">Creative. <em>Visionary.</em></div>
+              <div class="trust-text">I’ve worked with Loïc for the past 8 years in the fashion industry. He combines creativity, strong business vision, and a truly inspiring mindset. A rare profile with both aesthetic sensitivity and strategic depth.</div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <button class="trust-arrow trust-arrow-next" type="button" aria-label="Next testimonial">›</button>
+    </div>
+  </div>
+</section>
+
+<style>
+@media (min-width: 961px) {
+  .diag-section {
+    padding-bottom: 24px;
+  }
+
+  .baf-section {
+    padding-top: 24px;
+  }
+}
+@media (min-width: 961px) {
+  .real-copy-center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 760px;
+  }
+
+  .real-copy-center .section-p {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+</style>
+
+<!-- DIAGNOSTIC INVISIBLE -->
+<section class="section diag-section" id="diagnostic" style="position:relative;z-index:1;background:linear-gradient(180deg,transparent 0%,rgba(17,26,74,.4) 50%,transparent 100%);padding-top:72px;">
+  <div class="c">
+    <div class="r">
+      <span class="section-eyebrow" style="text-align:center;display:block" data-en="THE REAL PROBLEM" data-fr="LE DIAGNOSTIC INVISIBLE">THE REAL PROBLEM</span>
+      <h2 class="section-h2" style="max-width:700px;text-align:center;margin-left:auto;margin-right:auto;margin-bottom:60px">
+        <span data-en="Most brands look good." data-fr="La plupart des marques perdent des clients ici.">Most brands look good.</span><br>
+        <em><span data-en="But don't sell enough." data-fr="Et ne le savent même pas.">But don't sell enough.</span></em>
+      </h2>
+    </div>
+    <!-- RECONNAISSANCE — le prospect se voit -->
+    <div class="r d1" style="max-width:640px;margin:0 auto 12px;padding:36px 40px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px">
+      <p style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:20px;text-align:center" data-en="Sound familiar?" data-fr="Vous vous reconnaissez ?">Sound familiar?</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px">
+        <div style="font-size:16px;font-weight:300;color:rgba(255,255,255,.65);padding-left:18px;position:relative">
+          <span style="position:absolute;left:0;color:rgba(255,255,255,.25)">&rarr;</span>
+          <span data-en="Your visuals don't convert as much as they should" data-fr="Vos visuels ne convertissent pas autant qu'ils devraient">Your visuals don't convert as much as they should</span>
+        </div>
+        <div style="font-size:16px;font-weight:300;color:rgba(255,255,255,.65);padding-left:18px;position:relative">
+          <span style="position:absolute;left:0;color:rgba(255,255,255,.25)">&rarr;</span>
+          <span data-en="You spend on ads. But nothing converts." data-fr="Vous investissez en ads et en contenu… mais les résultats ne suivent pas">You spend on ads. But nothing converts.</span>
+        </div>
+        <div style="font-size:16px;font-weight:300;color:rgba(255,255,255,.65);padding-left:18px;position:relative">
+          <span style="position:absolute;left:0;color:rgba(255,255,255,.25)">&rarr;</span>
+          <span data-en="Your product is great. Your visuals don't show it." data-fr="Vous avez un bon produit, mais il ne se perçoit pas encore à sa juste valeur">Your product is great. Your visuals don&rsquo;t show it.</span>
+        </div>
+        <div style="font-size:16px;font-weight:300;color:rgba(255,255,255,.65);padding-left:18px;position:relative">
+          <span style="position:absolute;left:0;color:rgba(255,255,255,.25)">&rarr;</span>
+          <span data-en="You keep tweaking. Nothing sticks." data-fr="Vous testez, vous ajustez. Mais rien ne change vraiment">You keep tweaking. Nothing sticks.</span>
+        </div>
+        <div style="font-size:16px;font-weight:300;color:rgba(255,255,255,.65);padding-left:18px;position:relative">
+          <span style="position:absolute;left:0;color:rgba(255,255,255,.25)">&rarr;</span>
+          <span data-en="You don't know what's broken." data-fr="Vous ne comprenez pas ce qui bloque">You don&rsquo;t know what&rsquo;s broken.</span>
+        </div>
+      </div>
+      <p style="font-size:17px;font-weight:500;color:rgba(255,255,255,.9);line-height:1.6;text-align:center">
+        <span data-en="The fix isn't more content." data-fr="Le problème n'est pas votre produit.">The fix isn&rsquo;t more content.</span><br>
+        <span data-en="It's how your brand looks and feels." data-fr="C'est la façon dont il est perçu.">It&rsquo;s how your brand <span style="font-weight:500;color:rgba(255,255,255,.9)">looks</span> and <span style="font-weight:500;color:rgba(255,255,255,.9)">feels</span>.</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- AVANT / APRÈS MENTAL -->
+<section class="section baf-section" style="position:relative;z-index:1;">
+  <div class="c">
+    <div class="r" style="text-align:center;margin-bottom:64px">
+      <span class="section-eyebrow" data-en="Before & After" data-fr="La transformation">Before &amp; After</span>
+      <h2 class="section-h2" style="margin-top:0;margin-bottom:0;">
+        <span data-en="When your brand" data-fr="Quand votre image">When your brand</span><br><em><span data-en="looks the part." data-fr="devient cohérente.">looks the part.</span></em>
+      </h2>
+    </div>
+    <div class="mental-baf r d1">
+      <div class="mb-col bad-col">
+        <div class="mb-label">
+          <span class="mb-dot bad-dot"></span>
+          <span data-en="Without us" data-fr="Sans système visuel">Without us</span>
+        </div>
+        <div class="mb-items">
+          <div class="mb-item" data-en="Inconsistent visuals across every channel" data-fr="Image sans cohérence ni direction">Inconsistent visuals across every channel</div>
+          <div class="mb-item" data-en="Product looks cheaper than it is" data-fr="Produit sous-perçu vs sa qualité réelle">Product looks cheaper than it is</div>
+          <div class="mb-item" data-en="No clear brand identity" data-fr="Univers visuel qui ne reflète pas votre vision">No clear brand identity</div>
+          <div class="mb-item" data-en="Random freelancers, no coherence" data-fr="Prestataires isolés, zéro système">Random freelancers, no coherence</div>
+          <div class="mb-item" data-en="Revenue left on the table" data-fr="Potentiel de marque bloqué">Revenue left on the table</div>
+        </div>
+      </div>
+      <div class="mb-arrow">&#8594;</div>
+      <div class="mb-col good-col">
+        <div class="mb-label">
+          <span class="mb-dot good-dot"></span>
+          With the Vignau System&trade;
+        </div>
+        <div class="mb-items">
+          <div class="mb-item" data-en="Visuals that match your product's real value" data-fr="Image alignée sur la qualité de vos produits">Visuals that match your product's real value</div>
+          <div class="mb-item" data-en="People want it before they read a word" data-fr="Désirabilité immédiate, sans explication">People want it before they read a word</div>
+          <div class="mb-item" data-en="One look. Instantly recognizable." data-fr="Vision de marque visible à chaque point de contact">One look. Instantly recognizable.</div>
+          <div class="mb-item" data-en="Content that works across every platform" data-fr="Système visuel cohérent &amp; scalable">Content that works across every platform</div>
+          <div class="mb-item" data-en="More sales. Higher perceived value." data-fr="Plein potentiel de votre marque atteint">More sales. Higher perceived value.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SÉLECTIVITÉ — pouvoir perçu -->
+<section class="section select-section" style="position:relative;z-index:1;">
+  <div class="c">
+    <div class="select-inner r">
+      <div class="select-quote">
+        <span data-en="You have a great product." data-fr="Vous avez un bon produit.">You have a great product.</span>
+      </div>
+      <div class="select-right">
+        <p class="select-text">
+  <span data-en="But it doesn’t look like it.<br>So you’re losing sales." data-fr="Mais votre image ne le reflète pas.<br>Donc vous perdez des ventes.">But it doesn’t look like it.<br>So you’re losing sales.</span>
+</p>
+        <a href="#offres" class="btn-select">
+          <span data-en="See pricing →" data-fr="Voir les offres →">See pricing &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROCESS VERTICAL -->
+<section class="process-section" id="processus" style="text-align:center">
+  <div class="c">
+    <div class="r" style="margin-bottom:64px;max-width:700px;margin-left:auto;margin-right:auto;text-align:center">
+      <span class="section-eyebrow" data-en="How it works" data-fr="Notre processus">How it works</span>
+      <h2 class="section-h2"><span data-en="Fast." data-fr="Simple.">Fast.</span><br><em><span data-en="No guesswork." data-fr="Sans improvisation.">No guesswork.</span></em></h2>
+    </div>
+    <div class="r d1" style="display:grid;grid-template-columns:48px 1fr;max-width:700px;margin:0 auto;text-align:left">
+      <div class="process-rail">
+        <div class="rail-stop"><div class="rail-stop-inner"></div></div>
+        <div class="rail-spacer"></div>
+        <div class="rail-stop"><div class="rail-stop-inner"></div></div>
+        <div class="rail-spacer"></div>
+        <div class="rail-stop"><div class="rail-stop-inner"></div></div>
+      </div>
+      <div class="process-cards">
+        <div class="pcard">
+          <span class="pcard-index"><span data-en="01 — Audit" data-fr="01 — Diagnostic">01 &mdash; Audit</span></span>
+          <h3 class="pcard-title" data-en="We find what’s costing you sales." data-fr="On identifie ce qui vous fait perdre des ventes.">We find what’s costing you sales.</h3>
+          <p class="pcard-desc" data-en="20 minutes. We show you exactly why your brand isn’t converting." data-fr="20 minutes. Vous comprenez pourquoi votre image ne convertit pas.">20 minutes. We show you exactly why your brand isn’t converting.</p>
+        </div>
+        <div class="pcard">
+          <span class="pcard-index"><span data-en="02 — Production" data-fr="02 — Architecture visuelle">02 &mdash; Production</span></span>
+          <h3 class="pcard-title" data-en="We build a visual system that sells." data-fr="On construit une image qui vend.">We create your visuals.</h3>
+          <p class="pcard-desc" data-en="Everything aligned. Everything on-brand. Built to convert." data-fr="Tout est aligné. Tout est cohérent. Pensé pour convertir.">Photos, AI visuals, brand direction. Everything consistent. Everything on-brand.</p>
+        </div>
+        <div class="pcard">
+          <span class="pcard-index"><span data-en="03 — Delivery" data-fr="03 — Déploiement">03 &mdash; Delivery</span></span>
+          <h3 class="pcard-title" data-en="You get content that drives sales." data-fr="Vous obtenez du contenu qui convertit.">You get content that sells.</h3>
+          <p class="pcard-desc" data-en="Ready to post. Ready to convert. Your brand finally looks the part." data-fr="Prêt à poster. Prêt à vendre. Votre marque prend enfin sa place.">Ready to post. Ready to convert. Your brand finally looks the part.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFRES -->
+<section class="section" id="offres" style="position:relative;z-index:1;background:linear-gradient(180deg,transparent 0%,rgba(17,26,74,.35) 30%,rgba(13,18,53,.5) 70%,transparent 100%);">
+  <div class="c">
+    <div class="r" style="text-align:center">
+      <span class="section-eyebrow" style="display:inline-flex;align-items:center;gap:7px;justify-content:center"><span class="dot-red"></span><span data-en="Only 3 spots this week" data-fr="Plus que 3 places disponibles cette semaine">Only 3 spots this week</span></span>
+      <h2 class="section-h2" style="margin-bottom:28px">
+        <span data-en="Start where your" data-fr="Commencez là où votre">Start where your</span><br><em><span data-en=" brand needs it most." data-fr="marque en a besoin.">starting point.</span></em>
+      </h2>
+      <p class="section-p" style="margin-left:auto;margin-right:auto">
+        <span data-en="Built to make your brand look right and sell more." data-fr=" Pensé pour rendre votre marque désirable et vendre plus.">Three clear options. Each one built to make your brand look better and perform.</span>
+      </p>
+    </div>
+
+    <div class="offers-grid r d1">
+
+      <div class="offer-card" style="display:flex;flex-direction:column;height:100%">
+        <div class="card-top" style="min-height:190px;">
+          <div class="offer-name" style="margin-bottom:8px">Visual System</div>
+          <div class="offer-tier"><span data-en="Level 01 · Fast start" data-fr="Niveau 01 · Entrée rapide">Level 01 &middot; Fast start</span></div>
+          <div class="offer-tier" style="margin-bottom:2px"><span data-en="Starting at" data-fr="À partir de">Starting at</span></div>
+          <div class="offer-vol" style="margin-bottom:4px"><span data-en="$950" data-fr="950€">950€</span></div>
+          <div class="offer-vol-s" style="margin-bottom:16px"data-en="A visual system to make your brand look premium fast." data-fr="Un système visuel pour rendre votre marque premium rapidement.">A visual system to make your brand look premium fast</div>
+        </div>
+        <div class="card-cta">
+          <a href="https://calendly.com/vignaustudio/new-meeting"class="offer-cta" data-en="Make my brand look better →" data-fr=" Améliorer mon image →">Get my visuals &rarr;</a>
+          <hr class="card-divider">
+          <div class="offer-list">
+            <span class="offer-li" data-en="Consistent visual system for your brand" data-fr="Système visuel cohérent pour votre marque">Consistent visual system for your brand</span>
+            <span class="offer-li" data-en="Minimum 12 visuals to build a strong foundation" data-fr="12 visuels minimum pour poser une base solide">Minimum 12 visuals to build a strong foundation</span>
+            <span class="offer-li" data-en="Realistic product integration" data-fr="Intégration réaliste de votre produit">Realistic product integration</span>
+            <span class="offer-li" data-en="3 distinct visual universes" data-fr="3 univers visuels distincts">3 distinct visual universes</span>
+            <span class="offer-li" data-en="Adapted formats (social, ads, website)" data-fr="Formats adaptés (réseaux, ads, site)">Adapted formats (social, ads, website)</span>
+          <span class="offer-li" data-en=" Ready to use, fast delivery (5–7 days)" data-fr="Prêt à l’emploi. Prêt à vendre.">Ready to use. Ready to sell.</span>
+          </div>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;padding-top:16px" data-en="For brands that need better visuals. Fast." data-fr="Pour les marques qui veulent améliorer leur image avant d'accélérer.">For brands that need better visuals. Fast.</p>
+        </div>
+      </div><div class="offer-card featured" style="display:flex;flex-direction:column;height:100%">
+        <span class="offer-badge">Recommended</span>
+        <div class="card-top">
+          <div class="offer-name" style="margin-bottom:8px">Brand System</div>
+          <div class="offer-tier"><span data-en="Level 02 · Full brand" data-fr="Niveau 02 · Identité">Level 02 &middot; Full brand</span></div>
+          <div class="offer-tier" style="margin-bottom:2px"><span data-en="Starting at" data-fr="À partir de">Starting at</span></div>
+          <div class="offer-vol" style="margin-bottom:4px"><span data-en="$2,500" data-fr="2 500€">2 500€</span></div>
+          <div class="offer-vol-s" style="margin-bottom:16px" data-en="For brands ready to build a strong, consistent identity." data-fr="Pour les marques qui veulent construire une image forte et cohérente.">For brands ready to build a strong, consistent identity.</div>
+        </div>
+        <div class="card-cta">
+          <a href="https://calendly.com/vignaustudio/new-meeting" class="offer-cta" data-en="Upgrade my brand →" data-fr="Structurer ma marque →">Build my brand &rarr;</a>
+          <hr class="card-divider">
+          <div class="offer-list">
+            <span class="offer-li" data-en="Brand strategy &amp; positioning" data-fr="Brand strategy &amp; positionnement">Brand strategy &amp; positioning</span>
+            <span class="offer-li" data-en="Branding &amp; visual identity" data-fr="Branding &amp; identité visuelle">Branding &amp; visual identity</span>
+            <span class="offer-li" data-en="Visual guidelines &amp; global consistency" data-fr="Guidelines visuelles &amp; cohérence globale">Visual guidelines &amp; global consistency</span>
+            <span class="offer-li" data-en="Full art direction" data-fr="Direction artistique complète">Full art direction</span>
+            <span class="offer-li">Consistent content system</span>
+            <span class="offer-li" data-en="AI visuals included" data-fr="Visuels IA inclus">AI visuals included</span>
+          </div>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;padding-top:16px" data-en="For brands ready to look premium everywhere." data-fr="Pour les marques qui veulent structurer une identité forte et cohérente.">For brands ready to look premium everywhere.</p>
+        </div>
+      </div><div class="offer-card" style="display:flex;flex-direction:column;height:100%">
+        <span class="badge-limited">Limited spots</span>
+        <div class="card-top">
+          <div class="offer-name" style="margin-bottom:8px">Full Brand Build</div>
+          <div class="offer-tier"><span data-en="Level 03 · Done with you" data-fr="Niveau 03 · Accompagnement">Level 03 &middot; Done with you</span></div>
+          <div class="offer-tier" style="margin-bottom:2px" data-en="Custom-built" data-fr="Sur mesure">Custom-built</div>
+          <div class="offer-vol" style="margin-bottom:4px"><span data-en="90-day" data-fr="90 jours">90 jours</span></div>
+          <div class="offer-vol-s" style="letter-spacing:.1em;text-transform:uppercase;font-size:10px;margin-bottom:16px" data-en="Vignau System™ a complete system to scale your brand." data-fr="Vignau System™ un système complet pour faire grandir votre marque.">Vignau System&trade; &middot; Custom-built</div>
+        </div>
+        <div class="card-cta">
+          <a href="https://calendly.com/vignaustudio/new-meeting" class="offer-cta" style="background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff" data-en="Apply now →" data-fr="Candidater →">Apply now &rarr;</a>
+          <hr class="card-divider">
+          <div class="offer-list">
+            <span class="offer-li" style="color:rgba(255,255,255,.7)" data-en="The 7 foundations of the Vignau System™" data-fr="Les 7 fondations du Vignau System™">The 7 foundations of the Vignau System&trade;</span>
+            <span class="offer-li" data-en="Clear vision &amp; strategic positioning" data-fr="Vision claire &amp; positionnement stratégique">Clear vision &amp; strategic positioning</span>
+            <span class="offer-li" data-en="Consistent &amp; differentiating brand image" data-fr="Image de marque cohérente et différenciante">Consistent &amp; differentiating brand image</span>
+            <span class="offer-li" data-en="Structured &amp; scalable content system" data-fr="Système de contenu structuré et scalable">Structured &amp; scalable content system</span>
+            <span class="offer-li" data-en="Controlled organic growth" data-fr="Croissance organique maîtrisée">Controlled organic growth</span>
+            <span class="offer-li" data-en="Preparation for marketing amplification" data-fr="Préparation à l'amplification marketing">Preparation for marketing amplification</span>
+          </div>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;padding-top:16px" data-en="For brands serious about scaling their image." data-fr="Pour les marques prêtes à construire et scaler un système de marque complet.">For brands serious about scaling their image.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="c">
+    <div class="r" style="text-align:center">
+      <span class="section-eyebrow" data-en="FAQ" data-fr="Questions fréquentes">FAQ</span>
+      <h2 class="section-h2" style="margin-bottom:60px">
+        FAQ<br><em><span data-en="quick answers." data-fr="on répond à tout.">quick answers.</span></em>
+      </h2>
+    </div>
+    <div class="faq-list r d1" style="max-width:800px;margin:0 auto">
+      <div class="faq-item">
+        <button class="faq-q" onclick="tFaq(this)">
+          <span data-en="What makes you different from a regular agency?" data-fr="En quoi votre approche diffère d'une agence créative classique ?">What makes you different from a regular agency?</span>
+          <span class="faq-ico">+</span>
+        </button>
+        <div class="faq-a"><p data-en="A traditional agency executes we architect. We don&rsquo;t just produce visuals, we build a brand system (aligned with your DNA) where every element serves a perception and conversion goal. The Vignau System&trade; is our framework for creating scalable consistency across 7 foundations." data-fr="Une agence classique exécute, nous architectons. On ne produit pas des visuels, on construit un système de marque (aligné avec votre ADN) dans lequel chaque élément s'aligne sur un objectif de perception et de conversion. Le Vignau System™ est notre structure pour créer de la cohérence scalable à travers 7 fondations.">A traditional agency executes &mdash; we architect. We don&rsquo;t just produce visuals, we build a brand system (aligned with your DNA) where every element serves a perception and conversion goal. The Vignau System&trade; is our framework for creating scalable consistency across 7 foundations.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="tFaq(this)">
+          <span data-en="What's an AI visual?" data-fr="C'est quoi concrètement un visuel IA avec intégration produit ?">What's an AI visual?</span>
+          <span class="faq-ico">+</span>
+        </button>
+        <div class="faq-a"><p data-en="We integrate your real product into a fully AI-generated scene premium, luxury, lifestyle or cinematic atmosphere. The result is indistinguishable from a real photoshoot, delivered in 5&ndash;7 days, without the cost, delays or logistics of a traditional studio shoot." data-fr="On intègre votre produit réel dans une scène entièrement générée par IA, ambiance premium, luxe, lifestyle ou cinématographique. Le résultat est indiscernable d'un vrai shooting, livré en 5–7 jours, sans le coût, les délais et ni la logistique et l'organisation que nécessite un vrai shooting.">We integrate your real product into a fully AI-generated scene &mdash; premium, luxury, lifestyle or cinematic atmosphere. The result is indistinguishable from a real photoshoot, delivered in 5&ndash;7 days, without the cost, delays or logistics of a traditional studio shoot.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="tFaq(this)">
+          <span data-en="Who do you work with?" data-fr="Pour quel type de marque travaillez-vous ?">Who do you work with?</span>
+          <span class="faq-ico">+</span>
+        </button>
+        <div class="faq-a"><p data-en="We work with beauty, luxury, jewelry, lifestyle, wellness and fashion brands at launch, in development, or already live.<br><br>Any brand with strong premium ambitions that wants to create desire rather than justify prices. Entrepreneurs starting out or founders with an existing brand that doesn&rsquo;t yet reflect its true potential." data-fr="Nous travaillons avec les marques beauté, luxe, joaillerie, lifestyle, bien-être, mode en lancement, en construction, projet en cours, projet en réflexion.<br><br>Toute marque avec une ambition forte et premium qui veut créer le désir plutôt que de justifier ses prix. Entrepreneurs en création ou fondateurs avec une marque existante qui ne reflète pas encore son vrai potentiel.">We work with beauty, luxury, jewelry, lifestyle, wellness and fashion brands &mdash; at launch, in development, or already live.<br><br>Any brand with strong premium ambitions that wants to create desire rather than justify prices. Entrepreneurs starting out or founders with an existing brand that doesn&rsquo;t yet reflect its true potential.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="tFaq(this)">
+          <span data-en="How fast?" data-fr="Quels sont les délais ?">How fast?</span>
+          <span class="faq-ico">+</span>
+        </button>
+        <div class="faq-a"><p data-en="AI visuals + product integration: 5&ndash;7 business days. Brand System: 3&ndash;5 weeks. Full Brand Build: timeline defined together during the strategic audit." data-fr="Visuels IA + intégration produit : 5–7 jours ouvrés. Brand System : 3–5 semaines. Full Brand System : délai défini ensemble lors du diagnostic stratégique.">AI visuals + product integration: 5&ndash;7 business days. Brand System: 3&ndash;5 weeks. Full Brand Build: timeline defined together during the strategic audit.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="tFaq(this)">
+          <span data-en="What happens during the free audit?" data-fr="Comment se passe le diagnostic stratégique offert ?">What happens during the free audit?</span>
+          <span class="faq-ico">+</span>
+        </button>
+        <div class="faq-a"><p data-en="We take 20 minutes together to understand where you stand and analyze your current image: brand strategy, branding, Instagram feed, website, product visuals, positioning.<br><br>We identify what&rsquo;s holding back your perception and define priorities. You leave with a concrete action plan whether you work with us or not." data-fr="Nous échangeons 20 minutes en vision pour comprendre où vous en êtes et analyser votre image actuelle : brand stratégie, branding, feed instagram, site, visuels produit, positionnement.<br><br>On identifie les points qui freinent votre perception et on définit les priorités. Vous repartez avec un plan d'action concret que vous travailliez avec nous ou non.">We take 20 minutes together to understand where you stand and analyze your current image: brand strategy, branding, Instagram feed, website, product visuals, positioning.<br><br>We identify what&rsquo;s holding back your perception and define priorities. You leave with a concrete action plan &mdash; whether you work with us or not.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final" id="contact">
+  <div class="c r">
+    <span class="final-label" data-en="Are you Ready to" data-fr="Prochaine étape">Ready?</span>
+    <h2 class="final-h2">
+      <span data-en="Make your brand" data-fr="Votre image">Make your brand</span><br><em><span data-en=" impossible to ignore?" data-fr="fixe le prix.">l impossible to ignore..</span></em>
+    </h2>
+    <p class="final-sub">
+      <span data-en="20 min audit." data-fr="20 min offertes.">20 min audit.</span><br>
+      <span data-en="Find what’s costing you sales." data-fr="Comprenez ce qui bloque vos ventes..">Find what’s costing you sales.</span>
+    </p>
+    <a href="https://calendly.com/vignaustudio/new-meeting" class="btn-primary">
+      <span data-en="Book my free audit &rarr;" data-fr="Réserver mon diagnostic &rarr;">Book my free audit &rarr;</span>
+    </a>
+    <p class="final-note" data-en="Strategy · Branding · Creative Direction · AI" data-fr="Stratégie · Branding · Creative Direction · IA">Strategy &middot; Creative Direction &middot; IA &middot; </p>
+  </div>
+</section>
+
+
+<!-- PAGE RÉALISATIONS INTÉGRÉE -->
+<section id="realisations-all" style="display:none;position:relative;z-index:1;padding:80px 0 120px">
+  <div style="max-width:1200px;margin:0 auto;padding:0 var(--pad)">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:52px">
+      <div>
+        <span style="font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.22);display:block;margin-bottom:14px" data-en="Full portfolio" data-fr="Portfolio complet" data-en="Full portfolio" data-fr="Portfolio complet">Full portfolio</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,72px);font-weight:500;line-height:.94;letter-spacing:-.02em">
+          <span data-en="Selected" data-fr="Réalisations">Selected</span><br><em style="font-style:italic;opacity:.6;font-weight:400"><span data-en="work." data-fr="sélectionnées.">work.</span></em>
+        </h2>
+      </div>
+      <button onclick="closeWork()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:#fff;width:44px;height:44px;border-radius:50%;font-size:20px;cursor:pointer;flex-shrink:0">&#10005;</button>
+    </div>
+
+    <!-- Filtres -->
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px">
+  <button class="wf-btn active" onclick="filterWork(this,'all')">All</button>
+  <button class="wf-btn" onclick="filterWork(this,'fashion')">Fashion</button>
+  <button class="wf-btn" onclick="filterWork(this,'wellness')">Wellness</button>
+  <button class="wf-btn" onclick="filterWork(this,'joaillerie')" data-en="Jewelry" data-fr="Joaillerie">Jewelry</button>
+  <button class="wf-btn" onclick="filterWork(this,'beaute')" data-en="Beauty" data-fr="Beauté">Beauty</button>
+  <button class="wf-btn" onclick="filterWork(this,'luxe')" data-en="Luxury" data-fr="Luxe">Luxury</button>
+</div>
+
+   <!-- Masonry grid -->
+<div class="wmasonry">
+
+  <div class="wi" data-cat="da wellness">
+  <img src="images/house-of.png" alt="House of Freïa" loading="lazy">
+  <div class="wi-info">
+    <div>
+      <div class="wi-title" data-en="House of Freïa" data-fr="House of Freïa">
+        House of Freïa
+      </div>
+      <div class="wi-type" data-en="Wellness Visual System &middot; AI Campaign" data-fr="Système visuel wellness &middot; Campagne IA">
+        Wellness Visual System &middot; AI Campaign
+      </div>
+    </div>
+    <span class="wi-loc">Paris</span>
+  </div>
+</div>
+
+<div class="wi" data-cat="da wellness">
+  <img src="images/houseof-site.png" alt="House of Freïa" loading="lazy">
+  <div class="wi-info">
+    <div>
+      <div class="wi-title" data-en="House of Freïa" data-fr="House of Freïa">
+        House of Freïa
+      </div>
+      <div class="wi-type" data-en="Launch System · Website & AI Campaign" data-fr="Système visuel wellness &middot; Campagne IA">
+        Wellness Visual System &middot; AI Campaign
+      </div>
+    </div>
+    <span class="wi-loc">Paris</span>
+  </div>
+</div>
+
+<div class="wi" data-cat="wellness">
+  <img src="images/birushi-insta.png" alt="Birushi Haircare" loading="lazy">
+  <div class="wi-info">
+    <div>
+      <div class="wi-title" data-en="Birushi Haircare" data-fr="Birushi Haircare">
+        Birushi Haircare
+      </div>
+      <div class="wi-type" data-en="Haircare Visual System &middot; AI Campaign" data-fr="Système visuel haircare &middot; Campagne IA">
+        Haircare Visual System &middot; AI Campaign
+      </div>
+    </div>
+    <span class="wi-loc">Paris</span>
+  </div>
+</div>
+
+<div class="wi" data-cat="ia beaute">
+    <img src="images/fare-same.png" alt="" loading="lazy">
+    <div class="wi-info">
+      <div>
+        <div class="wi-title" data-en="Fare Same" data-fr="Fare Same">
+  Fare Same
+</div>
+<div class="wi-type" data-en="Beauty Visual System &middot; AI Campaign" data-fr="Système visuel beauté &middot; Campagne IA">
+  Beauty Visual System &middot; AI Campaign
+</div>
+      </div>
+      <span class="wi-loc">New York</span>
+    </div>
+  </div>
+
+<div class="wi" data-cat="beaute">
+  <img src="images/thewave-insta.jpg" alt="The Wave" loading="lazy">
+  <div class="wi-info">
+    <div>
+      <div class="wi-title" data-en="The Wave" data-fr="The Wave">
+        The Wave
+      </div>
+      <div class="wi-type" data-en="Beauty Visual System &middot; AI Campaign" data-fr="Système visuel beauté &middot; Campagne IA">
+        Beauty Visual System &middot; AI Campaign
+      </div>
+    </div>
+    <span class="wi-loc">Los Angeles</span>
+  </div>
+</div>
+
+<div class="wi" data-cat="beaute">
+  <img src="images/amarelle-insta.png" alt="Amarelle" loading="lazy">
+  <div class="wi-info">
+    <div>
+      <div class="wi-title" data-en="Amarelle" data-fr="Amarelle">
+        Amarelle
+      </div>
+      <div class="wi-type" data-en="Beauty Visual System &middot; AI Campaign" data-fr="Système visuel beauté &middot; Campagne IA">
+        Beauty Visual System &middot; AI Campaign
+      </div>
+    </div>
+    <span class="wi-loc">Paris</span>
+  </div>
+</div>
+
+ <div class="wi" data-cat="ia beaute">
+    <img src="images/auralis-feed.png" alt="" loading="lazy">
+    <div class="wi-info">
+      <div>
+        <div class="wi-title" data-en="Auralis" data-fr="Auralis">Auralis</div>
+<div class="wi-type" data-en="Beauty Liquid Visuals &middot; AI Campaign" data-fr="Visuels beauté liquides &middot; Campagne IA">Beauty Liquid Visuals &middot; AI Campaign</div>
+      </div>
+      <span class="wi-loc">New York</span>
+    </div>
+  </div>
+
+  <div class="wi" data-cat="luxe">
+  <img src="images/byredo-feed.png" alt="Byredo" loading="lazy">
+  <div class="wi-info">
+    <div>
+      <div class="wi-title" data-en="Byredo" data-fr="Byredo">
+        Byredo
+      </div>
+      <div class="wi-type" data-en="Fragrance Visual System &middot; AI Campaign" data-fr="Système visuel parfum &middot; Campagne IA">
+        Fragrance Visual System &middot; AI Campaign
+      </div>
+    </div>
+    <span class="wi-loc">Stockholm</span>
+  </div>
+</div>
+
+<div class="wi" data-cat="ia joaillerie">
+    <img src="images/duniya-insta.png" alt="" loading="lazy">
+    <div class="wi-info">
+      <div>
+        <div class="wi-title" data-en="Duniya Jewels" data-fr="Duniya Jewels">
+  Duniya Jewels
+</div>
+<div class="wi-type" data-en="Jewelry Visual System &middot; AI Campaign" data-fr="Système visuel joaillerie &middot; Campagne IA">
+  Jewelry Visual System &middot; AI Campaign
+</div>
+      </div>
+      <span class="wi-loc">Los Angeles</span>
+    </div>
+  </div>
+
+<div class="wi" data-cat="wellness">
+  <img src="images/bulle-insta.png" alt="Bulle cosmetics" loading="lazy">
+  <div class="wi-info">
+    <div>
+      <div class="wi-title" data-en="Bulle cosmetics" data-fr="Birushi Haircare">
+        Birushi Haircare
+      </div>
+      <div class="wi-type" data-en="Selfcare Visual System &middot; AI Campaign" data-fr="Système visuel selfcare &middot; Campagne IA">
+        Haircare Visual System &middot; AI Campaign
+      </div>
+    </div>
+    <span class="wi-loc">Paris</span>
+  </div>
+</div>
+
+<div class="wi" data-cat="luxe">
+  <img src="images/feeels-insta.jpg" alt="Feeels" loading="lazy">
+  <div class="wi-info">
+    <div>
+      <div class="wi-title" data-en="Feeels" data-fr="Feeels">
+        FEEELS
+      </div>
+      <div class="wi-type" data-en="Leather Goods Visual System &middot; AI Campaign" data-fr="Système visuel maroquinerie &middot; Campagne IA">
+        Leather Goods Visual System &middot; AI Campaign
+      </div>
+    </div>
+    <span class="wi-loc">Paris</span>
+  </div>
+</div>
+
+<div class="wi" data-cat="fashion">
+  <img src="images/design-insta.png" alt="Design Motion" loading="lazy">
+  <div class="wi-info">
+    <div>
+      <div class="wi-title" data-en="Design Motion x ELLE" data-fr="Design Motion">
+        Design Motion
+      </div>
+      <div class="wi-type" data-en="Fashion Brand System &middot; Art Direction" data-fr="Système de marque mode &middot; Direction artistique">
+        Fashion Brand System &middot; Art Direction
+      </div>
+    </div>
+    <span class="wi-loc">Luxembourg</span>
+  </div>
+</div>
+
+<div class="wi" data-cat="fashion">
+  <img src="images/design-2.png" alt="Design Motion" loading="lazy">
+  <div class="wi-info">
+    <div>
+      <div class="wi-title" data-en="Design Motion x ELLE" data-fr="Design Motion">
+        Design Motion
+      </div>
+      <div class="wi-type" data-en="Fashion Brand System &middot; Art Direction" data-fr="Système de marque mode &middot; Direction artistique">
+        Fashion Brand System &middot; Art Direction
+      </div>
+    </div>
+    <span class="wi-loc">Luxembourg</span>
+  </div>
+</div>
+
+<div class="wi" data-cat="fashion">
+  <img src="images/design-motion.png" alt="Design Motion" loading="lazy">
+  <div class="wi-info">
+    <div>
+      <div class="wi-title" data-en="Design Motion x ELLE" data-fr="Design Motion">
+        Design Motion
+      </div>
+      <div class="wi-type" data-en="Fashion Brand System &middot; Art Direction" data-fr="Système de marque mode &middot; Direction artistique">
+        Fashion Brand System &middot; Art Direction
+      </div>
+    </div>
+    <span class="wi-loc">Luxembourg</span>
+  </div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo-wrap">
+      <a href="https://vignaustudio.com" class="footer-logo">
+        <img src="images/logo-header.png" alt="Vignau Studio">
+      </a>
+    </div>
+
+    <a href="https://www.instagram.com/vignaustudio/" class="footer-insta footer-insta-mobile" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block">
+<rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" stroke-width="1.8"/>
+<circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/>
+<circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/>
+</svg></a>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/vignaustudio/" class="footer-insta" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block">
+<rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" stroke-width="1.8"/>
+<circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/>
+<circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/>
+</svg></a>
+      <a href="https://www.linkedin.com/in/lo%C3%AFc-vignau/">LinkedIn</a>
+      <a href="#realisations-all" onclick="openWork();return false;" data-en="Work" data-fr="Réalisations">Work</a>
+      <a href="/cdn-cgi/l/email-protection#d9bab6b7adb8baad99afb0beb7b8acaaadacbdb0b6f7bab6b4">Contact</a>
+    </div>
+    <span class="footer-copy">&copy; 2025 Vignau Studio &middot; Paris</span>
+    <button class="lang-btn" onclick="switchLang()" id="lang-toggle-footer">FR</button>
+    <a href="#mentions" onclick="document.getElementById('mentions-modal').style.display='flex';return false;" style="font-size:12px;color:rgba(255,255,255,.25);text-decoration:underline;text-underline-offset:3px" data-en="Legal notice" data-fr="Mentions légales">Legal notice</a>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{ threshold: 0.05 });
+  document.querySelectorAll('.r').forEach(function(el){ io.observe(el); });
+
+
+  window.openWork = function() {
+    var s = document.getElementById('realisations-all');
+    s.style.display = 'block';
+    setTimeout(function(){ s.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
+  };
+  window.closeWork = function() {
+    var s = document.getElementById('realisations-all');
+    s.style.display = 'none';
+    document.getElementById('realisations').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+  window.filterWork = function(btn, cat) {
+    document.querySelectorAll('.wf-btn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    document.querySelectorAll('.wi').forEach(function(item){
+      if (cat === 'all' || item.dataset.cat.indexOf(cat) > -1) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  };
+
+  window.toggleMenu = function() {
+    var m = document.getElementById('mobileMenu');
+    m.classList.toggle('open');
+    document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+  };
+
+  window.tFaq = function(btn){
+    var item = btn.closest('.faq-item');
+    var open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); });
+    if(!open) item.classList.add('open');
+  };
+})();
+
+/* ── TABS MENTIONS MODAL ── */
+function switchTab(tab) {
+  ['ml','cgv','cgu'].forEach(function(t) {
+    document.getElementById('panel-'+t).style.display = t === tab ? 'block' : 'none';
+    var btn = document.getElementById('tab-'+t);
+    btn.style.opacity = t === tab ? '1' : '.4';
+    btn.style.borderBottomColor = t === tab ? '#fff' : 'transparent';
+  });
+}
+
+/* ── LANGUAGE SWITCH ── */
+ var currentLang = 'en';
+
+function applyLang() {
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var val = el.getAttribute('data-' + currentLang);
+    if (!val) return;
+    el.innerHTML = val;
+  });
+
+  var t1 = document.getElementById('lang-toggle');
+  var t2 = document.getElementById('lang-toggle-footer');
+  var t3 = document.getElementById('lang-toggle-mobile');
+  if (t1) t1.textContent = currentLang === 'en' ? 'French' : 'English';
+  if (t2) t2.textContent = currentLang === 'en' ? 'French' : 'English';
+  if (t3) t3.textContent = currentLang === 'en' ? 'French' : 'English';
+
+  document.documentElement.lang = currentLang;
+}
+
+function switchLang() {
+  currentLang = currentLang === 'en' ? 'fr' : 'en';
+  applyLang();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  applyLang();
+});
+
+</script>
+
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="toggleMenu()">&#10005;</button>
+  <nav class="mobile-menu-links">
+    <a href="#realisations" onclick="toggleMenu()">Work</a>
+    <a href="#realisations-all" onclick="openWork();toggleMenu();return false;" data-en="Full portfolio" data-fr="Portfolio complet">Full portfolio</a>
+    <a href="#processus" onclick="toggleMenu()" data-en="Process" data-fr="Processus">Process</a>
+    <a href="#offres" onclick="toggleMenu()" data-en="Services" data-fr="Offres">Services</a>
+    <a href="#faq" onclick="toggleMenu()">FAQ</a>
+  </nav>
+
+  <button class="lang-btn" onclick="switchLang()" id="lang-toggle-mobile">Language</button>
+
+  <a href="https://calendly.com/vignaustudio/new-meeting" class="mobile-menu-cta">
+    Book a free brand audit &rarr;
+  </a>
+</div>
+
+<!-- MENTIONS LÉGALES / CGV / CGU -->
+<div id="mentions-modal" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(6,7,15,.96);backdrop-filter:blur(20px);align-items:center;justify-content:center;padding:24px">
+  <div style="max-width:640px;width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;position:relative;max-height:85vh;display:flex;flex-direction:column">
+    <button onclick="document.getElementById('mentions-modal').style.display='none'" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;z-index:10">&#10005;</button>
+    <div style="display:flex;border-bottom:1px solid rgba(255,255,255,.08);padding:0 32px;flex-shrink:0">
+      <button onclick="switchTab('ml')" id="tab-ml" style="background:none;border:none;border-bottom:2px solid #fff;color:#fff;font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:18px 14px 14px;cursor:pointer;opacity:1;transition:opacity .2s,border-color .2s">Mentions l&eacute;gales</button>
+      <button onclick="switchTab('cgv')" id="tab-cgv" style="background:none;border:none;border-bottom:2px solid transparent;color:#fff;font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:18px 14px 14px;cursor:pointer;opacity:.4;transition:opacity .2s,border-color .2s">CGV</button>
+      <button onclick="switchTab('cgu')" id="tab-cgu" style="background:none;border:none;border-bottom:2px solid transparent;color:#fff;font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:18px 14px 14px;cursor:pointer;opacity:.4;transition:opacity .2s,border-color .2s">CGU</button>
+    </div>
+    <div style="overflow-y:auto;padding:32px;font-size:14px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.6)">
+
+      <!-- Mentions légales -->
+      <div id="panel-ml">
+        <p style="margin-bottom:16px"><strong style="color:#fff">&Eacute;diteur du site</strong><br>
+        Vignau Studio &mdash; Lo&iuml;c Vignau<br>
+        SIRET&nbsp;: 835 025 883 00017<br>
+        RCS&nbsp;: 835 025 883 R.C.S Pontoise<br>
+        Adresse&nbsp;: Paris, France<br>
+        Contact&nbsp;: <a href="/cdn-cgi/l/email-protection#c4a7abaab0a5a7b084b2ada3aaa5b1b7b0b1a0adabeaa7aba9" style="color:rgba(255,255,255,.6);text-decoration:underline"><span class="__cf_email__" data-cfemail="beddd1d0cadfddcafec8d7d9d0dfcbcdcacbdad7d190ddd1d3">[email&#160;protected]</span></a></p>
+        <p style="margin-bottom:16px"><strong style="color:#fff">H&eacute;bergement</strong><br>
+        IONOS SE &mdash; 7 Place de la Gare, 57200 Sarreguemines</p>
+        <p style="margin-bottom:16px"><strong style="color:#fff">Propri&eacute;t&eacute; intellectuelle</strong><br>
+        L&rsquo;ensemble du contenu de ce site (textes, visuels, structure) est la propri&eacute;t&eacute; exclusive de Vignau Studio. Toute reproduction est interdite sans autorisation.</p>
+        <p><strong style="color:#fff">Donn&eacute;es personnelles</strong><br>
+        Les informations collect&eacute;es via le formulaire de contact sont utilis&eacute;es uniquement pour r&eacute;pondre &agrave; vos demandes. Conform&eacute;ment au RGPD, vous disposez d&rsquo;un droit d&rsquo;acc&egrave;s, de rectification et de suppression de vos donn&eacute;es personnelles. Pour toute demande&nbsp;: <a href="/cdn-cgi/l/email-protection#81e2eeeff5e0e2f5c1f7e8e6efe0f4f2f5f4e5e8eeafe2eeec" style="color:rgba(255,255,255,.6);text-decoration:underline"><span class="__cf_email__" data-cfemail="62010d0c1603011622140b050c0317111617060b0d4c010d0f">[email&#160;protected]</span></a></p>
+      </div>
+
+      <!-- CGV -->
+      <div id="panel-cgv" style="display:none">
+        <p style="margin-bottom:20px"><strong style="color:#fff">Conditions G&eacute;n&eacute;rales de Vente</strong><br>
+        <span style="font-size:12px;opacity:.5">En vigueur &mdash; Vignau Studio</span></p>
+        <p style="margin-bottom:16px"><strong style="color:#fff">1. Objet</strong><br>
+        Les pr&eacute;sentes CGV r&eacute;gissent les relations contractuelles entre Vignau Studio (Lo&iuml;c Vignau, SIRET 835 025 883 00017, RCS Pontoise) et tout client ayant pass&eacute; commande d&rsquo;une prestation de brand architecture, direction artistique ou production visuelle.</p>
+        <p style="margin-bottom:16px"><strong style="color:#fff">2. Prestations</strong><br>
+        Les prestations sont d&eacute;taill&eacute;es dans le devis ou la proposition commerciale accept&eacute;s par le client. Toute prestation non mentionn&eacute;e fait l&rsquo;objet d&rsquo;un avenant sign&eacute; des deux parties.</p>
+        <p style="margin-bottom:16px"><strong style="color:#fff">3. Tarifs &amp; paiement</strong><br>
+        Les tarifs sont indiqu&eacute;s en euros. Le r&egrave;glement int&eacute;gral est d&ucirc; avant le d&eacute;marrage de la prestation. Tout retard de paiement entra&icirc;ne des p&eacute;nalit&eacute;s au taux l&eacute;gal en vigueur.</p>
+        <p style="margin-bottom:16px"><strong style="color:#fff">4. Droits d&rsquo;utilisation &amp; cession</strong><br>
+        Les livrables sont livr&eacute;s pour un usage communication organique (r&eacute;seaux sociaux, site web, presse). L&rsquo;utilisation en publicit&eacute; pay&eacute;e (ads Meta, Google, TikTok, etc.) n&eacute;cessite une cession de droits sp&eacute;cifique, factur&eacute; 260&nbsp;&euro; suppl&eacute;mentaires. Cette cession est formalis&eacute;e par avenant sign&eacute; des deux parties.</p>
+        <p style="margin-bottom:16px"><strong style="color:#fff">5. D&eacute;lais de livraison</strong><br>
+        Les d&eacute;lais indiqu&eacute;s sont donn&eacute;s &agrave; titre indicatif et d&eacute;pendent de la r&eacute;activit&eacute; du client dans la fourniture des &eacute;l&eacute;ments n&eacute;cessaires (brief, assets, validations).</p>
+        <p style="margin-bottom:16px"><strong style="color:#fff">6. Propri&eacute;t&eacute; intellectuelle</strong><br>
+        Les livrables deviennent la propri&eacute;t&eacute; enti&egrave;re du client apr&egrave;s r&egrave;glement int&eacute;gral de la prestation. Vignau Studio conserve le droit de pr&eacute;senter les r&eacute;alisations dans son portfolio et supports de communication.</p>
+        <p style="margin-bottom:16px"><strong style="color:#fff">7. Annulation &amp; r&eacute;tractation</strong><br>
+        Toute annulation apr&egrave;s d&eacute;marrage des travaux entra&icirc;ne la facturation des travaux r&eacute;alis&eacute;s au prorata. L&rsquo;acompte vers&eacute; n&rsquo;est pas remboursable sauf faute av&eacute;r&eacute;e de Vignau Studio.</p>
+        <p><strong style="color:#fff">8. Droit applicable</strong><br>
+        Les pr&eacute;sentes CGV sont soumises au droit fran&ccedil;ais. En cas de litige, les parties privil&eacute;gient une r&eacute;solution amiable avant tout recours judiciaire aupr&egrave;s des tribunaux comp&eacute;tents de Paris.</p>
+      </div>
+
+      <!-- CGU -->
+      <div id="panel-cgu" style="display:none">
+        <p style="margin-bottom:20px"><strong style="color:#fff">Conditions G&eacute;n&eacute;rales d&rsquo;Utilisation</strong><br>
+        <span style="font-size:12px;opacity:.5">En vigueur &mdash; vignaustudio.com</span></p>
+        <p style="margin-bottom:16px"><strong style="color:#fff">1. Acc&egrave;s au site</strong><br>
+        L&rsquo;acc&egrave;s au site vignaustudio.com est libre et gratuit. Vignau Studio se r&eacute;serve le droit de modifier, suspendre ou interrompre le site &agrave; tout moment et sans pr&eacute;avis, notamment pour maintenance ou mise &agrave; jour.</p>
+        <p style="margin-bottom:16px"><strong style="color:#fff">2. Propri&eacute;t&eacute; du contenu</strong><br>
+        L&rsquo;ensemble des contenus pr&eacute;sents sur ce site (textes, visuels, logos, structure, code) sont prot&eacute;g&eacute;s par le droit d&rsquo;auteur et appartiennent exclusivement &agrave; Vignau Studio. Toute reproduction, m&ecirc;me partielle, est interdite sans autorisation &eacute;crite pr&eacute;alable.</p>
+        <p style="margin-bottom:16px"><strong style="color:#fff">3. Responsabilit&eacute;</strong><br>
+        Vignau Studio s&rsquo;efforce d&rsquo;assurer l&rsquo;exactitude des informations publi&eacute;es mais ne peut garantir leur exhaustivit&eacute;. Vignau Studio ne saurait &ecirc;tre tenu responsable de tout dommage r&eacute;sultant de l&rsquo;utilisation du site ou de l&rsquo;interpr&eacute;tation de son contenu.</p>
+        <p style="margin-bottom:16px"><strong style="color:#fff">4. Cookies &amp; donn&eacute;es</strong><br>
+        Le site peut utiliser des cookies techniques n&eacute;cessaires &agrave; son bon fonctionnement. Aucune donn&eacute;e personnelle n&rsquo;est collect&eacute;e sans consentement explicite. Conform&eacute;ment au RGPD, vous pouvez exercer vos droits en contactant&nbsp;: <a href="/cdn-cgi/l/email-protection#9ffcf0f1ebfefcebdfe9f6f8f1feeaecebeafbf6f0b1fcf0f2" style="color:rgba(255,255,255,.6);text-decoration:underline"><span class="__cf_email__" data-cfemail="9ffcf0f1ebfefcebdfe9f6f8f1feeaecebeafbf6f0b1fcf0f2">[email&#160;protected]</span></a></p>
+        <p style="margin-bottom:16px"><strong style="color:#fff">5. Liens externes</strong><br>
+        Le site peut contenir des liens vers des sites tiers (Instagram, LinkedIn, Calendly). Vignau Studio n&rsquo;exerce aucun contr&ocirc;le sur ces sites et d&eacute;cline toute responsabilit&eacute; quant &agrave; leur contenu ou leur politique de confidentialit&eacute;.</p>
+        <p><strong style="color:#fff">6. Droit applicable</strong><br>
+Les pr&eacute;sentes CGU sont soumises au droit fran&ccedil;ais. En cas de litige, les tribunaux fran&ccedil;ais seront seuls comp&eacute;tents.</p>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const trust = document.querySelector('#trust');
+  if (!trust) return;
+
+  const track = trust.querySelector('#trustTrack');
+  const cards = Array.from(track.querySelectorAll('.trust-card'));
+  const prevBtn = trust.querySelector('.trust-arrow-prev');
+  const nextBtn = trust.querySelector('.trust-arrow-next');
+
+  if (!track || cards.length < 2 || !prevBtn || !nextBtn) return;
+
+  let current = 0;
+  let startX = 0;
+  let hasInteracted = false;
+  let isAnimating = false;
+
+  function getPrevIndex(index) {
+    return (index - 1 + cards.length) % cards.length;
+  }
+
+  function getNextIndex(index) {
+    return (index + 1) % cards.length;
+  }
+
+  function clearStates() {
+    cards.forEach(card => {
+      card.classList.remove('is-active', 'is-left', 'is-right', 'is-hidden');
+    });
+  }
+
+  function render() {
+  clearStates();
+
+  const prev = getPrevIndex(current);
+  const next = getNextIndex(current);
+
+  cards.forEach((card, index) => {
+    if (index === current) {
+      card.classList.add('is-active');
+    } else if (index === prev) {
+      card.classList.add('is-left');
+    } else if (index === next) {
+      card.classList.add('is-right');
+    } else {
+      card.classList.add('is-hidden');
+    }
+  });
+
+  const activeCard = cards[current];
+
+ if (window.innerWidth <= 960) {
+  cards.forEach((card, index) => {
+    card.classList.remove('is-left', 'is-right', 'is-hidden', 'is-active');
+    if (index === current) {
+      card.classList.add('is-active');
+    } else {
+      card.classList.add('is-hidden');
+    }
+  });
+
+  track.style.transform = 'none';
+
+  if (hasInteracted) {
+  const activeCard = cards[current];
+  activeCard.scrollIntoView({
+    behavior: 'smooth',
+    inline: 'center',
+    block: 'nearest'
+  });
+}
+
+  return;
+}
+
+  const viewport = trust.querySelector('.trust-viewport');
+  const viewportCenter = viewport.clientWidth / 2;
+  const activeCenter = activeCard.offsetLeft + (activeCard.offsetWidth / 2);
+  const offset = viewportCenter - activeCenter;
+
+  track.style.transform = `translate3d(${offset}px, 0, 0)`;
+}
+
+function goTo(index) {
+  if (isAnimating) return;
+  isAnimating = true;
+hasInteracted = true;
+
+  current = (index + cards.length) % cards.length;
+  render();
+
+  setTimeout(() => {
+    isAnimating = false;
+  }, 320);
+}
+
+function goNext() {
+  goTo(current + 1);
+}
+
+function goPrev() {
+  goTo(current - 1);
+}
+
+  prevBtn.addEventListener('click', goPrev);
+  nextBtn.addEventListener('click', goNext);
+
+  track.addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', function (e) {
+    const endX = e.changedTouches[0].clientX;
+    const diff = endX - startX;
+
+    if (Math.abs(diff) < 40) return;
+
+    if (diff < 0) {
+      goNext();
+    } else {
+      goPrev();
+    }
+  }, { passive: true });
+
+  render();
+
+window.addEventListener('load', function () {
+    render();
+    setTimeout(render, 120);
+  });
+});
+</script>
+
+<script>
+(function () {
+  const nav = document.querySelector('.nav');
+  if (!nav) return;
+
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  function updateNav() {
+    const currentScrollY = window.scrollY;
+
+   if (currentScrollY <= 24) {
+  nav.classList.remove('is-hidden');
+} else {
+  nav.classList.add('is-hidden');
+}
+
+    lastScrollY = currentScrollY;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      window.requestAnimationFrame(updateNav);
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+</script>
+
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const tracks = document.querySelectorAll('.img-scroll-track');
+  if (!tracks.length) return;
+
+  tracks.forEach(function(track) {
+    const cards = Array.from(track.querySelectorAll('.img-scroll-card'));
+    if (!cards.length) return;
+
+    const lastTen = cards.slice(-10);
+    lastTen.forEach(function(card) {
+      track.appendChild(card.cloneNode(true));
+    });
+  });
+});
+</script>
