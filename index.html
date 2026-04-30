@@ -860,19 +860,14 @@ body::after {
    OFFRES — 3 cartes côte à côte
 ======================== */
 .offers-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  margin: 52px auto 0;
-  align-items: stretch;
-  max-width: 1220px;
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 14px;
+  margin-top: 52px; align-items: stretch;
 }
 .offer-card {
   background: #0a0d1a;
   background-image: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(18,25,65,.9) 0%, transparent 70%);
   border: 1px solid var(--line);
-  border-radius: 22px;
-  padding: 28px 26px;
+  border-radius: 20px; padding: 36px 30px;
   display: flex; flex-direction: column;
   position: relative; overflow: hidden;
   opacity: 1;
@@ -975,11 +970,7 @@ body::after {
 }
 .card-top { flex: 1; display: flex; flex-direction: column; }
 .card-cta { margin-top: auto; padding-top: 0; }
-.card-divider {
-  border: none;
-  border-top: 1px solid var(--line);
-  margin: 18px 0;
-}
+.card-divider { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
 @media (max-width: 768px) {
   .hero {
   padding: 110px 20px 56px;
