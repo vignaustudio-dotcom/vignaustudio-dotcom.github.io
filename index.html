@@ -882,7 +882,10 @@ body::after {
   opacity: 1;
   transition: border-color .3s ease, transform .3s ease;
 }
-.offer-card:hover { border-color: rgba(255,255,255,.2); transform: translateY(-4px); opacity: 1; }
+.offers-grid .offer-card:last-child:hover {
+  background: rgba(255,255,255,.06);
+  background-image: none;
+}
 .offer-card.featured {
   background: #0a0d1a;
   background-image: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(18,25,65,.9) 0%, transparent 70%);
