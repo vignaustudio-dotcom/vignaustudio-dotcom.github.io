@@ -22,6 +22,7 @@ window.SITE = {
     cases:    { fr: "Projets", en: "Work" },
     how:      { fr: "Comment ça marche", en: "How it works" },
     pricing:  { fr: "Tarifs", en: "Pricing" },
+    journal:  { fr: "Journal", en: "Journal" },
     faq:      { fr: "FAQ", en: "FAQ" },
     cta:      { fr: "Voir les tarifs", en: "See pricing" }
   },
@@ -159,36 +160,44 @@ window.SITE = {
      Si une image manque, un emplacement neutre s'affiche à la place. */
   casesLabel: { fr: "Études de cas", en: "Case studies" },
   casesTitle: { fr: "Des marques construites *de A à Z*.", en: "Brands built *from A to Z*." },
-  casesSub:   { fr: "Pas des maquettes. Des marques réelles, en ligne, pensées et fabriquées de la première idée au dernier pixel.", en: "Not mockups. Real brands, live, thought through and built from the first idea to the last pixel." },
+  casesSub:   { fr: "Pas des maquettes. Des marques réelles, en ligne. Chaque site et chaque solution est designé et entièrement codé par le studio, de la première idée au dernier pixel.", en: "Not mockups. Real brands, live. Every site and every product is designed and fully coded by the studio, from the first idea to the last pixel." },
   didLabel:   { fr: "Ce que j'ai fait", en: "What I did" },
+  devBadge:   { fr: "Design et développement : 100 % codé par le studio", en: "Design and development: 100% coded by the studio" },
+  /* instagram : lien affiché en bas de chaque projet, avec le logo Instagram */
   cases: [
     { slug: "birushi", n: "01", name: "Birushi", year: "2023 — 2026",
-      kind: { fr: "Beauté · Ma propre marque", en: "Beauty · My own brand" },
+      kind: { fr: "Site e-commerce · Ma propre marque", en: "E-commerce website · My own brand" },
       tagline: { fr: "Une marque de beauté, *pensée de zéro*.", en: "A beauty brand, *built from zero*." },
-      intro: { fr: "Une brosse premium pour cheveux bouclés. Le nom, l'identité, le packaging, le site, les visuels et les contenus : tout a été construit par moi, de la première esquisse à la boutique en ligne.", en: "A premium brush for curly hair. Name, identity, packaging, website, visuals and content: all built by me, from the first sketch to the online store." },
-      did: { fr: ["Nom et identité","Packaging","Site e-commerce","Visuels de campagne","Vidéos UGC","Réseaux sociaux"], en: ["Name and identity","Packaging","E-commerce site","Campaign visuals","UGC videos","Social media"] },
+      intro: { fr: "Une brosse premium pour cheveux bouclés. Le nom, l'identité, le packaging, le site e-commerce (entièrement codé), les visuels et la stratégie réseaux : tout a été construit par moi, de la première esquisse à la boutique en ligne.", en: "A premium brush for curly hair. Name, identity, packaging, the e-commerce site (fully coded), visuals and social strategy: all built by me, from the first sketch to the online store." },
+      did: { fr: ["Nom et identité","Packaging","Site e-commerce, design et développement","Visuels de campagne","Vidéos UGC","Stratégie social media, organique et payante"], en: ["Name and identity","Packaging","E-commerce site, design and development","Campaign visuals","UGC videos","Social media strategy, organic and paid"] },
       link: "https://birushi.com",
+      instagram: "https://www.instagram.com/birushi_",
       images: ["images/projects/birushi/cover.jpg","images/projects/birushi/1.jpg","images/projects/birushi/2.jpg","images/projects/birushi/3.jpg","images/projects/birushi/4.jpg","images/projects/birushi/5.jpg","images/projects/birushi/6.jpg"] },
     { slug: "olquizz", n: "02", name: "Olquizz", year: "2026",
-      kind: { fr: "SaaS · EdTech", en: "SaaS · EdTech" },
+      kind: { fr: "Logiciel (SaaS) · Site web", en: "Software (SaaS) · Website" },
       tagline: { fr: "Le Duolingo de l'entrepreneuriat, *de l'idée au lancement*.", en: "The Duolingo of entrepreneurship, *from idea to launch*." },
-      intro: { fr: "Une app d'apprentissage gamifiée pour les entrepreneurs. Branding, produit, landing page et contenus réseaux, pensés comme un seul univers.", en: "A gamified learning app for entrepreneurs. Branding, product, landing page and social content, designed as one world." },
-      did: { fr: ["Branding","Design produit","Landing page","Réseaux sociaux","Contenus de lancement"], en: ["Branding","Product design","Landing page","Social media","Launch content"] },
+      intro: { fr: "Une app d'apprentissage gamifiée pour les entrepreneurs. Branding, produit, site et contenus réseaux, pensés comme un seul univers. L'application et le site sont entièrement codés par le studio.", en: "A gamified learning app for entrepreneurs. Branding, product, website and social content, designed as one world. The app and the site are fully coded by the studio." },
+      did: { fr: ["Branding","Design produit","Développement de l'app (SaaS)","Site web, design et développement","Stratégie social media organique"], en: ["Branding","Product design","App development (SaaS)","Website, design and development","Organic social media strategy"] },
       link: "https://olquizz.com",
+      instagram: "https://www.instagram.com/olquizz.app",
       images: ["images/projects/olquizz/cover.jpg","images/projects/olquizz/1.jpg","images/projects/olquizz/2.jpg","images/projects/olquizz/3.jpg","images/projects/olquizz/4.jpg","images/projects/olquizz/5.jpg","images/projects/olquizz/6.jpg"] },
     { slug: "haveit", n: "03", name: "HAVEIT", year: "2026",
-      kind: { fr: "SaaS · IA", en: "SaaS · AI" },
+      kind: { fr: "Logiciel (SaaS) · Site web", en: "Software (SaaS) · Website" },
       tagline: { fr: "Une photo ordinaire, *un visuel de luxe*.", en: "An ordinary photo, *a luxury visual*." },
-      intro: { fr: "Une app qui transforme une photo du quotidien en visuel lifestyle premium. Marque, produit, site bilingue et contenus vidéo.", en: "An app that turns an everyday photo into a premium lifestyle visual. Brand, product, bilingual site and video content." },
-      did: { fr: ["Nom et identité","App web IA","Site FR / EN","Contenus vidéo","Réseaux sociaux"], en: ["Name and identity","AI web app","FR / EN website","Video content","Social media"] },
+      intro: { fr: "Une app qui transforme une photo du quotidien en visuel lifestyle premium. Marque, produit, site bilingue et contenus vidéo. Le logiciel et le site sont entièrement codés par le studio.", en: "An app that turns an everyday photo into a premium lifestyle visual. Brand, product, bilingual site and video content. The software and the site are fully coded by the studio." },
+      did: { fr: ["Nom et identité","Développement du logiciel IA (SaaS)","Site FR / EN, design et développement","Contenus vidéo","Stratégie social media organique"], en: ["Name and identity","AI software development (SaaS)","FR / EN website, design and development","Video content","Organic social media strategy"] },
       link: "https://haveitnow.fr",
+      instagram: "https://www.instagram.com/haveit.io/",
       images: ["images/projects/haveit/cover.jpg","images/projects/haveit/1.jpg","images/projects/haveit/2.jpg","images/projects/haveit/3.jpg","images/projects/haveit/4.jpg","images/projects/haveit/5.jpg","images/projects/haveit/6.jpg"] },
     { slug: "elle", n: "04", name: "ELLE", year: "2025",
+      subline: { fr: "ELLE Luxembourg · Projet Line-Up, création Design Motion", en: "ELLE Luxembourg · Line-Up project, created by Design Motion" },
       kind: { fr: "Magazine · Luxembourg", en: "Magazine · Luxembourg" },
       tagline: { fr: "Une collaboration *éditoriale*.", en: "An *editorial* collaboration." },
-      intro: { fr: "Visuels et direction artistique pour ELLE Luxembourg. Remplace ce texte par le détail exact de la collaboration.", en: "Visuals and art direction for ELLE Luxembourg. Replace this text with the exact details of the collaboration." },
-      did: { fr: ["Direction artistique","Visuels éditoriaux"], en: ["Art direction","Editorial visuals"] },
+      intro: { fr: "Direction artistique et visuels pour le projet Line-Up de Design Motion, publié dans ELLE Luxembourg. Remplace ce texte par le détail exact de la collaboration.", en: "Art direction and visuals for Design Motion's Line-Up project, featured in ELLE Luxembourg. Replace this text with the exact details of the collaboration." },
+      did: { fr: ["Direction artistique","Visuels éditoriaux","Stratégie social media organique (Design Motion)"], en: ["Art direction","Editorial visuals","Organic social media strategy (Design Motion)"] },
       link: "",
+      dev: false,
+      instagram: "https://www.instagram.com/design.motion.lu",
       images: ["images/projects/elle/cover.jpg","images/projects/elle/1.jpg","images/projects/elle/2.jpg","images/projects/elle/3.jpg","images/projects/elle/4.jpg","images/projects/elle/5.jpg","images/projects/elle/6.jpg"] }
   ],
   visitLabel: { fr: "Voir le site", en: "Visit the site" },
@@ -210,6 +219,25 @@ window.SITE = {
       { name: { fr: "Marque complète", en: "Full brand" }, what: { fr: "Sur mesure", en: "Custom" }, price: { fr: "Sur devis", en: "On quote" },
         items: { fr: ["Identité de marque","Site en ligne","Campagne de lancement","Visuels chaque mois"], en: ["Brand identity","Live website","Launch campaign","Visuals every month"] },
         cta: { fr: "Réserver un appel", en: "Book a call" }, link: "call" }
+    ]
+  },
+
+  /* ---------- JOURNAL (blog) ----------
+     Pour chaque nouvel article : ajoute un bloc en HAUT de la liste "posts".
+     url = le fichier de l'article dans le dossier blog/
+     img = image de couverture (4:5) dans images/blog/
+     La section se cache toute seule tant que la liste est vide. */
+  journal: {
+    label: { fr: "Journal", en: "Journal" },
+    title: { fr: "Notes sur l'image, *la marque* et la vente.", en: "Notes on image, *brand* and selling." },
+    sub:   { fr: "Conseils concrets pour des visuels produit qui donnent envie d'acheter.", en: "Practical advice for product visuals that make people buy." },
+    all:   { fr: "Tous les articles", en: "All articles" },
+    read:  { fr: "Lire l'article", en: "Read the article" },
+    posts: [
+      { url: "blog/article-modele.html", img: "images/blog/article-modele.jpg",
+        cat: "Visuels produit", date: "2026-10-20", minutes: 5,
+        title: "Titre de ton premier article",
+        excerpt: "Une ou deux phrases qui donnent envie de lire. Remplace ce texte quand l'article est prêt." }
     ]
   },
 

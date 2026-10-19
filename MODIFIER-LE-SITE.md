@@ -30,3 +30,14 @@ open index.html
 git add -A && git commit -m "Mise à jour" && git push
 ```
 Si la page devient blanche : il manque un guillemet ou une virgule dans `content.js`. `Cmd + Z` jusqu'à ce que ça remarche.
+
+## Publier un article de blog
+1. Dans le dossier `blog/`, duplique `article-modele.html` (clic droit, Dupliquer).
+2. Renomme la copie avec des mots-clés, en minuscules et avec des tirets : `visuels-produit-qui-vendent.html`.
+3. Ouvre-la dans VS Code et remplace tout ce qui est marqué ✏️ (titre, description, adresse, date, texte).
+4. Mets la couverture (4:5) dans `images/blog/` avec le même nom : `visuels-produit-qui-vendent.jpg`.
+5. Dans `content.js`, partie JOURNAL, ajoute un bloc en haut de la liste `posts` (copie celui qui existe).
+6. Dans `sitemap.xml`, ajoute une ligne avec l'adresse de l'article.
+7. `git add -A && git commit -m "Nouvel article" && git push`
+
+Quand ton premier vrai article est en ligne, supprime le bloc `article-modele` de `content.js`.

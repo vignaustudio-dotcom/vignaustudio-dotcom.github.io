@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!--
+  ============ MODÈLE D'ARTICLE ============
+  Pour un nouvel article :
+  1. Duplique ce fichier et renomme-le avec des mots-clés, en minuscules et avec des tirets
+     ex : visuels-produit-qui-vendent.html
+  2. Remplace tout ce qui est marqué  ✏️  (titre, description, date, texte, image).
+  3. Mets l'image de couverture dans images/blog/ (format 4:5) avec le même nom que l'article.
+  4. Ajoute l'article dans content.js, partie JOURNAL (en haut de la liste "posts").
+  5. Ajoute l'adresse de l'article dans sitemap.xml.
+  ==========================================
+-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9ETD2H3N52"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9ETD2H3N52');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ✏️ Titre Google (60 caractères max, mot-clé au début) -->
+<title>Titre de ton premier article | Vignau Studio</title>
+<!-- ✏️ Description Google (150 à 160 caractères, donne envie de cliquer) -->
+<meta name="description" content="Une ou deux phrases qui résument l'article et donnent envie de cliquer depuis Google. Mets le mot-clé principal dedans.">
+<!-- ✏️ Adresse exacte de l'article -->
+<link rel="canonical" href="https://vignaustudio.com/blog/article-modele.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Titre de ton premier article">
+<meta property="og:description" content="Une ou deux phrases qui résument l'article.">
+<meta property="og:url" content="https://vignaustudio.com/blog/article-modele.html">
+<meta property="og:image" content="https://vignaustudio.com/images/blog/article-modele.jpg">
+
+<!-- ✏️ Données pour Google (titre, date, image) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Titre de ton premier article",
+  "description": "Une ou deux phrases qui résument l'article.",
+  "image": "https://vignaustudio.com/images/blog/article-modele.jpg",
+  "datePublished": "2026-10-20",
+  "dateModified": "2026-10-20",
+  "author": { "@type": "Person", "name": "Loïc Vignau", "url": "https://vignaustudio.com/" },
+  "publisher": { "@type": "Organization", "name": "Vignau Studio", "url": "https://vignaustudio.com/" },
+  "mainEntityOfPage": "https://vignaustudio.com/blog/article-modele.html"
+}
+</script>
+
+<link rel="icon" href="../images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--soft:#F3F4F7;--line:#E4E6EC;--ink:#0B0F1F;--mute:#6B7080;--navy:#0B1640;--ice:#E9EDFB;--sans:'Raleway','Helvetica Neue',Arial,sans-serif;--serif:'Cormorant Garamond',Georgia,serif;--max:1240px;--pad:clamp(18px,4vw,48px)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+em{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.1em}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .in{max-width:var(--max);margin:0 auto;padding:0 var(--pad);height:74px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:25px;font-weight:600;letter-spacing:-.05em}
+.nav nav{display:flex;gap:28px;font-size:15px;color:var(--mute)}
+.nav nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:500 15px/1 var(--sans);padding:14px 22px;border-radius:999px;background:var(--navy);color:#fff}
+.frame{max-width:var(--max);margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+footer{max-width:var(--max);margin:0 auto;padding:34px var(--pad) 44px;color:var(--mute);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:860px){.nav nav{display:none}.frame{border:0}}
+
+.ahead{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,72px);align-items:end;padding:clamp(56px,8vw,110px) var(--pad) clamp(40px,5vw,64px);border-bottom:1px solid var(--line)}
+.kick{display:flex;justify-content:space-between;gap:12px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);border-bottom:1px solid var(--ink);padding-bottom:14px}
+.kick a:hover{color:var(--ink)}
+h1{font-size:clamp(40px,5.6vw,80px);font-weight:500;letter-spacing:-.045em;line-height:1.02;margin-top:28px}
+h1 em{color:var(--navy)}
+.chapo{font-size:clamp(19px,1.7vw,23px);line-height:1.5;margin-top:24px;color:#2a2f40}
+.by{display:flex;align-items:center;gap:12px;margin-top:28px;font-size:14px;color:var(--mute)}
+.by i{width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-style:normal;font-size:11px;font-weight:600}
+.by b{color:var(--ink);font-weight:600}
+.cover{overflow:hidden;border-radius:6px;background:var(--soft)}
+.cover img{width:100%;aspect-ratio:4/5;object-fit:cover}
+article{max-width:700px;margin:0 auto;padding:clamp(48px,6vw,80px) var(--pad)}
+article p{font-size:19px;line-height:1.75;margin-bottom:26px;color:#1d2233}
+article>p:first-of-type::first-letter{font-family:var(--serif);font-size:4.6em;float:left;line-height:.8;padding:8px 12px 0 0;color:var(--navy)}
+article h2{font-size:clamp(28px,2.8vw,38px);font-weight:500;letter-spacing:-.035em;line-height:1.12;margin:56px 0 20px}
+article h3{font-size:22px;font-weight:600;letter-spacing:-.02em;margin:36px 0 12px}
+article ul,article ol{margin:0 0 26px 22px;font-size:19px;line-height:1.7}
+article li{margin-bottom:8px}
+article a{color:var(--navy);border-bottom:1px solid currentColor}
+article strong{font-weight:600}
+blockquote{margin:44px 0;padding:6px 0 6px 28px;border-left:2px solid var(--navy);font-family:var(--serif);font-style:italic;font-size:clamp(26px,2.6vw,34px);line-height:1.3;color:var(--navy)}
+figure{margin:44px 0}
+figure img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;background:var(--soft)}
+figcaption{font-size:14px;color:var(--mute);margin-top:10px}
+.cta{margin:64px 0 0;background:var(--navy);color:#fff;border-radius:24px;padding:clamp(28px,4vw,44px);text-align:center}
+.cta h2{color:#fff;margin:0 0 10px}
+.cta p{color:rgba(255,255,255,.7);font-size:17px;margin-bottom:22px}
+.cta a{display:inline-block;background:#fff;color:var(--navy);border:0;border-radius:999px;padding:16px 26px;font-weight:500;font-size:16px}
+.back{display:inline-block;margin-top:40px;font-family:var(--serif);font-style:italic;font-size:20px;border:0!important}
+@media(max-width:860px){.ahead{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="in">
+  <a href="../" class="logo">vignau</a>
+  <nav><a href="../#exemples">Exemples</a><a href="../#cas">Projets</a><a href="../#tarifs">Tarifs</a><a href="./">Journal</a></nav>
+  <a href="../#top" class="btn">Aperçu gratuit</a>
+</div></header>
+
+<main class="frame">
+  <header class="ahead">
+    <div>
+      <!-- ✏️ Catégorie, date, temps de lecture -->
+      <div class="kick"><a href="./">Journal</a><span>Visuels produit</span><span>20 octobre 2026 · 5 min</span></div>
+      <!-- ✏️ Titre de l'article (un seul h1). Un mot entre <em></em> passe en italique -->
+      <h1>Titre de ton premier <em>article</em></h1>
+      <!-- ✏️ Chapô : 2 ou 3 phrases qui résument l'article -->
+      <p class="chapo">Le chapô résume l'article en deux ou trois phrases. C'est souvent ce que le lecteur lit en premier, et ce qui le décide à continuer.</p>
+      <div class="by"><i>LV</i><span><b>Loïc Vignau</b> · Fondateur de Vignau Studio</span></div>
+    </div>
+    <!-- ✏️ Image de couverture (4:5) -->
+    <div class="cover"><img src="../images/blog/article-modele.jpg" alt="✏️ Décris l'image en quelques mots (bon pour Google)"></div>
+  </header>
+
+  <article>
+    <!-- ✏️ Ton texte. Un paragraphe = <p>...</p>. La première lettre devient une lettrine. -->
+    <p>Premier paragraphe de l'article. Commence fort : une situation que ton lecteur reconnaît, ou une question qu'il se pose. Mets ton mot-clé principal dans les deux premières phrases.</p>
+    <p>Deuxième paragraphe. Des phrases courtes, un seul message par paragraphe.</p>
+
+    <!-- Intertitre : <h2>. Mets des mots-clés dedans. -->
+    <h2>Un intertitre clair, avec un mot-clé</h2>
+    <p>Texte de la partie. Pour mettre un mot en gras : <strong>comme ça</strong>. Pour un lien vers une autre page : <a href="../#tarifs">comme ça</a>.</p>
+
+    <!-- Citation mise en avant -->
+    <blockquote>Une phrase forte, mise en avant comme dans un magazine.</blockquote>
+
+    <!-- Liste à puces -->
+    <ul>
+      <li>Premier point</li>
+      <li>Deuxième point</li>
+      <li>Troisième point</li>
+    </ul>
+
+    <!-- Image dans l'article (4:5) -->
+    <figure>
+      <img src="../images/blog/article-modele-2.jpg" alt="✏️ Décris l'image" loading="lazy">
+      <figcaption>✏️ Légende de l'image.</figcaption>
+    </figure>
+
+    <h2>Deuxième intertitre</h2>
+    <p>Suite du texte. Termine par une conclusion simple : ce que le lecteur doit retenir ou faire.</p>
+
+    <!-- Appel à l'action (garde-le, c'est lui qui transforme le lecteur en client) -->
+    <div class="cta">
+      <h2>Ton produit en visuel premium</h2>
+      <p>Colle le lien de ton produit et reçois un aperçu gratuit sous 24h.</p>
+      <a href="../#top">Recevoir mon aperçu gratuit</a>
+    </div>
+
+    <a class="back" href="./">← Tous les articles</a>
+  </article>
+</main>
+
+<footer><span>© 2026 Vignau Studio, Paris</span><a href="../">Retour au site</a></footer>
+</body>
+</html>

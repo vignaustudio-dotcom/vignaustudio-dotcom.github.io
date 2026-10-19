@@ -168,6 +168,30 @@ em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.0
 .cwrap{overflow:hidden;border-radius:6px}
 .cwrap:hover .cimg{transform:scale(1.04)}
 
+.csubline{margin-top:14px;font-size:clamp(15px,1.4vw,18px);color:var(--mute);letter-spacing:.02em}
+.cdev{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:13px;font-weight:500;color:var(--navy);background:var(--ice);border-radius:999px;padding:8px 14px}
+.cdev svg{width:15px;height:15px}
+.cig{display:flex;justify-content:flex-end;margin-top:16px}
+.cig a{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--mute);opacity:.75;transition:opacity .2s,color .2s}
+.cig a:hover{opacity:1;color:var(--navy)}
+.cig svg{width:16px;height:16px}
+
+/* JOURNAL */
+.jhead{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.jhead h2{max-width:16ch;font-size:clamp(36px,4.8vw,64px)}
+.jhead .sub{margin-left:0}
+.jall{font-weight:500;border-bottom:1px solid var(--ink);padding-bottom:3px;white-space:nowrap}
+.jall:hover{color:var(--navy);border-color:var(--navy)}
+.jgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,32px);margin-top:52px;text-align:left}
+.jcard{display:flex;flex-direction:column;border-top:1px solid var(--ink);padding-top:16px}
+.jmeta{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.jimg{margin-top:16px;overflow:hidden;border-radius:6px;background:var(--soft)}
+.jimg img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .9s ease}
+.jcard:hover .jimg img{transform:scale(1.04)}
+.jcard h3{font-size:clamp(22px,2vw,28px);margin-top:20px;line-height:1.15}
+.jcard p{color:var(--mute);margin-top:10px;font-size:15px}
+.jcard .jread{margin-top:16px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--navy)}
+
 /* AVANT / APRÈS */
 .ba{position:relative;max-width:520px;margin:48px auto 0;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:var(--soft);user-select:none}
 .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -304,6 +328,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
   .row .btn{width:100%}
   .strip img{height:clamp(300px,64vw,460px)}
   .logos{justify-content:center;gap:22px 32px}
+  .jgrid{grid-template-columns:1fr}
   .igrid,.steps,.plans,.tgrid,.tq,.cbody,.case.flip .cbody{grid-template-columns:1fr}
   .case.flip .ctext{order:0}
   .cstrip{grid-template-columns:1fr 1fr}
@@ -334,6 +359,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
     <a href="#cas" data-t="nav.cases"></a>
     <a href="#comment" data-t="nav.how"></a>
     <a href="#tarifs" data-t="nav.pricing"></a>
+    <a href="blog/" data-t="nav.journal"></a>
     <a href="#faq" data-t="nav.faq"></a>
   </nav>
   <div class="nav-r">
@@ -400,6 +426,16 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
   <p class="unote" data-t="uses.note"></p>
 </section>
 
+<!-- ÉTUDES DE CAS -->
+<section class="cases" id="cas" style="padding:0">
+  <div class="cases-head rv">
+    <span class="ilabel" data-t="casesLabel"></span>
+    <h2 data-t="casesTitle"></h2>
+    <p class="sub" data-t="casesSub"></p>
+  </div>
+  <div id="cases"></div>
+</section>
+
 <!-- SECTEURS + TÉMOIGNAGES -->
 <section class="trust">
   <div class="tgrid">
@@ -420,16 +456,6 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
   </div>
 </section>
 
-<!-- ÉTUDES DE CAS -->
-<section class="cases" id="cas" style="padding:0">
-  <div class="cases-head rv">
-    <span class="ilabel" data-t="casesLabel"></span>
-    <h2 data-t="casesTitle"></h2>
-    <p class="sub" data-t="casesSub"></p>
-  </div>
-  <div id="cases"></div>
-</section>
-
 <!-- TARIFS -->
 <section id="tarifs">
   <div class="in center">
@@ -444,6 +470,17 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
   <div class="in center">
     <h2 data-t="faqTitle"></h2>
     <div class="faq rv" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- JOURNAL -->
+<section id="journal">
+  <div class="in">
+    <div class="jhead rv">
+      <div><span class="ilabel" data-t="journal.label"></span><h2 data-t="journal.title"></h2><p class="sub" data-t="journal.sub"></p></div>
+      <a class="jall" href="blog/"><span data-t="journal.all"></span> →</a>
+    </div>
+    <div class="jgrid rv" id="jgrid"></div>
   </div>
 </section>
 
@@ -515,7 +552,7 @@ $('logos').innerHTML = S.logos.map(l=> l.img ? img(l.img,l.name) : `<span class=
 /* Avant / après : masqué si une image manque */
 const B = S.beforeAfter;
 $('ba').innerHTML = `<img src="${esc(B.before)}" alt=""><img class="after" src="${esc(B.after)}" alt=""><span class="line"></span><span class="tag tl" data-t="beforeAfter.beforeLabel"></span><span class="tag tr" data-t="beforeAfter.afterLabel"></span><input type="range" min="0" max="100" value="50" aria-label="Avant / Après">`;
-$('ba').querySelectorAll('img').forEach(i=>i.onerror=()=>$('ba-section').remove());
+$('ba').querySelectorAll('img').forEach(i=>i.onerror=()=>{ const s=$('ba-section'); if(s) s.remove(); });
 $('ba').querySelector('input').oninput = e => $('ba').style.setProperty('--pos', e.target.value + '%');
 
 function formHTML(){
@@ -595,18 +632,32 @@ function render(){
     return `<article class="case ${i%2?'flip':''}">
       <div class="cmeta rv"><span class="num">${esc(k.n)}</span><span>${fmt(k.kind)}</span><span>${esc(k.year||'')}</span></div>
       <h3 class="cname rv">${esc(k.name)}</h3>
+      ${k.subline?`<p class="csubline rv">${fmt(k.subline)}</p>`:''}
       <div class="cbody">
         <div class="ctext rv">
           <p class="ctag">${fmt(k.tagline)}</p>
           <p class="cintro">${fmt(k.intro)}</p>
+          ${k.dev===false?'':`<span class="cdev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>${fmt(S.devBadge)}</span>`}
           <div class="cdid"><small>${fmt(S.didLabel)}</small><ul>${did.map((d,j)=>`<li>${esc(d)}<span>${String(j+1).padStart(2,'0')}</span></li>`).join('')}</ul></div>
           ${k.link?`<a class="clink" href="${esc(k.link)}" target="_blank" rel="noopener">${fmt(S.visitLabel)} →</a>`:''}
         </div>
         <div class="cgrid rv">${im[0]?pic(im[0],k.name,'big'):''}<div class="side">${im.slice(1,3).map(s=>pic(s,k.name)).join('')}</div></div>
       </div>
       ${im.length>3?`<div class="cstrip rv">${im.slice(3,7).map(s=>pic(s,k.name)).join('')}</div>`:''}
+      ${k.instagram?`<div class="cig"><a href="${esc(k.instagram)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>@${esc(k.instagram.replace(/\/$/,'').split('/').pop())}</a></div>`:''}
     </article>`;}).join('');
   document.querySelectorAll('#cases .rv:not(.seen)').forEach(n=>window.__io && window.__io.observe(n));
+
+  /* Journal : 3 derniers articles */
+  const J = S.journal, posts = (J && J.posts) || [];
+  if (!posts.length) { const js=$('journal'); if(js) js.remove(); }
+  else {
+    const d = s => { try { return new Date(s).toLocaleDateString(lang==='fr'?'fr-FR':'en-GB',{day:'numeric',month:'long',year:'numeric'}); } catch(e){ return s; } };
+    $('jgrid').innerHTML = posts.slice(0,3).map(p=>`<a class="jcard" href="${esc(p.url)}">
+      <div class="jmeta"><span>${esc(tr(p.cat))}</span><span>${esc(d(p.date))}</span></div>
+      <div class="jimg"><img src="${esc(p.img)}" alt="${esc(tr(p.title))}" loading="lazy" onerror="this.style.visibility='hidden'"></div>
+      <h3>${fmt(p.title)}</h3><p>${fmt(p.excerpt)}</p><span class="jread">${fmt(J.read)} →</span></a>`).join('');
+  }
 
   $('faq-list').innerHTML = S.faq.map(f=>`<details><summary>${fmt(f.q)}</summary><p>${fmt(f.a)}</p></details>`).join('');
 }
