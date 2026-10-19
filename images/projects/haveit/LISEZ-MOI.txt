@@ -1,0 +1,7 @@
+Images de l'étude de cas (format 4:5, 1080 x 1350) :
+
+cover.jpg = la grande image
+1.jpg et 2.jpg = les deux images à côté
+3.jpg, 4.jpg, 5.jpg, 6.jpg = la bande du bas
+
+Tu peux utiliser d'autres noms : change-les dans content.js (partie ÉTUDES DE CAS, ligne images).

@@ -1,0 +1,234 @@
+/* =====================================================================
+   CONTENU DU SITE VIGNAU STUDIO : le SEUL fichier à modifier.
+   - Chaque texte : { fr: "...", en: "..." }
+   - *mot* = italique serif
+   - Images : dossier images/, format 4:5 (1080 x 1350)
+   - Après une modif : Cmd + S, puis rafraîchis la page.
+   ===================================================================== */
+
+window.SITE = {
+
+  /* ---------- RÉGLAGES ---------- */
+  email: "contact@vignaustudio.com",         // reçoit les demandes d'aperçu gratuit
+  callUrl: "https://calendly.com/vignaustudio/new-meeting",
+  instagram: "https://www.instagram.com/vignaustudio/",
+  linkedin: "https://www.linkedin.com/in/lo%C3%AFc-vignau/",
+  siteUrl: "https://vignaustudio.com/",
+  defaultLang: "auto",
+
+  /* ---------- MENU ---------- */
+  nav: {
+    examples: { fr: "Exemples", en: "Examples" },
+    cases:    { fr: "Projets", en: "Work" },
+    how:      { fr: "Comment ça marche", en: "How it works" },
+    pricing:  { fr: "Tarifs", en: "Pricing" },
+    faq:      { fr: "FAQ", en: "FAQ" },
+    cta:      { fr: "Voir les tarifs", en: "See pricing" }
+  },
+
+  /* ---------- HERO (façon Kamevo) ---------- */
+  hero: {
+    pill:  { fr: "Aperçu gratuit sous 24h", en: "Free preview within 24h" },
+    title: { fr: "Ton produit en visuel *premium*. Sans shooting.", en: "Your product as a *premium* visual. No shoot." },
+    sub:   { fr: "Colle le lien de ton produit. Je te renvoie un aperçu gratuit, qualité campagne, sous 24h.", en: "Paste your product link. I'll send you a free campaign-quality preview within 24h." },
+    urlLabel:   { fr: "Lien de ton produit", en: "Your product link" },
+    urlPh:      { fr: "https://tamarque.com/produit", en: "https://yourbrand.com/product" },
+    emailLabel: { fr: "Ton email", en: "Your email" },
+    emailPh:    { fr: "toi@tamarque.com", en: "you@yourbrand.com" },
+    button:     { fr: "Recevoir mon aperçu gratuit", en: "Get my free preview" },
+    fine:       { fr: "Gratuit · Sans engagement · Réponse sous 24h", en: "Free · No commitment · Answer within 24h" },
+    thanks:     { fr: "C'est reçu. Ton aperçu arrive par email sous 24h.", en: "Got it. Your preview lands in your inbox within 24h." },
+    badge1: { t: { fr: "Aperçu envoyé", en: "Preview sent" }, s: { fr: "Packshot parfum · 18h", en: "Fragrance packshot · 18h" } },
+    badge2: { t: { fr: "Nouveau pack", en: "New pack" }, s: { fr: "10 visuels · livrés en 48h", en: "10 visuals · delivered in 48h" } },
+    images: [
+      "images/hero-01.png","images/hero-02.jpg","images/hero-03.jpeg","images/hero-04.jpg","images/hero-05.jpeg",
+      "images/hero-06.png","images/hero-07.jpeg","images/hero-08.jpg","images/hero-09.png","images/hero-10.png",
+      "images/hero-11.png","images/hero-13.png","images/hero-14.png","images/hero-16.png"
+    ]
+  },
+
+  /* Logos "Ils nous ont fait confiance" (sous la bande d'images).
+     style : "serif", "sans" ou "caps". img : chemin d'un logo (optionnel, remplace le texte). */
+  logosLabel: { fr: "Ils nous ont fait confiance", en: "They trusted us" },
+  logos: [
+    { name: "ELLE Luxembourg", style: "caps" },
+    { name: "New York Fashion Week", style: "serif" },
+    { name: "Marilou Jewelry", style: "serif" },
+    { name: "Doors", style: "sans" },
+    { name: "Flying Solo", style: "caps" },
+    { name: "Birushi", style: "sans" },
+    { name: "HAVEIT", style: "caps" }
+  ],
+
+  /* ---------- AVANT / APRÈS (la preuve) ----------
+     Mets une photo "avant" (prise au téléphone) et le visuel "après".
+     Si les images n'existent pas, la section se masque toute seule. */
+  beforeAfter: {
+    title: { fr: "Avant. *Après*.", en: "Before. *After*." },
+    sub:   { fr: "Une photo prise au téléphone. Un visuel prêt pour ta campagne.", en: "A phone photo. A visual ready for your campaign." },
+    before: "images/avant.jpg",
+    after:  "images/apres.jpg",
+    beforeLabel: { fr: "Avant", en: "Before" },
+    afterLabel:  { fr: "Après", en: "After" }
+  },
+
+  /* ---------- IMPACT (graphique façon Bup) ---------- */
+  impact: {
+    label: { fr: "Le problème", en: "The problem" },
+    title: { fr: "Tes pubs s'essoufflent ? C'est souvent *le visuel*.", en: "Ads running out of steam? It's often *the visual*." },
+    sub:   { fr: "Un même visuel diffusé trop longtemps finit par ne plus arrêter personne. Les clics baissent, le coût par vente grimpe, sans prévenir.", en: "The same visual shown too long stops catching anyone. Clicks drop, cost per sale climbs, without warning." },
+    chartTitle: { fr: "Un visuel s'use. Un flux, non.", en: "A visual wears out. A flow doesn't." },
+    lineA: { fr: "Mêmes visuels qui tournent", en: "Same visuals running" },
+    lineB: { fr: "Visuels Vignau renouvelés", en: "Renewed Vignau visuals" },
+    newTag: { fr: "NOUVEAUX VISUELS", en: "NEW VISUALS" },
+    axis: { fr: "CLICS", en: "CLICKS" },
+    weeks: { fr: ["SEM. 1","SEM. 4","SEM. 8"], en: ["WK 1","WK 4","WK 8"] },
+    withoutTitle: { fr: "Sans Vignau", en: "Without Vignau" },
+    withTitle:    { fr: "Avec Vignau", en: "With Vignau" },
+    without: [
+      { fr: "Les mêmes photos partout, plus personne ne les voit", en: "Same photos everywhere, nobody sees them" },
+      { fr: "Un shooting à plusieurs milliers d'euros pour renouveler", en: "A shoot costing thousands to refresh" },
+      { fr: "Des visuels IA faits seul, qui font cheap", en: "DIY AI visuals that look cheap" }
+    ],
+    with: [
+      { fr: "Des visuels neufs avant que les anciens s'usent", en: "Fresh visuals before the old ones wear out" },
+      { fr: "Assez de volume pour tester plusieurs angles", en: "Enough volume to test several angles" },
+      { fr: "Un rendu premium, ton vrai produit", en: "Premium look, your real product" }
+    ]
+  },
+
+  /* ---------- COMMENT ÇA MARCHE ---------- */
+  how: {
+    title: { fr: "Ton visuel en *3 étapes*.", en: "Your visual in *3 steps*." },
+    steps: [
+      { t: { fr: "Colle le lien de ton produit", en: "Paste your product link" }, p: { fr: "Ou envoie quelques photos prises au téléphone.", en: "Or send a few phone photos." } },
+      { t: { fr: "Je crée tes visuels", en: "I create your visuals" }, p: { fr: "Direction artistique, mise en scène, retouche à la main.", en: "Art direction, staging, hand retouching." } },
+      { t: { fr: "Tu publies. Tu vends.", en: "You post. You sell." }, p: { fr: "Livrés en 48h, aux formats site, réseaux et pub.", en: "Delivered in 48h, in site, social and ad formats." } }
+    ]
+  },
+
+  /* ---------- USAGES (2 rangées qui défilent, façon Whenever) ----------
+     Chaque carte : une image 4:5, un titre, une phrase. */
+  uses: {
+    label: { fr: "Fait main, avec l'IA", en: "Hand-crafted, with AI" },
+    title: { fr: "Des visuels parfaits pour *chaque* usage.", en: "Pixel-perfect visuals for *every* use." },
+    sub:   { fr: "Chaque image est dirigée et retouchée à la main, pour que tu publies sans hésiter.", en: "Every image is art-directed and retouched by hand, so you can publish with confidence." },
+    note:  { fr: "(oui, tout est fait par IA !)", en: "(yep, that's all AI!)" },
+    row1: [
+      { img: "images/fragrance-1.png", t: { fr: "Visuels de campagne", en: "Campaign visuals" }, p: { fr: "Des images fortes pour tes lancements et tes pubs.", en: "Strong images for launches and ads." } },
+      { img: "images/patch-colla.jpg",  t: { fr: "Packshots studio", en: "Studio packshots" }, p: { fr: "Lumière maîtrisée, matières fidèles, détails nets.", en: "Controlled light, true materials, sharp details." } },
+      { img: "images/beauty-1.png",    t: { fr: "Sur modèle", en: "On-model" }, p: { fr: "Ton produit porté ou tenu par le bon visage.", en: "Your product worn or held by the right face." } },
+      { img: "images/byredo-beauty.png", t: { fr: "Variations pub", en: "Ad variations" }, p: { fr: "Plusieurs angles à tester, produit identique.", en: "Several angles to test, same product." } }
+    ],
+    row2: [
+      { img: "images/fragrance-5.png", zoom: 1.12, t: { fr: "Promos saisonnières", en: "Seasonal promos" }, p: { fr: "Noël, été, soldes, sans nouveau shooting.", en: "Holidays, summer, sales, no new shoot." } },
+      { img: "images/doigt.jpg",   t: { fr: "Coloris et variantes", en: "Colourways & variants" }, p: { fr: "Chaque couleur, chaque finition.", en: "Every colour, every finish." } },
+      { img: "images/beauty-5.png",    t: { fr: "Réseaux sociaux", en: "Social content" }, p: { fr: "Un feed cohérent, prêt à publier.", en: "A coherent feed, ready to post." } },
+      { img: "images/gouttes.jpg",     t: { fr: "Textures", en: "Textures" }, p: { fr: "Gouttes, crèmes, poudres qui donnent envie.", en: "Drops, creams, powders that tempt." } }
+    ]
+  },
+
+  /* ---------- SECTEURS + TÉMOIGNAGES (façon Whenever) ---------- */
+  trust: {
+    title: { fr: "Ils nous font confiance, *dans tous les secteurs*.", en: "Trusted by brands *across industries*." },
+    sub:   { fr: "Quoi que tu vendes, on crée des visuels haut de gamme fidèles à ton produit et à ta marque.", en: "Whatever you sell, we create high-end visuals true to your product and your brand." },
+    industries: [
+      { fr: "Beauté", en: "Beauty" }, { fr: "Tech", en: "Tech" }, { fr: "SaaS", en: "SaaS" }, { fr: "Sites web", en: "Websites" },
+      { fr: "Bien-être", en: "Wellness" }, { fr: "Sacs & accessoires", en: "Bags & Accessories" }, { fr: "Montres", en: "Watches" }, { fr: "Influenceurs", en: "Influencers" },
+      { fr: "E-commerce", en: "E-commerce" }, { fr: "Food & boissons", en: "Food & Beverage" }, { fr: "Mode", en: "Fashion" }, { fr: "Joaillerie", en: "Jewelry" }
+    ],
+    prev: { fr: "Précédent", en: "Previous" },
+    next: { fr: "Suivant", en: "Next" }
+  },
+  // La partie entre *étoiles* s'affiche en italique serif
+  testimonials: [
+    { img: "images/melanie.png", name: "Mélanie Lange", role: { fr: "Fondatrice & CEO, Tribe Management", en: "Founder & CEO, Tribe Management" },
+      quote: { fr: "*Il comprend parfaitement la vision créative*, et la traduit en concepts visuels puissants. Talentueux, réactif et extrêmement fiable.", en: "*He perfectly understands the creative vision*, and translates it into powerful visual concepts. Talented, responsive and extremely reliable." } },
+    { img: "images/rahel.png", name: "Rahel Tadesse", role: { fr: "Brand Director, Flying Solo New York", en: "Brand Director, Flying Solo New York" },
+      quote: { fr: "*Une capacité rare à allier esthétique et clarté*, et à transformer des idées en images désirables et premium.", en: "*A rare ability to balance aesthetics with clarity*, and to shape ideas into images that feel desirable and premium." } },
+    { img: "images/rick.png", name: "Rick David", role: { fr: "Directeur, BK Style Foundation", en: "Director, BK Style Foundation" },
+      quote: { fr: "*Créativité, vraie vision business*, et un état d'esprit inspirant. Un profil rare, à la fois esthétique et stratégique.", en: "*Creativity, strong business vision*, and an inspiring mindset. A rare profile, both aesthetic and strategic." } },
+    { img: "images/vivia.png", name: "Vivia Ferragamo", role: { fr: "Fondatrice, Vivia Resort", en: "Founder, Vivia Resort" },
+      quote: { fr: "*Un œil naturel, une approche calme*, et des résultats beaux et authentiques à chaque fois.", en: "*A natural eye, a calm approach*, and beautiful, authentic results every time." } }
+  ],
+
+  /* ---------- ÉTUDES DE CAS (éditorial) ----------
+     Images dans images/projects/<nom>/ : cover.jpg (grande), 1.jpg, 2.jpg (à droite),
+     puis 3.jpg, 4.jpg, 5.jpg, 6.jpg (la bande du bas). Format 4:5.
+     Tu peux mettre d'autres noms : modifie juste la liste "images".
+     Si une image manque, un emplacement neutre s'affiche à la place. */
+  casesLabel: { fr: "Études de cas", en: "Case studies" },
+  casesTitle: { fr: "Des marques construites *de A à Z*.", en: "Brands built *from A to Z*." },
+  casesSub:   { fr: "Pas des maquettes. Des marques réelles, en ligne, pensées et fabriquées de la première idée au dernier pixel.", en: "Not mockups. Real brands, live, thought through and built from the first idea to the last pixel." },
+  didLabel:   { fr: "Ce que j'ai fait", en: "What I did" },
+  cases: [
+    { slug: "birushi", n: "01", name: "Birushi", year: "2023 — 2026",
+      kind: { fr: "Beauté · Ma propre marque", en: "Beauty · My own brand" },
+      tagline: { fr: "Une marque de beauté, *pensée de zéro*.", en: "A beauty brand, *built from zero*." },
+      intro: { fr: "Une brosse premium pour cheveux bouclés. Le nom, l'identité, le packaging, le site, les visuels et les contenus : tout a été construit par moi, de la première esquisse à la boutique en ligne.", en: "A premium brush for curly hair. Name, identity, packaging, website, visuals and content: all built by me, from the first sketch to the online store." },
+      did: { fr: ["Nom et identité","Packaging","Site e-commerce","Visuels de campagne","Vidéos UGC","Réseaux sociaux"], en: ["Name and identity","Packaging","E-commerce site","Campaign visuals","UGC videos","Social media"] },
+      link: "https://birushi.com",
+      images: ["images/projects/birushi/cover.jpg","images/projects/birushi/1.jpg","images/projects/birushi/2.jpg","images/projects/birushi/3.jpg","images/projects/birushi/4.jpg","images/projects/birushi/5.jpg","images/projects/birushi/6.jpg"] },
+    { slug: "olquizz", n: "02", name: "Olquizz", year: "2026",
+      kind: { fr: "SaaS · EdTech", en: "SaaS · EdTech" },
+      tagline: { fr: "Le Duolingo de l'entrepreneuriat, *de l'idée au lancement*.", en: "The Duolingo of entrepreneurship, *from idea to launch*." },
+      intro: { fr: "Une app d'apprentissage gamifiée pour les entrepreneurs. Branding, produit, landing page et contenus réseaux, pensés comme un seul univers.", en: "A gamified learning app for entrepreneurs. Branding, product, landing page and social content, designed as one world." },
+      did: { fr: ["Branding","Design produit","Landing page","Réseaux sociaux","Contenus de lancement"], en: ["Branding","Product design","Landing page","Social media","Launch content"] },
+      link: "https://olquizz.com",
+      images: ["images/projects/olquizz/cover.jpg","images/projects/olquizz/1.jpg","images/projects/olquizz/2.jpg","images/projects/olquizz/3.jpg","images/projects/olquizz/4.jpg","images/projects/olquizz/5.jpg","images/projects/olquizz/6.jpg"] },
+    { slug: "haveit", n: "03", name: "HAVEIT", year: "2026",
+      kind: { fr: "SaaS · IA", en: "SaaS · AI" },
+      tagline: { fr: "Une photo ordinaire, *un visuel de luxe*.", en: "An ordinary photo, *a luxury visual*." },
+      intro: { fr: "Une app qui transforme une photo du quotidien en visuel lifestyle premium. Marque, produit, site bilingue et contenus vidéo.", en: "An app that turns an everyday photo into a premium lifestyle visual. Brand, product, bilingual site and video content." },
+      did: { fr: ["Nom et identité","App web IA","Site FR / EN","Contenus vidéo","Réseaux sociaux"], en: ["Name and identity","AI web app","FR / EN website","Video content","Social media"] },
+      link: "https://haveitnow.fr",
+      images: ["images/projects/haveit/cover.jpg","images/projects/haveit/1.jpg","images/projects/haveit/2.jpg","images/projects/haveit/3.jpg","images/projects/haveit/4.jpg","images/projects/haveit/5.jpg","images/projects/haveit/6.jpg"] },
+    { slug: "elle", n: "04", name: "ELLE", year: "2025",
+      kind: { fr: "Magazine · Luxembourg", en: "Magazine · Luxembourg" },
+      tagline: { fr: "Une collaboration *éditoriale*.", en: "An *editorial* collaboration." },
+      intro: { fr: "Visuels et direction artistique pour ELLE Luxembourg. Remplace ce texte par le détail exact de la collaboration.", en: "Visuals and art direction for ELLE Luxembourg. Replace this text with the exact details of the collaboration." },
+      did: { fr: ["Direction artistique","Visuels éditoriaux"], en: ["Art direction","Editorial visuals"] },
+      link: "",
+      images: ["images/projects/elle/cover.jpg","images/projects/elle/1.jpg","images/projects/elle/2.jpg","images/projects/elle/3.jpg","images/projects/elle/4.jpg","images/projects/elle/5.jpg","images/projects/elle/6.jpg"] }
+  ],
+  visitLabel: { fr: "Voir le site", en: "Visit the site" },
+
+  /* ---------- TARIFS (façon Miniamea) ----------
+     link = ton lien de paiement Whop (vide = renvoie vers l'appel) */
+  pricing: {
+    title: { fr: "Une offre pour *chaque* étape.", en: "An offer for *every* stage." },
+    sub:   { fr: "Paiement sécurisé. Livraison en 48h. Retouches incluses.", en: "Secure payment. Delivered in 48h. Revisions included." },
+    included: { fr: "Inclus :", en: "Included:" },
+    plans: [
+      { name: { fr: "Starter", en: "Starter" }, what: { fr: "1 visuel", en: "1 visual" }, price: "79 €",
+        items: { fr: ["1 visuel premium de ton produit","Format au choix (site, réseaux, pub)","Livraison en 48h","2 retouches"], en: ["1 premium visual of your product","Format of your choice (site, social, ad)","Delivered in 48h","2 revisions"] },
+        cta: { fr: "Commencer", en: "Get started" }, link: "" },
+      { name: { fr: "Pack Pro", en: "Pro Pack" }, star: true, badge: { fr: "Le plus populaire", en: "Most popular" },
+        what: { fr: "Pack de 10 visuels", en: "Pack of 10 visuals" }, price: "590 €", old: "790 €", save: { fr: "200 € d'économie", en: "Save €200" },
+        items: { fr: ["10 visuels premium","Tous les formats inclus","Livraison en 48h","Retouches illimitées","Support WhatsApp"], en: ["10 premium visuals","All formats included","Delivered in 48h","Unlimited revisions","WhatsApp support"] },
+        cta: { fr: "Prendre le pack", en: "Get the pack" }, link: "" },
+      { name: { fr: "Marque complète", en: "Full brand" }, what: { fr: "Sur mesure", en: "Custom" }, price: { fr: "Sur devis", en: "On quote" },
+        items: { fr: ["Identité de marque","Site en ligne","Campagne de lancement","Visuels chaque mois"], en: ["Brand identity","Live website","Launch campaign","Visuals every month"] },
+        cta: { fr: "Réserver un appel", en: "Book a call" }, link: "call" }
+    ]
+  },
+
+  /* ---------- FAQ ---------- */
+  faqTitle: { fr: "Questions *fréquentes*", en: "Frequent *questions*" },
+  faq: [
+    { q: { fr: "L'aperçu est vraiment gratuit ?", en: "Is the preview really free?" }, a: { fr: "Oui. Tu reçois un aperçu de ton produit en visuel premium, sans carte bancaire. Si tu l'aimes, tu choisis une offre.", en: "Yes. You get a preview of your product as a premium visual, no card needed. If you like it, pick an offer." } },
+    { q: { fr: "Ça ressemble vraiment à mon produit ?", en: "Will it really look like my product?" }, a: { fr: "Oui. Je pars de ton vrai produit. Forme, couleur, étiquette et packaging restent exacts.", en: "Yes. I start from your real product. Shape, colour, label and packaging stay accurate." } },
+    { q: { fr: "Pourquoi toi si je peux le faire avec l'IA ?", en: "Why you, if I can do it with AI?" }, a: { fr: "Générer une image, tout le monde sait faire. Avoir ton produit exact, dans un rendu premium utilisable en pub, c'est un métier. Ancien photographe de mode, Chanel, Hermès : c'est le mien.", en: "Anyone can generate an image. Getting your exact product, premium and ready for ads, is a craft. Former fashion photographer, Chanel, Hermès: it's mine." } },
+    { q: { fr: "Je peux utiliser les visuels en pub ?", en: "Can I use them in ads?" }, a: { fr: "Oui, usage commercial complet : site, réseaux, pub, marketplaces, print.", en: "Yes, full commercial use: site, socials, ads, marketplaces, print." } },
+    { q: { fr: "Et si un visuel ne me plaît pas ?", en: "What if I don't like a visual?" }, a: { fr: "On le retouche : 2 fois sur Starter, sans limite sur le Pack Pro.", en: "We revise it: twice on Starter, unlimited on the Pro Pack." } }
+  ],
+
+  /* ---------- FINAL ---------- */
+  final: {
+    title: { fr: "Ta prochaine campagne commence *par un lien*.", en: "Your next campaign starts *with a link*." },
+    sub:   { fr: "Colle le lien de ton produit. On s'occupe du reste.", en: "Paste your product link. I'll handle the rest." }
+  },
+
+  footerLine: { fr: "Des visuels produit premium, sans shooting.", en: "Premium product visuals, no shoot." },
+  legalLabel: { fr: "Mentions légales & CGV", en: "Legal & terms" }
+};
