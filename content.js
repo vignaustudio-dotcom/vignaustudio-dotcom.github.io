@@ -10,7 +10,7 @@ window.SITE = {
 
   /* ---------- RÉGLAGES ---------- */
   email: "contact@vignaustudio.com",         // reçoit les demandes d'aperçu gratuit
-  callUrl: "https://calendly.com/vignaustudio/new-meeting",
+  callUrl: "https://calendly.com/vignaustudio/brand-audit",
   instagram: "https://www.instagram.com/vignaustudio/",
   linkedin: "",   // lien LinkedIn de la PAGE Vignau Studio (vide = masqué)
   siteUrl: "https://vignaustudio.com/",
