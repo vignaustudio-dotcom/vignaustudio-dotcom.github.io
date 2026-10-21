@@ -12,7 +12,7 @@ window.SITE = {
   email: "contact@vignaustudio.com",         // reçoit les demandes d'aperçu gratuit
   callUrl: "https://calendly.com/vignaustudio/new-meeting",
   instagram: "https://www.instagram.com/vignaustudio/",
-  linkedin: "https://www.linkedin.com/in/lo%C3%AFc-vignau/",
+  linkedin: "",   // lien LinkedIn de la PAGE Vignau Studio (vide = masqué)
   siteUrl: "https://vignaustudio.com/",
   defaultLang: "auto",
 
@@ -258,5 +258,10 @@ window.SITE = {
   },
 
   footerLine: { fr: "Des visuels produit premium, sans shooting.", en: "Premium product visuals, no shoot." },
-  legalLabel: { fr: "Mentions légales & CGV", en: "Legal & terms" }
+  legal: {
+    mentions: { fr: "Mentions légales", en: "Legal notice" },
+    cgv:      { fr: "CGV", en: "Terms of sale" },
+    cgu:      { fr: "CGU", en: "Terms of use" },
+    privacy:  { fr: "Confidentialité", en: "Privacy" }
+  }
 };

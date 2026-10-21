@@ -501,33 +501,14 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
     <a id="l-ig" target="_blank" rel="noopener">Instagram</a>
     <a id="l-li" target="_blank" rel="noopener">LinkedIn</a>
     <a id="l-mail"></a>
-    <button type="button" id="legal-open" data-t="legalLabel"></button>
+    <a href="legal.html#mentions" data-t="legal.mentions"></a>
+    <a href="legal.html#cgv" data-t="legal.cgv"></a>
+    <a href="legal.html#cgu" data-t="legal.cgu"></a>
+    <a href="legal.html#confidentialite" data-t="legal.privacy"></a>
   </nav>
 </div></footer>
 
-<dialog id="legal" aria-label="Legal">
-  <div class="legal">
-    <button class="close" id="legal-close" aria-label="Close">✕</button>
-    <div data-lang-block="fr">
-      <h3>Mentions légales</h3>
-      <h4>Éditeur</h4><p>Vignau Studio, Loïc Vignau. SIRET 835 025 883 00017. RCS 835 025 883 R.C.S Pontoise. Paris, France. contact@vignaustudio.com</p>
-      <h4>Hébergement</h4><p>GitHub Pages, GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.</p>
-      <h4>Propriété intellectuelle</h4><p>Tout le contenu de ce site appartient à Vignau Studio. Toute reproduction est interdite sans autorisation.</p>
-      <h4>Données personnelles</h4><p>Le lien produit et l'email envoyés via le formulaire servent uniquement à préparer et envoyer votre aperçu. Ils sont transmis par le service FormSubmit. Conformément au RGPD, vous pouvez y accéder, les corriger ou les supprimer en écrivant à contact@vignaustudio.com.</p>
-      <h3>Conditions générales de vente</h3>
-      <p>Les offres et prix sont ceux affichés sur ce site au moment de la commande, en euros. Le paiement se fait en ligne via Whop. La livraison intervient sous 48h à réception des éléments nécessaires. Les retouches sont incluses selon l'offre choisie. Une fois payés, les visuels appartiennent au client, y compris pour un usage commercial et publicitaire ; Vignau Studio peut les montrer dans son portfolio. S'agissant de contenus numériques réalisés sur mesure, le droit de rétractation ne s'applique pas une fois la création commencée avec l'accord du client. Droit français.</p>
-    </div>
-    <div data-lang-block="en">
-      <h3>Legal notice</h3>
-      <h4>Publisher</h4><p>Vignau Studio, Loïc Vignau. SIRET 835 025 883 00017. RCS 835 025 883 R.C.S Pontoise. Paris, France. contact@vignaustudio.com</p>
-      <h4>Hosting</h4><p>GitHub Pages, GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.</p>
-      <h4>Intellectual property</h4><p>All content on this website belongs to Vignau Studio. Any reproduction is prohibited without permission.</p>
-      <h4>Personal data</h4><p>The product link and email sent through the form are used only to prepare and send your preview. They are transmitted via the FormSubmit service. Under the GDPR you can access, correct or delete them at contact@vignaustudio.com.</p>
-      <h3>Terms of sale</h3>
-      <p>Offers and prices are those shown on this site at the time of order, in euros. Payment is made online via Whop. Delivery within 48h once the required elements are received. Revisions are included according to the chosen offer. Once paid, visuals belong to the client, including commercial and advertising use; Vignau Studio may show them in its portfolio. As custom digital content, the withdrawal right does not apply once creation has started with the client's agreement. French law.</p>
-    </div>
-  </div>
-</dialog>
+
 
 <script>
 (function(){
@@ -662,14 +643,10 @@ function render(){
   $('faq-list').innerHTML = S.faq.map(f=>`<details><summary>${fmt(f.q)}</summary><p>${fmt(f.a)}</p></details>`).join('');
 }
 
-$('l-ig').href = S.instagram; $('l-li').href = S.linkedin;
+$('l-ig').href = S.instagram; if (S.linkedin) $('l-li').href = S.linkedin; else $('l-li').remove();
 $('l-mail').href = 'mailto:' + S.email; $('l-mail').textContent = S.email;
 $('yr').textContent = new Date().getFullYear();
 document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>{ lang=b.dataset.lang; try{localStorage.setItem('vs-lang',lang);}catch(e){} render(); });
-const lg = $('legal');
-$('legal-open').onclick = ()=>lg.showModal();
-$('legal-close').onclick = ()=>lg.close();
-lg.addEventListener('click', e=>{ if(e.target===lg) lg.close(); });
 /* Témoignages */
 var ti = 0;
 function showT(){

@@ -41,3 +41,7 @@ Si la page devient blanche : il manque un guillemet ou une virgule dans `content
 7. `git add -A && git commit -m "Nouvel article" && git push`
 
 Quand ton premier vrai article est en ligne, supprime le bloc `article-modele` de `content.js`.
+
+## Pages légales
+Tout est dans `legal.html` (mentions légales, CGV, CGU, confidentialité), en français puis en anglais.
+Si tu changes un prix, une offre ou un délai, pense à mettre à jour les CGV dans ce fichier.
