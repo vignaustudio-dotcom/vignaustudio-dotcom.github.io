@@ -348,6 +348,24 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
   .saw,.decay{stroke-dashoffset:0}
   .strip{overflow-x:auto}
 }
+
+/* Mobile : tous les titres centrés comme le hero */
+@media(max-width:960px){
+  .cases-head,.jhead,.tgrid>div:first-child{text-align:center}
+  .jhead{flex-direction:column;align-items:center}
+  .cases-head h2,.jhead h2,.tgrid h2{margin-left:auto;margin-right:auto}
+  .cases-head .sub,.jhead .sub,.tgrid .sub{margin-left:auto;margin-right:auto}
+  .tgrid{padding-left:var(--pad);padding-right:var(--pad)}
+  .cname,.csubline,.ctag{text-align:center}
+  .unote{text-align:center;padding-right:0}
+}
+
+/* Mobile : la bande de 4 images devient un carrousel à faire glisser */
+@media(max-width:960px){
+  .cstrip{display:flex;grid-template-columns:none;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:var(--pad);margin-left:calc(-1 * var(--pad));margin-right:calc(-1 * var(--pad));padding:0 var(--pad) 6px;scrollbar-width:none}
+  .cstrip::-webkit-scrollbar{display:none}
+  .cstrip .cwrap{flex:0 0 62%;scroll-snap-align:start}
+}
 </style>
 </head>
 <body>
