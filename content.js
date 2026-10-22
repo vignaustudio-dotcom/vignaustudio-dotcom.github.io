@@ -58,7 +58,8 @@ window.SITE = {
     { img: "images/logo/fwbk.jpg",   name: "Fashion Week Brooklyn" },
     { img: "images/logo/duniya.jpg", name: "Duniya Jewels" },
     { img: "images/logo/flying.jpg", name: "Flying Solo" },
-    { img: "images/logo/tribe.jpg",  name: "Tribe Management" }
+    { img: "images/logo/tribe.jpg",  name: "Tribe Management" },
+    { name: "Marilou Jewelry NYC", style: "caps" }
   ],
 
 
@@ -146,7 +147,14 @@ window.SITE = {
   // La partie entre *étoiles* s'affiche en italique serif
   testimonials: [
     { img: "images/melanie.png", name: "Mélanie Lange", role: { fr: "Fondatrice & CEO, Tribe Management", en: "Founder & CEO, Tribe Management" },
-      quote: { fr: "*Il comprend parfaitement la vision créative*, et la traduit en concepts visuels puissants. Talentueux, réactif et extrêmement fiable.", en: "*He perfectly understands the creative vision*, and translates it into powerful visual concepts. Talented, responsive and extremely reliable." } },
+      quote: { fr: "*Je suis ravie de recommander Loïc Vignau*, qui nous a grandement aidés à concevoir la direction artistique du projet Line Up pour Design Motion. Loïc est un professionnel talentueux, réactif et extrêmement fiable. Il comprend parfaitement la vision créative et sait la traduire en concepts visuels percutants. Au-delà de sa créativité, il respecte toujours les délais et s'adapte parfaitement au planning du projet. Travailler avec lui a été un vrai plaisir : il combine créativité, rigueur et excellente collaboration, ce qui en fait un partenaire précieux pour tout projet dans l'univers de la mode ou du design. Je le recommande sans hésitation à toute personne cherchant un professionnel créatif, engagé et visionnaire.",
+               en: "*I'm delighted to recommend Loïc Vignau*, who greatly helped us shape the art direction of the Line Up project for Design Motion. Loïc is a talented, responsive and extremely reliable professional. He fully understands the creative vision and knows how to turn it into striking visual concepts. Beyond his creativity, he always meets deadlines and adapts perfectly to the project schedule. Working with him was a real pleasure: he combines creativity, rigour and excellent collaboration, which makes him a valuable partner for any fashion or design project. I recommend him without hesitation to anyone looking for a creative, committed and visionary professional." } },
+    { img: "images/jelizaveta.png", name: "Jelizaveta Hagleitner", role: { fr: "Fondatrice, RDxOS · Vienne · Digital Week Paris · NY", en: "Founder, RDxOS · Vienna · Digital Week Paris · NY" },
+      quote: { fr: "*Travailler avec Loïc est fluide, précis et profondément aligné.* Il donne vie aux concepts avec un œil raffiné et un vrai instinct créatif. Il sait transformer des références, des idées et une direction créative en visuels cohérents, intentionnels et pertinents à l'international.",
+               en: "*Working with Loïc feels fluid, sharp and deeply aligned.* He brings concepts to life with a refined eye and a strong creative instinct. He understands how to turn references, ideas and creative direction into visuals that feel cohesive, intentional and internationally relevant." } },
+    { img: "images/merilou-profil.jpg", name: "Marilou", role: { fr: "CEO & fondatrice, Marilou Jewelry NYC", en: "CEO & Founder, Marilou Jewelry NYC" },
+      quote: { fr: "*Travailler avec Loïc est simple et inspirant.* Il sait traduire l'essence d'une marque en visuels à la fois élevés et intentionnels.",
+               en: "*Working with Loïc is seamless and inspiring.* He understands how to translate a brand's essence into visuals that feel both elevated and intentional." } },
     { img: "images/rahel.png", name: "Rahel Tadesse", role: { fr: "Brand Director, Flying Solo New York", en: "Brand Director, Flying Solo New York" },
       quote: { fr: "*Une capacité rare à allier esthétique et clarté*, et à transformer des idées en images désirables et premium.", en: "*A rare ability to balance aesthetics with clarity*, and to shape ideas into images that feel desirable and premium." } },
     { img: "images/rick.png", name: "Rick David", role: { fr: "Directeur, BK Style Foundation", en: "Director, BK Style Foundation" },
@@ -154,6 +162,7 @@ window.SITE = {
     { img: "images/vivia.png", name: "Vivia Ferragamo", role: { fr: "Fondatrice, Vivia Resort", en: "Founder, Vivia Resort" },
       quote: { fr: "*Un œil naturel, une approche calme*, et des résultats beaux et authentiques à chaque fois.", en: "*A natural eye, a calm approach*, and beautiful, authentic results every time." } }
   ],
+
 
   /* ---------- ÉTUDES DE CAS (éditorial) ----------
      Images dans images/projects/<nom>/ : cover.jpg (grande), 1.jpg, 2.jpg (à droite),
