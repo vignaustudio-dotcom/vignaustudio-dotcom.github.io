@@ -21,25 +21,25 @@ window.SITE = {
     examples: { fr: "Exemples", en: "Examples" },
     cases:    { fr: "Projets", en: "Work" },
     how:      { fr: "Comment ça marche", en: "How it works" },
-    pricing:  { fr: "Tarifs", en: "Pricing" },
+    pricing:  { fr: "Offres", en: "Offers" },
     journal:  { fr: "Journal", en: "Journal" },
     faq:      { fr: "FAQ", en: "FAQ" },
-    cta:      { fr: "Voir les tarifs", en: "See pricing" }
+    cta:      { fr: "Voir les offres", en: "See offers" }
   },
 
   /* ---------- HERO (façon Kamevo) ---------- */
   hero: {
-    pill:  { fr: "Aperçu gratuit sous 24h", en: "Free preview within 24h" },
+    pill:  { fr: "Aperçu gratuit", en: "Free preview" },
     title: { fr: "Ton produit en visuel *premium*. Sans shooting.", en: "Your product as a *premium* visual. No shoot." },
-    sub:   { fr: "Colle le lien de ton produit. Je te renvoie un aperçu gratuit, qualité campagne, sous 24h.", en: "Paste your product link. I'll send you a free campaign-quality preview within 24h." },
+    sub:   { fr: "Colle le lien de ton produit. Je te renvoie un aperçu gratuit, qualité campagne.", en: "Paste your product link. I'll send you a free campaign-quality preview." },
     urlLabel:   { fr: "Lien de ton produit", en: "Your product link" },
     urlPh:      { fr: "https://tamarque.com/produit", en: "https://yourbrand.com/product" },
     emailLabel: { fr: "Ton email", en: "Your email" },
     emailPh:    { fr: "toi@tamarque.com", en: "you@yourbrand.com" },
     button:     { fr: "Recevoir mon aperçu gratuit", en: "Get my free preview" },
-    fine:       { fr: "Gratuit · Sans engagement · Réponse sous 24h", en: "Free · No commitment · Answer within 24h" },
-    thanks:     { fr: "C'est reçu. Ton aperçu arrive par email sous 24h.", en: "Got it. Your preview lands in your inbox within 24h." },
-    badge1: { t: { fr: "Aperçu envoyé", en: "Preview sent" }, s: { fr: "Packshot parfum · 18h", en: "Fragrance packshot · 18h" } },
+    fine:       { fr: "Gratuit · Sans engagement", en: "Free · No commitment" },
+    thanks:     { fr: "C'est reçu. Ton aperçu arrive par email.", en: "Got it. Your preview is on its way to your inbox." },
+    badge1: { t: { fr: "Aperçu envoyé", en: "Preview sent" }, s: { fr: "Packshot parfum", en: "Fragrance packshot" } },
     badge2: { t: { fr: "Nouveau pack", en: "New pack" }, s: { fr: "10 visuels · livrés en 48h", en: "10 visuals · delivered in 48h" } },
     images: [
       "images/hero-01.png","images/hero-02.jpg","images/hero-03.jpeg","images/hero-04.jpg","images/hero-05.jpeg",
@@ -51,15 +51,17 @@ window.SITE = {
   /* Logos "Ils nous ont fait confiance" (sous la bande d'images).
      style : "serif", "sans" ou "caps". img : chemin d'un logo (optionnel, remplace le texte). */
   logosLabel: { fr: "Ils nous ont fait confiance", en: "They trusted us" },
+  /* Logos qui défilent : fichiers dans images/logo/ (fond blanc accepté) */
   logos: [
-    { name: "ELLE Luxembourg", style: "caps" },
-    { name: "New York Fashion Week", style: "serif" },
-    { name: "Marilou Jewelry", style: "serif" },
-    { name: "Doors", style: "sans" },
-    { name: "Flying Solo", style: "caps" },
-    { name: "Birushi", style: "sans" },
-    { name: "HAVEIT", style: "caps" }
+    { img: "images/logo/elle.jpg",   name: "ELLE" },
+    { img: "images/logo/harper.jpg", name: "Harper's Bazaar" },
+    { img: "images/logo/fwbk.jpg",   name: "Fashion Week Brooklyn" },
+    { img: "images/logo/duniya.jpg", name: "Duniya Jewels" },
+    { img: "images/logo/flying.jpg", name: "Flying Solo" },
+    { img: "images/logo/tribe.jpg",  name: "Tribe Management" }
   ],
+
+
 
   /* ---------- AVANT / APRÈS (la preuve) ----------
      Mets une photo "avant" (prise au téléphone) et le visuel "après".
@@ -206,17 +208,17 @@ window.SITE = {
      link = ton lien de paiement Whop (vide = renvoie vers l'appel) */
   pricing: {
     title: { fr: "Une offre pour *chaque* étape.", en: "An offer for *every* stage." },
-    sub:   { fr: "Paiement sécurisé. Livraison en 48h. Retouches incluses.", en: "Secure payment. Delivered in 48h. Revisions included." },
+    sub:   { fr: "Tarif donné sur demande. Livraison en 48h, retouches incluses.", en: "Pricing on request. Delivered in 48h, revisions included." },
     included: { fr: "Inclus :", en: "Included:" },
     plans: [
-      { name: { fr: "Starter", en: "Starter" }, what: { fr: "1 visuel", en: "1 visual" }, price: "79 €",
+      { name: { fr: "Starter", en: "Starter" }, what: { fr: "1 visuel", en: "1 visual" },
         items: { fr: ["1 visuel premium de ton produit","Format au choix (site, réseaux, pub)","Livraison en 48h","2 retouches"], en: ["1 premium visual of your product","Format of your choice (site, social, ad)","Delivered in 48h","2 revisions"] },
-        cta: { fr: "Commencer", en: "Get started" }, link: "" },
+        cta: { fr: "Demander un devis", en: "Request a quote" }, link: "call" },
       { name: { fr: "Pack Pro", en: "Pro Pack" }, star: true, badge: { fr: "Le plus populaire", en: "Most popular" },
-        what: { fr: "Pack de 10 visuels", en: "Pack of 10 visuals" }, price: "590 €", old: "790 €", save: { fr: "200 € d'économie", en: "Save €200" },
+        what: { fr: "Pack de 10 visuels", en: "Pack of 10 visuals" },
         items: { fr: ["10 visuels premium","Tous les formats inclus","Livraison en 48h","Retouches illimitées","Support WhatsApp"], en: ["10 premium visuals","All formats included","Delivered in 48h","Unlimited revisions","WhatsApp support"] },
-        cta: { fr: "Prendre le pack", en: "Get the pack" }, link: "" },
-      { name: { fr: "Marque complète", en: "Full brand" }, what: { fr: "Sur mesure", en: "Custom" }, price: { fr: "Sur devis", en: "On quote" },
+        cta: { fr: "Demander un devis", en: "Request a quote" }, link: "call" },
+      { name: { fr: "Marque complète", en: "Full brand" }, what: { fr: "Sur mesure", en: "Custom" },
         items: { fr: ["Identité de marque","Site en ligne","Campagne de lancement","Visuels chaque mois"], en: ["Brand identity","Live website","Launch campaign","Visuals every month"] },
         cta: { fr: "Réserver un appel", en: "Book a call" }, link: "call" }
     ]
@@ -234,10 +236,7 @@ window.SITE = {
     all:   { fr: "Tous les articles", en: "All articles" },
     read:  { fr: "Lire l'article", en: "Read the article" },
     posts: [
-      { url: "blog/article-modele.html", img: "images/blog/article-modele.jpg",
-        cat: "Visuels produit", date: "2026-10-20", minutes: 5,
-        title: "Titre de ton premier article",
-        excerpt: "Une ou deux phrases qui donnent envie de lire. Remplace ce texte quand l'article est prêt." }
+      // Ajoute ici tes articles quand ils sont prêts (modèle dans blog/article-modele.html)
     ]
   },
 

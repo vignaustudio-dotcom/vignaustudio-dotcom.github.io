@@ -54,8 +54,9 @@ em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.0
 
 /* NAV */
 .nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav .in{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;height:74px}
-.logo{font-size:25px;font-weight:600;letter-spacing:-.05em}
+.nav{position:sticky}
+.nav .in{position:relative;max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;height:74px}
+.logo{display:inline-flex;flex-direction:column;align-items:flex-end;line-height:1;text-decoration:none;color:var(--ink)}.logo .lw{font-size:22px;font-weight:600;letter-spacing:.08em;margin-right:-.08em}.logo .ls{font-size:9px;font-weight:500;letter-spacing:.42em;margin-right:-.42em;margin-top:4px;color:var(--mute)}
 .links{display:flex;gap:32px;font-size:15px;color:var(--mute)}
 .links a:hover{color:var(--ink)}
 .nav-r{display:flex;align-items:center;gap:10px}
@@ -94,19 +95,21 @@ em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.0
 .strip{margin-top:clamp(56px,7vw,80px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .strip>div{display:flex;gap:14px;width:max-content;animation:slide 80s linear infinite}
 .strip img{height:clamp(300px,30vw,420px);aspect-ratio:4/5;object-fit:cover;border-radius:18px;background:var(--soft)}
-@keyframes slide{to{transform:translateX(-50%)}}
+@keyframes slide{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 .logos{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;padding:40px var(--pad);border-top:1px solid var(--line);margin-top:56px}
 .logos img{height:22px;width:auto;filter:grayscale(1) brightness(0);opacity:.45}
 
 /* LOGOS TEXTE */
 .trustbar{padding:34px var(--pad) 40px;border-top:1px solid var(--line);margin-top:56px;text-align:center}
 .trustbar small{display:block;font-size:13px;color:var(--mute);letter-spacing:.04em;margin-bottom:20px}
-.wordmarks{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:14px 34px;color:var(--ink);opacity:.32}
+.wordmarks{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:24px 56px}
+.wmrow{padding:0 var(--pad)}
 .wordmarks span{font-size:19px;white-space:nowrap;transition:opacity .3s}
 .wordmarks .serif{font-family:var(--serif);font-style:italic;font-size:23px}
 .wordmarks .sans{font-weight:600;letter-spacing:-.03em;font-size:21px}
 .wordmarks .caps{font-weight:500;letter-spacing:.22em;text-transform:uppercase;font-size:14px}
-.wordmarks img{height:22px;width:auto;filter:grayscale(1) brightness(0)}
+.wordmarks img{height:34px;width:auto;max-width:150px;object-fit:contain;filter:url(#ink)}
+@media(max-width:960px){.wordmarks{gap:20px 32px}.wordmarks img{height:24px;max-width:110px}}
 
 /* SECTEURS + TÉMOIGNAGES */
 .trust{padding:0}
@@ -317,7 +320,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
 .legal h4{font-size:14px;font-weight:600;margin:14px 0 4px;color:var(--ink)}
 .close{float:right;width:40px;height:40px;border-radius:50%;border:0;background:var(--soft);cursor:pointer}
 
-@media(max-width:1100px){ .badge{display:none} }
+@media(max-width:1100px){ .badge{padding:7px 12px 7px 7px;gap:8px;border-radius:14px;font-size:12px;z-index:3} .badge i{width:28px;height:28px;border-radius:9px;font-size:12px} .badge small{font-size:10px} .b1{left:10px;top:auto;bottom:480px} .b2{right:10px;top:auto;bottom:270px} }
 @media(max-width:960px){
   .links,.nav .btn{display:none}
   .frame{border:0}
@@ -343,7 +346,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .strip>div,.utrack,.ctrack,.b1,.b2,.p.star::after{animation:none}
+  .ctrack_off,.b1,.b2,.p.star::after{animation:none}
   .rv{opacity:1;transform:none}
   .saw,.decay{stroke-dashoffset:0}
   .strip{overflow-x:auto}
@@ -366,12 +369,26 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
   .cstrip::-webkit-scrollbar{display:none}
   .cstrip .cwrap{flex:0 0 62%;scroll-snap-align:start}
 }
+.burger{display:none;width:44px;height:44px;border:0;border-radius:12px;background:var(--soft);cursor:pointer;align-items:center;justify-content:center}
+.burger span{display:block;width:18px;height:1.6px;background:var(--ink);position:relative;transition:transform .25s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.6px;background:var(--ink);transition:transform .25s,top .25s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.nav.open .burger span{background:transparent}
+.nav.open .burger span::before{top:0;transform:rotate(45deg)}
+.nav.open .burger span::after{top:0;transform:rotate(-45deg)}
+@media(max-width:960px){
+  .burger{display:inline-flex}
+  .nav.open .links{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 20px 40px -24px rgba(11,22,64,.3);padding:8px var(--pad) 20px}
+  .nav.open .links a{padding:14px 0;border-bottom:1px solid var(--line);font-size:17px;color:var(--ink)}
+  .nav.open .links a:last-child{border-bottom:0}
+}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="ink" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.47  0 0 0 0 0.52  -2.67 -2.67 -2.67 7.8 0"/></filter></svg>
 
 <header class="nav"><div class="in">
-  <a href="index.html" class="logo">vignau</a>
+  <a href="index.html" class="logo"><span class="lw">VIGNAU</span><span class="ls">STUDIO</span></a>
   <nav class="links" aria-label="Main">
     <a href="#exemples" data-t="nav.examples"></a>
     <a href="#cas" data-t="nav.cases"></a>
@@ -383,6 +400,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
   <div class="nav-r">
     <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="fr">FR</button><button type="button" data-lang="en">EN</button></div>
     <a href="#tarifs" class="btn btn-navy" data-t="nav.cta"></a>
+    <button type="button" class="burger" aria-label="Menu" aria-expanded="false" onclick="var n=this.closest('.nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)"><span></span></button>
   </div>
 </div></header>
 
@@ -399,7 +417,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
     <div data-form></div>
   </div>
   <div class="strip" aria-hidden="true"><div id="strip"></div></div>
-  <div class="trustbar"><small data-t="logosLabel"></small><div class="wordmarks" id="logos"></div></div>
+  <div class="trustbar"><small data-t="logosLabel"></small><div class="wmrow"><div class="wordmarks" id="logos"></div></div></div>
 </section>
 
 <!-- AVANT / APRÈS -->
@@ -545,8 +563,9 @@ const sent = location.hash === '#merci';
 
 /* Images fixes */
 const H = S.hero.images;
-$('strip').innerHTML = [...H,...H].map(s=>img(s)).join('');
-$('logos').innerHTML = S.logos.map(l=> l.img ? img(l.img,l.name) : `<span class="${esc(l.style||'sans')}">${esc(l.name)}</span>`).join('');
+$('strip').innerHTML = [...H,...H].map(s=>`<img src="${esc(s)}" alt="" decoding="async" onerror="this.remove()">`).join('');
+const L2 = S.logos;
+$('logos').innerHTML = L2.map(l=> l.img ? img(l.img,l.name) : `<span class="${esc(l.style||'sans')}">${esc(l.name)}</span>`).join('');
 
 /* Avant / après : masqué si une image manque */
 const B = S.beforeAfter;
@@ -609,7 +628,7 @@ function render(){
     return `<div class="p ${p.star?'star':''}">
       <div class="ptop"><span class="pname">${fmt(p.name)}</span>${p.badge?`<span class="pbadge">${fmt(p.badge)}</span>`:''}</div>
       <div class="pwhat">${fmt(p.what)}</div>
-      <div class="pprice"><b>${fmt(p.price)}</b>${p.old?`<span class="pold">${esc(p.old)}</span>`:''}</div>
+      ${p.price?`<div class="pprice"><b>${fmt(p.price)}</b>${p.old?`<span class="pold">${esc(p.old)}</span>`:''}</div>`:''}
       ${p.save?`<span class="psave">${fmt(p.save)}</span>`:''}
       <a href="${esc(href)}" target="_blank" rel="noopener" class="btn ${p.star?'btn-white':'btn-soft'}" data-plan="${esc(tr(p.name))}">${fmt(p.cta)}</a>
       <div class="pinc">${fmt(P.included)}</div>
@@ -649,7 +668,7 @@ function render(){
 
   /* Journal : 3 derniers articles */
   const J = S.journal, posts = (J && J.posts) || [];
-  if (!posts.length) { const js=$('journal'); if(js) js.remove(); }
+  if (!posts.length) { const js=$('journal'); if(js) js.remove(); document.querySelectorAll('.nav a[href="blog/index.html"]').forEach(a=>a.remove()); }
   else {
     const d = s => { try { return new Date(s).toLocaleDateString(lang==='fr'?'fr-FR':'en-GB',{day:'numeric',month:'long',year:'numeric'}); } catch(e){ return s; } };
     $('jgrid').innerHTML = posts.slice(0,3).map(p=>`<a class="jcard" href="${esc(p.url)}">
@@ -685,5 +704,6 @@ window.__io = io;
 document.querySelectorAll('.rv').forEach(n=>io.observe(n));
 })();
 </script>
+<script>document.querySelectorAll('.nav .links a').forEach(function(a){a.addEventListener('click',function(){var n=document.querySelector('.nav');n.classList.remove('open');var b=n.querySelector('.burger');if(b)b.setAttribute('aria-expanded','false');});});</script>
 </body>
 </html>
