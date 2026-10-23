@@ -432,6 +432,15 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
   .links .lang-in-burger{margin-top:0;padding-top:0;border-top:0}
 }
 
+
+@media(max-width:960px){
+  header > .lang { display: none !important; }
+  .links .mobile-burger-lang { display: flex !important; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
+}
+@media(min-width:961px){
+  .links .mobile-burger-lang { display: none !important; }
+}
+
 </style>
 </head>
 <body>
