@@ -29,9 +29,9 @@ window.SITE = {
 
   /* ---------- HERO (façon Kamevo) ---------- */
   hero: {
-    pill:  { fr: "Aperçu gratuit", en: "Free preview" },
+    pill:  { fr: "Places limitées ce mois-ci", en: "Limited spots this month" },
     title: { fr: "Ton produit en visuel *premium*. Sans shooting.", en: "Your product as a *premium* visual. No shoot." },
-    sub:   { fr: "Colle le lien de ton produit. Je te renvoie un aperçu gratuit, qualité campagne.", en: "Paste your product link. I'll send you a free campaign-quality preview." },
+    sub:   { fr: "Des visuels produit qualité campagne, sans shooting. Je m'occupe de tout, tu publies.", en: "Campaign-quality product visuals, without the shoot. I handle everything, you just publish." },
     urlLabel:   { fr: "Lien de ton produit", en: "Your product link" },
     urlPh:      { fr: "https://tamarque.com/produit", en: "https://yourbrand.com/product" },
     emailLabel: { fr: "Ton email", en: "Your email" },
