@@ -111,7 +111,7 @@ em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.0
 .wordmarks img{height:34px;width:auto;max-width:150px;object-fit:contain}
 @media(max-width:960px){
   .hero h1{font-size:34px!important;line-height:1.1!important}
-  .lang{display:none!important}.hero{padding-top:32px!important}
+  .hero{padding-top:32px!important}
 .wordmarks{gap:20px 32px}.wordmarks img{height:24px;max-width:110px}}
 
 /* SECTEURS + TÉMOIGNAGES */
@@ -326,7 +326,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
 @media(max-width:1100px){ .badge{display:none} }
 @media(max-width:960px){
   .hero h1{font-size:34px!important;line-height:1.1!important}
-  .lang{display:none!important}.hero{padding-top:32px!important}
+  .hero{padding-top:32px!important}
 
   .links,.nav .btn{display:none}
   .frame{border:0}
@@ -361,7 +361,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
 /* Mobile : tous les titres centrés comme le hero */
 @media(max-width:960px){
   .hero h1{font-size:34px!important;line-height:1.1!important}
-  .lang{display:none!important}.hero{padding-top:32px!important}
+  .hero{padding-top:32px!important}
 
   .cases-head,.jhead,.tgrid>div:first-child{text-align:center}
   .jhead{flex-direction:column;align-items:center}
@@ -375,7 +375,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
 /* Mobile : la bande de 4 images devient un carrousel à faire glisser */
 @media(max-width:960px){
   .hero h1{font-size:34px!important;line-height:1.1!important}
-  .lang{display:none!important}.hero{padding-top:32px!important}
+  .hero{padding-top:32px!important}
 
   .cstrip{display:flex;grid-template-columns:none;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:var(--pad);margin-left:calc(-1 * var(--pad));margin-right:calc(-1 * var(--pad));padding:0 var(--pad) 6px;scrollbar-width:none}
   .cstrip::-webkit-scrollbar{display:none}
@@ -390,7 +390,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
 .nav.open .burger span::after{top:0;transform:rotate(-45deg)}
 @media(max-width:960px){
   .hero h1{font-size:34px!important;line-height:1.1!important}
-  .lang{display:none!important}.hero{padding-top:32px!important}
+  .hero{padding-top:32px!important}
 
   .burger{display:inline-flex}
   .nav.open .links{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 20px 40px -24px rgba(11,22,64,.3);padding:8px var(--pad) 20px}
@@ -404,7 +404,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
 .tmore{border:0;background:none;padding:0;margin-left:6px;font:500 15px var(--sans);color:var(--navy);border-bottom:1px solid currentColor;cursor:pointer;vertical-align:middle}
 @media(max-width:960px){
   .hero h1{font-size:34px!important;line-height:1.1!important}
-  .lang{display:none!important}.hero{padding-top:32px!important}
+  .hero{padding-top:32px!important}
 .tqmain blockquote{font-size:19px;line-height:1.55}}
 .inkfb{mix-blend-mode:multiply;filter:grayscale(1) contrast(1.3);opacity:.7}
 
@@ -415,7 +415,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
 .btn-light2:hover{border-color:#cfd3dc}
 @media(max-width:960px){
   .hero h1{font-size:34px!important;line-height:1.1!important}
-  .lang{display:none!important}.hero{padding-top:32px!important}
+  .hero{padding-top:32px!important}
 .hctas{flex-direction:column;align-items:stretch;max-width:360px;margin-left:auto;margin-right:auto}.hctas .btn{min-width:0;width:100%}}
 
 @media(max-width:960px){
@@ -423,6 +423,14 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
   .lang-mobile button{border:1px solid var(--line);background:#fff;padding:8px 18px;border-radius:999px;font-size:13px;font-weight:600;color:var(--ink);cursor:pointer}
 }
 @media(min-width:961px){ .lang-mobile{display:none!important} }
+
+
+@media(max-width:960px){
+  .links .lang-in-burger{display:flex!important;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);justify-content:flex-start}
+}
+@media(min-width:961px){
+  .links .lang-in-burger{margin-top:0;padding-top:0;border-top:0}
+}
 
 </style>
 </head>
@@ -443,7 +451,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
     </div>
   </nav>
   <div class="nav-r">
-    <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="fr">FR</button><button type="button" data-lang="en">EN</button></div>
+    
     <a href="#tarifs" class="btn btn-navy" data-t="nav.cta"></a>
     <button type="button" class="burger" aria-label="Menu" aria-expanded="false" onclick="var n=this.closest('.nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)"><span></span></button>
   </div>
