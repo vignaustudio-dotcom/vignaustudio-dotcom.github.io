@@ -417,6 +417,13 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
   .hero h1{font-size:34px!important;line-height:1.1!important}
   .lang{display:none!important}.hero{padding-top:32px!important}
 .hctas{flex-direction:column;align-items:stretch;max-width:360px;margin-left:auto;margin-right:auto}.hctas .btn{min-width:0;width:100%}}
+
+@media(max-width:960px){
+  .lang-mobile{display:flex!important;gap:12px;padding-top:20px;margin-top:16px;border-top:1px solid var(--line)}
+  .lang-mobile button{border:1px solid var(--line);background:#fff;padding:8px 18px;border-radius:999px;font-size:13px;font-weight:600;color:var(--ink);cursor:pointer}
+}
+@media(min-width:961px){ .lang-mobile{display:none!important} }
+
 </style>
 </head>
 <body>
@@ -425,12 +432,15 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
 <header class="nav"><div class="in">
   <a href="index.html" class="logo"><span class="lw">VIGNAU</span><span class="ls">STUDIO</span></a>
   <nav class="links" aria-label="Main">
-    <a href="#exemples" data-t="nav.examples"></a>
-    <a href="#cas" data-t="nav.cases"></a>
-    <a href="#comment" data-t="nav.how"></a>
-    <a href="#tarifs" data-t="nav.pricing"></a>
-    <a href="blog/index.html" data-t="nav.journal"></a>
-    <a href="#faq" data-t="nav.faq"></a>
+    <a href="#comment" data-t="nav.how">How it works</a>
+    <a href="#cas" data-t="nav.cases">Case studies</a>
+    <a href="#tarifs" data-t="nav.pricing">Offers</a>
+    <a href="#faq" data-t="nav.faq">FAQ</a>
+    <a href="blog/index.html" data-t="nav.journal">Journal</a>
+    <div class="lang-mobile" role="group" aria-label="Language">
+      <button type="button" onclick="setLang('fr')">FR</button>
+      <button type="button" onclick="setLang('en')">EN</button>
+    </div>
   </nav>
   <div class="nav-r">
     <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="fr">FR</button><button type="button" data-lang="en">EN</button></div>
