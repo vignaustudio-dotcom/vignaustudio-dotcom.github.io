@@ -454,9 +454,9 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
     <a href="#tarifs" data-t="nav.pricing">Offers</a>
     <a href="#faq" data-t="nav.faq">FAQ</a>
     <a href="blog/index.html" data-t="nav.journal">Journal</a>
-    <div class="lang-mobile" role="group" aria-label="Language">
-      <button type="button" onclick="setLang('fr')">FR</button>
-      <button type="button" onclick="setLang('en')">EN</button>
+    <div class="lang mobile-burger-lang" role="group" aria-label="Language">
+      <button type="button" data-lang="fr" onclick="if(window.setLang)setLang('fr')">FR</button>
+      <button type="button" data-lang="en" onclick="if(window.setLang)setLang('en')">EN</button>
     </div>
   </nav>
   <div class="nav-r">
