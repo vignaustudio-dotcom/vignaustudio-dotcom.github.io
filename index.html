@@ -456,6 +456,16 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
   .trustbar .wordmarks{display:flex!important;flex-wrap:nowrap!important;justify-content:space-between;align-items:center;gap:10px;max-width:360px;margin:0 auto}
   .trustbar .wordmarks img{flex:1 1 0;min-width:0;width:auto!important;max-width:84px!important;height:26px!important;object-fit:contain}
 }
+
+/* logos-sizes */
+@media(max-width:960px){
+  .trustbar .wordmarks{justify-content:space-between;gap:8px;max-width:370px}
+  .trustbar .wordmarks img{flex:0 1 auto!important;max-width:none!important;min-width:0}
+  .trustbar .wordmarks img[alt*="elle" i]{height:28px!important}
+  .trustbar .wordmarks img[alt*="baza" i]{height:28px!important}
+  .trustbar .wordmarks img[alt*="duniya" i]{height:46px!important}
+  .trustbar .wordmarks img[alt*="flying" i]{height:40px!important;transform:scaleX(-1)}
+}
 </style>
 </head>
 <body>
