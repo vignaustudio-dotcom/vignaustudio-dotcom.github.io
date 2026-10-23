@@ -450,6 +450,12 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
   .trustbar .wordmarks img{height:34px!important;width:100%!important;max-width:130px!important;object-fit:contain}
   .trustbar .wordmarks span{grid-column:1 / -1;text-align:center;margin-top:8px}
 }
+
+/* logos-oneline */
+@media(max-width:960px){
+  .trustbar .wordmarks{display:flex!important;flex-wrap:nowrap!important;justify-content:space-between;align-items:center;gap:10px;max-width:360px;margin:0 auto}
+  .trustbar .wordmarks img{flex:1 1 0;min-width:0;width:auto!important;max-width:84px!important;height:26px!important;object-fit:contain}
+}
 </style>
 </head>
 <body>
@@ -639,7 +645,7 @@ const sent = location.hash === '#merci';
 /* Images fixes */
 const H = S.hero.images;
 $('strip').innerHTML = [...H,...H].map(s=>`<img src="${esc(s)}" alt="" decoding="async" onerror="this.remove()">`).join('');
-const L2 = S.logos;
+const KEEP=[/\belle\b/i,/baza+r/i,/duniya/i,/flying/i]; const L2f=KEEP.map(r=>S.logos.find(l=>r.test(l.name||''))).filter(Boolean); const L2=L2f.length?L2f:S.logos;
 $('logos').innerHTML = L2.map(l=> l.img ? img(l.img,l.name) : `<span class="${esc(l.style||'sans')}">${esc(l.name)}</span>`).join('');
 
 function inkify(im){
