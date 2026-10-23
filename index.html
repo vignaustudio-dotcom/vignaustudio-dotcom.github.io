@@ -320,7 +320,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
 .legal h4{font-size:14px;font-weight:600;margin:14px 0 4px;color:var(--ink)}
 .close{float:right;width:40px;height:40px;border-radius:50%;border:0;background:var(--soft);cursor:pointer}
 
-@media(max-width:1100px){ .badge{padding:6px 11px 6px 6px;gap:8px;border-radius:13px;font-size:11px;z-index:3} .badge i{width:26px;height:26px;border-radius:8px;font-size:11px} .badge small{font-size:10px} .b1{left:6px;bottom:auto} .b2{right:6px;bottom:auto} .hero h1{margin-top:58px!important} .hero .sub{margin-top:58px!important} }
+@media(max-width:1100px){ .badge{padding:4px 9px 4px 4px;gap:6px;border-radius:10px;font-size:10px;z-index:3} .badge i{width:20px;height:20px;border-radius:6px;font-size:9px} .badge small{font-size:8.5px} .b1{left:16px;bottom:auto} .b2{right:16px;bottom:auto} .hero h1{margin-top:52px!important} .hero .sub{margin-top:52px!important} }
 @media(max-width:960px){
   .links,.nav .btn{display:none}
   .frame{border:0}
@@ -741,13 +741,15 @@ function placeBadges(){
   const b1=document.querySelector('.b1'), b2=document.querySelector('.b2'); if(!b1||!b2) return;
   if (innerWidth>1100){ b1.style.top=''; b2.style.top=''; return; }
   const H=document.querySelector('.hero').getBoundingClientRect().top;
+  const pill=document.querySelector('.hero .pill').getBoundingClientRect();
   const t=document.querySelector('.hero h1').getBoundingClientRect();
-  b2.style.top=(t.top-H+t.height*0.12)+'px';
-  b1.style.top=(t.top-H+t.height*0.62)+'px';
+  b2.style.top=(pill.bottom-H+8)+'px';
+  b1.style.top=(t.bottom-H+8)+'px';
 }
 addEventListener('resize',placeBadges); addEventListener('load',placeBadges);
 if(document.fonts&&document.fonts.ready) document.fonts.ready.then(placeBadges);
 placeBadges();
+setTimeout(placeBadges,300); setTimeout(placeBadges,1500);
 </script>
 </body>
 </html>
