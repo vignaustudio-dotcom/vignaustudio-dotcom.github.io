@@ -395,7 +395,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
   .burger{display:inline-flex}
   .nav.open .links{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 20px 40px -24px rgba(11,22,64,.3);padding:8px var(--pad) 20px}
   .nav.open .links a{padding:14px 0;border-bottom:1px solid var(--line);font-size:17px;color:var(--ink)}
-  .nav.open .links a:last-child{border-bottom:0}
+  .nav.open .links a:last-of-type{border-bottom:0}
 }
 .trustbar small{color:var(--ink)!important;font-size:14px!important;font-weight:500}
 .wordmarks span{color:#7E8392!important;font-size:14px!important;font-weight:500!important;letter-spacing:.22em!important;text-transform:uppercase;white-space:nowrap;font-family:var(--sans)!important;font-style:normal!important}
@@ -426,7 +426,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
 
 
 @media(max-width:960px){
-  .links .lang-in-burger{display:flex!important;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);justify-content:flex-start}
+  .links .lang-in-burger{display:flex!important;margin-top:16px;padding-top:0;border-top:0;justify-content:flex-start}
 }
 @media(min-width:961px){
   .links .lang-in-burger{margin-top:0;padding-top:0;border-top:0}
@@ -435,7 +435,8 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
 
 @media(max-width:960px){
   header > .lang { display: none !important; }
-  .links .mobile-burger-lang { display: flex !important; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .nav-r .desk-lang { display: none !important; }
+  .links .mobile-burger-lang { display: flex !important; margin-top: 16px; padding-top: 0; border-top: 0 !important; }
 }
 @media(min-width:961px){
   .links .mobile-burger-lang { display: none !important; }
@@ -460,6 +461,10 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
     </div>
   </nav>
   <div class="nav-r">
+    <div class="lang desk-lang" role="group" aria-label="Language">
+      <button type="button" data-lang="fr">FR</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
     
     <a href="#tarifs" class="btn btn-navy" data-t="nav.cta"></a>
     <button type="button" class="burger" aria-label="Menu" aria-expanded="false" onclick="var n=this.closest('.nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)"><span></span></button>
@@ -736,7 +741,7 @@ function render(){
 
   /* Journal : 3 derniers articles */
   const J = S.journal, posts = (J && J.posts) || [];
-  if (!posts.length) { const js=$('journal'); if(js) js.remove(); document.querySelectorAll('.nav a[href="blog/index.html"]').forEach(a=>a.remove()); }
+  if (!posts.length) { const js=$('journal'); if(js) js.remove(); }
   else {
     const d = s => { try { return new Date(s).toLocaleDateString(lang==='fr'?'fr-FR':'en-GB',{day:'numeric',month:'long',year:'numeric'}); } catch(e){ return s; } };
     $('jgrid').innerHTML = posts.slice(0,3).map(p=>`<a class="jcard" href="${esc(p.url)}">
