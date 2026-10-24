@@ -5,12 +5,21 @@ var L = function(en, fr){ return {en:en, fr:fr}; };
 
 S.hero = Object.assign({}, S.hero, {
   title: L("Stop Burning Ad Spend on *Tired Creatives.*", "Arrêtez de gaspiller votre budget publicitaire avec des *créas épuisées.*"),
-  sub: L("Give your brand a fresh flow of ad concepts to test. Get new creative assets without the cost and complexity of traditional production.",
-         "Donnez à votre marque de nouveaux concepts publicitaires à tester. Produisez de nouvelles créations sans les coûts et la complexité d'une production traditionnelle."),
-  support: L("Creative production for brands that need more than the same product photo on repeat.",
-             "Une production créative pour les marques qui ont besoin de plus que la même photo produit en boucle."),
-  ctaBook: L("Book a Free 15-Min Creative Audit", "Réserver un audit créatif gratuit de 15 min"),
-  ctaCalc: L("Calculate Your Creative Costs", "Calculer vos coûts créatifs")
+  sub: L("Fresh ad concepts to test, without the cost of traditional production.",
+         "De nouveaux concepts publicitaires à tester, sans le coût d'une production traditionnelle."),
+  ctaBook: L("Book a 15-min call", "Réserver un appel de 15 min")
+});
+
+S.how = Object.assign({}, S.how, {
+  title: L("Your creatives in *3 steps.*", "Vos créas en *3 étapes.*"),
+  steps: [
+    { t: L("A 15-min call", "Un appel de 15 min"),
+      p: L("Share your brand and what you want to test.", "Présentez votre marque et ce que vous voulez tester.") },
+    { t: L("Creation", "Création"),
+      p: L("Distinct ad concepts, built around your real product.", "Des concepts publicitaires distincts, conçus autour de votre vrai produit.") },
+    { t: L("Launch", "Lancement"),
+      p: L("Ready-to-use files for paid social and your site.", "Des fichiers prêts à l'emploi pour vos publicités et votre site.") }
+  ]
 });
 
 S.pricing = Object.assign({}, S.pricing, {

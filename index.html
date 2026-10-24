@@ -533,7 +533,6 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
     <span class="pill" data-t="hero.pill"></span>
     <h1 data-t="hero.title"></h1>
     <p class="sub" data-t="hero.sub"></p>
-    <p class="sub hsup" data-t="hero.support"></p>
     <div data-form></div>
   </div>
   <div class="strip" aria-hidden="true"><div id="strip"></div></div>
@@ -753,11 +752,10 @@ function renderCalc(){
 }
 
 function formHTML(dark){
-  const H = S.hero;
-  if (dark) return `<div class="hctas">${bookLink('btn-white', H.ctaBook)}</div>`;
+  const call = S.callUrl, fr = lang==='fr';
   return `<div class="hctas">
-    <a href="#cout" class="btn btn-light2">${fmt(H.ctaCalc)}</a>
-    ${bookLink('btn-navy', H.ctaBook)}
+    <a href="${esc(call)}" target="_blank" rel="noopener" class="btn ${dark?'btn-white':'btn-light2'}">${fr?'Réserver un appel de 15 min':'Book a 15-min call'}</a>
+    ${dark?'':`<a href="#cas" class="btn btn-navy">${fr?'Voir les projets':'See the work'}</a>`}
   </div>`;
 }
 
