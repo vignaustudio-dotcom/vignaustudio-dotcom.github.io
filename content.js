@@ -29,7 +29,7 @@ window.SITE = {
 
   /* ---------- HERO (façon Kamevo) ---------- */
   hero: {
-    pill:  { fr: "Places limitées ce mois-ci", en: "Limited spots this month" },
+    pill:  { fr: "Créas publicitaires pour marques e-commerce", en: "Ad creatives for DTC brands" },
     title: { fr: "Ton produit en visuel *premium*. Sans shooting.", en: "Your product as a *premium* visual. No shoot." },
     sub:   { fr: "Des visuels produit qualité campagne, sans shooting. Je m'occupe de tout, tu publies.", en: "Campaign-quality product visuals, without the shoot. I handle everything, you just publish." },
     urlLabel:   { fr: "Lien de ton produit", en: "Your product link" },
