@@ -171,7 +171,7 @@ window.SITE = {
      Si une image manque, un emplacement neutre s'affiche à la place. */
   casesLabel: { fr: "Études de cas", en: "Case studies" },
   casesTitle: { fr: "Des marques construites *de A à Z*.", en: "Brands built *from A to Z*." },
-  casesSub:   { fr: "Pas des maquettes. Des marques réelles, en ligne. Chaque site et chaque solution est designé et entièrement codé par le studio, de la première idée au dernier pixel.", en: "Not mockups. Real brands, live. Every site and every product is designed and fully coded by the studio, from the first idea to the last pixel." },
+  casesSub:   { fr: "De vraies marques, en ligne. Pensées et construites par le studio.", en: "Real brands, live. Designed and built by the studio." },
   didLabel:   { fr: "Ce que j'ai fait", en: "What I did" },
   devBadge:   { fr: "Design et développement : 100 % codé par le studio", en: "Design and development: 100% coded by the studio" },
   /* instagram : lien affiché en bas de chaque projet, avec le logo Instagram */
