@@ -138,12 +138,12 @@ S.footerLine = L("Ad creatives for e-commerce brands.", "Des créations publicit
   S.calc.sub   = { en: "UGC castings, videos, shoots: what you spend producing angles that end up not working.", fr: "Castings UGC, vidéos, shootings : ce que vous dépensez à produire des angles qui ne marchent pas." };
   S.calc.groups = [
     { t: { en: "Production", fr: "Production" }, fields: [
-      { id: "cost", l: { en: "Cost of one campaign (UGC, video, shoot)", fr: "Coût d'une campagne (UGC, vidéo, shooting)" }, min: 500, max: 20000, step: 250, def: 3000, unit: "€" },
-      { id: "n",    l: { en: "Campaigns produced per year", fr: "Campagnes produites par an" }, min: 1, max: 24, step: 1, def: 6, unit: "" },
+      { id: "cost", l: { en: "Cost of one campaign (UGC, video, shoot)", fr: "Coût d'une campagne (UGC, vidéo, shooting)" }, min: 500, max: 500000, step: 250, def: 5000, unit: "€", log: true },
+      { id: "n",    l: { en: "Campaigns produced per year", fr: "Campagnes produites par an" }, min: 1, max: 52, step: 1, def: 6, unit: "" },
       { id: "flop", l: { en: "Share that doesn't perform", fr: "Part qui ne performe pas" }, min: 0, max: 100, step: 5, def: 70, unit: "%" }
     ]},
     { t: { en: "Ads", fr: "Publicité" }, fields: [
-      { id: "test", l: { en: "Ad spend behind each one before cutting it", fr: "Pub mise derrière chacune avant de la couper" }, min: 0, max: 10000, step: 250, def: 1500, unit: "€" }
+      { id: "test", l: { en: "Ad spend behind each one before cutting it", fr: "Pub mise derrière chacune avant de la couper" }, min: 500, max: 2000000, step: 250, def: 5000, unit: "€", log: true }
     ]}
   ];
   S.calc.lines = Object.assign({}, S.calc.lines, {

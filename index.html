@@ -742,7 +742,7 @@ function renderCalc(){
   const show = (f,v) => f.unit==='€' ? money(v) : (v + (f.unit?(' '+f.unit):''));
   const res = () => { const k=(V.n||0)*(V.flop||0)/100, a=(V.cost||0)*k, b=(V.test||0)*k; return {a:a,b:b,c:0,t:a+b}; }; /* VS-SIM-ANGLES */
 
-  host.innerHTML = `<div class="cgroups">${K.groups.filter(g=>!g.fields.some(f=>['cli','pan','re'].includes(f.id))).map(g=>`<div class="cg"><h4>${fmt(g.t)}</h4>${g.fields.map(f=>`<div class="cf"><label for="k-${f.id}">${fmt(f.l)}<b id="kv-${f.id}">${show(f,V[f.id])}</b></label><input type="range" id="k-${f.id}" min="${f.min}" max="${f.max}" step="${f.step}" value="${V[f.id]}"></div>`).join('')}</div>`).join('')}</div>
+  host.innerHTML = `<div class="cgroups">${K.groups.filter(g=>!g.fields.some(f=>['cli','pan','re'].includes(f.id))).map(g=>`<div class="cg"><h4>${fmt(g.t)}</h4>${g.fields.map(f=>`<div class="cf"><label for="k-${f.id}">${fmt(f.l)}<b id="kv-${f.id}">${show(f,V[f.id])}</b></label><input type="range" id="k-${f.id}" ${f.log?`min="0" max="1000" step="1" value="${Math.round(1000*Math.log(Math.max(V[f.id],f.min)/f.min)/Math.log(f.max/f.min))}"`:`min="${f.min}" max="${f.max}" step="${f.step}" value="${V[f.id]}"`}></div>`).join('')}</div>`).join('')}</div>
     <div class="cres">
       <div class="cline"><span>${fmt(K.lines.a)}</span><b id="ka"></b></div>
       <div class="cline"><span>${fmt(K.lines.b)}</span><b id="kb"></b></div>
@@ -754,7 +754,7 @@ function renderCalc(){
     const r = res();
     $('ka').textContent = money(r.a); $('kb').textContent = money(r.b); $('kt').textContent = money(r.t);
   };
-  K.groups.forEach(g=>g.fields.forEach(f=>{ const i=$('k-'+f.id); if(!i) return; i.oninput=()=>{ V[f.id]=+i.value; $('kv-'+f.id).textContent=show(f,V[f.id]); calc(); }; }));
+  K.groups.forEach(g=>g.fields.forEach(f=>{ const i=$('k-'+f.id); if(!i) return; i.oninput=()=>{ V[f.id]= f.log ? (v=>{const r=f.min*Math.pow(f.max/f.min,v/1000), s=r<10000?250:r<100000?1000:r<1000000?5000:25000; return Math.max(f.min,Math.round(r/s)*s);})(+i.value) : +i.value; /* VS-LOG-SLIDERS */ $('kv-'+f.id).textContent=show(f,V[f.id]); calc(); }; }));
   calc();
 
   const A = K.after, after = $('calc-after');
