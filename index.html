@@ -494,6 +494,16 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
 .hsup{font-size:16px!important;margin-top:10px!important}
 .p .pprice b.pq{font-size:clamp(26px,3vw,32px);letter-spacing:-.03em;line-height:1.1}
 @media(max-width:960px){.calc{grid-template-columns:1fr}.cres{position:relative;top:0}}
+
+/* VS-CASE-MOBILE : images avant le détail dans les études de cas */
+@media(max-width:960px){
+  .case{display:flex;flex-direction:column}
+  .case .cbody,.case .ctext{display:contents}
+  .case .cmeta{order:1}.case .cname{order:2}.case .csubline{order:3}.case .ctag{order:4}
+  .case .cgrid{order:5;margin-top:24px}.case .cstrip{order:6}
+  .case .cintro{order:7;margin-top:32px}.case .cdev{order:8;align-self:flex-start}
+  .case .cdid{order:9}.case .clink{order:10;align-self:flex-start}.case .cig{order:11}
+}
 </style>
 </head>
 <body>
