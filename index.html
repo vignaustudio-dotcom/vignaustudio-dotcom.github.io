@@ -504,6 +504,7 @@ dialog::backdrop{background:rgba(11,22,64,.5)}
   .case .cintro{order:7;margin-top:32px}.case .cdev{order:8;align-self:flex-start}
   .case .cdid{order:9}.case .clink{order:10;align-self:flex-start}.case .cig{order:11}
 }
+#cout p.sub ~ p.sub{display:none}
 </style>
 </head>
 <body>
@@ -739,26 +740,25 @@ function renderCalc(){
   const V = window.__calcV || (window.__calcV = {});
   K.groups.forEach(g=>g.fields.forEach(f=>{ if(V[f.id]==null) V[f.id]=f.def; }));
   const show = (f,v) => f.unit==='€' ? money(v) : (v + (f.unit?(' '+f.unit):''));
-  const res = () => { const a=V.n*V.c, b=V.ads*12*V.pct/100, c=V.cli*V.pan*12*V.re/100; return {a:a,b:b,c:c,t:a+b+c}; };
+  const res = () => { const a=V.n*V.c, b=V.ads*12*V.pct/100; return {a:a,b:b,c:0,t:a+b}; }; /* VS-CALC-LITE */
 
-  host.innerHTML = `<div class="cgroups">${K.groups.map(g=>`<div class="cg"><h4>${fmt(g.t)}</h4>${g.fields.map(f=>`<div class="cf"><label for="k-${f.id}">${fmt(f.l)}<b id="kv-${f.id}">${show(f,V[f.id])}</b></label><input type="range" id="k-${f.id}" min="${f.min}" max="${f.max}" step="${f.step}" value="${V[f.id]}"></div>`).join('')}</div>`).join('')}</div>
+  host.innerHTML = `<div class="cgroups">${K.groups.filter(g=>!g.fields.some(f=>['cli','pan','re'].includes(f.id))).map(g=>`<div class="cg"><h4>${fmt(g.t)}</h4>${g.fields.map(f=>`<div class="cf"><label for="k-${f.id}">${fmt(f.l)}<b id="kv-${f.id}">${show(f,V[f.id])}</b></label><input type="range" id="k-${f.id}" min="${f.min}" max="${f.max}" step="${f.step}" value="${V[f.id]}"></div>`).join('')}</div>`).join('')}</div>
     <div class="cres">
       <div class="cline"><span>${fmt(K.lines.a)}</span><b id="ka"></b></div>
       <div class="cline"><span>${fmt(K.lines.b)}</span><b id="kb"></b></div>
-      <div class="cline"><span>${fmt(K.lines.c)}</span><b id="kc"></b></div>
       <div class="ctot"><small>${fmt(K.totalLabel)}</small><b id="kt"></b></div>
       <p class="cnote">${fmt(K.note)}</p>
     </div>`;
 
   const calc = () => {
     const r = res();
-    $('ka').textContent = money(r.a); $('kb').textContent = money(r.b); $('kc').textContent = money(r.c); $('kt').textContent = money(r.t);
+    $('ka').textContent = money(r.a); $('kb').textContent = money(r.b); $('kt').textContent = money(r.t);
   };
-  K.groups.forEach(g=>g.fields.forEach(f=>{ const i=$('k-'+f.id); i.oninput=()=>{ V[f.id]=+i.value; $('kv-'+f.id).textContent=show(f,V[f.id]); calc(); }; }));
+  K.groups.forEach(g=>g.fields.forEach(f=>{ const i=$('k-'+f.id); if(!i) return; i.oninput=()=>{ V[f.id]=+i.value; $('kv-'+f.id).textContent=show(f,V[f.id]); calc(); }; }));
   calc();
 
   const A = K.after, after = $('calc-after');
-  if (after && A) after.innerHTML = `<h3>${fmt(A.title)}</h3><p>${fmt(A.body)}</p>${bookLink('btn-navy', S.hero.ctaBook)}`;
+  if (after && A) after.innerHTML = bookLink('btn-navy', S.hero.ctaBook);
 }
 
 function formHTML(dark){
