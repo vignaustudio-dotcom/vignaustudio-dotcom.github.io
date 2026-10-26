@@ -128,3 +128,28 @@ S.final = Object.assign({}, S.final, {
 S.footerLine = L("Ad creatives for e-commerce brands.", "Des créations publicitaires pour les marques e-commerce.");
 
 })();
+
+/* VS-SIM-ANGLES : coût des angles produits en gros sans validation */
+(function(){
+  var S=window.SITE; if(!S) return;
+  S.calc = S.calc || {};
+  S.calc.label = { en: "The real cost", fr: "Le vrai coût" };
+  S.calc.title = { en: "How much are your *untested angles* costing you?", fr: "Combien vous coûtent vos *angles non testés ?*" };
+  S.calc.sub   = { en: "UGC castings, videos, shoots: what you spend producing angles that end up not working.", fr: "Castings UGC, vidéos, shootings : ce que vous dépensez à produire des angles qui ne marchent pas." };
+  S.calc.groups = [
+    { t: { en: "Production", fr: "Production" }, fields: [
+      { id: "cost", l: { en: "Cost of one campaign (UGC, video, shoot)", fr: "Coût d'une campagne (UGC, vidéo, shooting)" }, min: 500, max: 20000, step: 250, def: 3000, unit: "€" },
+      { id: "n",    l: { en: "Campaigns produced per year", fr: "Campagnes produites par an" }, min: 1, max: 24, step: 1, def: 6, unit: "" },
+      { id: "flop", l: { en: "Share that doesn't perform", fr: "Part qui ne performe pas" }, min: 0, max: 100, step: 5, def: 70, unit: "%" }
+    ]},
+    { t: { en: "Ads", fr: "Publicité" }, fields: [
+      { id: "test", l: { en: "Ad spend behind each one before cutting it", fr: "Pub mise derrière chacune avant de la couper" }, min: 0, max: 10000, step: 250, def: 1500, unit: "€" }
+    ]}
+  ];
+  S.calc.lines = Object.assign({}, S.calc.lines, {
+    a: { en: "Production spent on angles that didn't work", fr: "Production perdue sur des angles qui n'ont pas marché" },
+    b: { en: "Ad spend behind those angles", fr: "Pub dépensée derrière ces angles" }
+  });
+  S.calc.totalLabel = { en: "Spent on angles that didn't work, per year", fr: "Dépensé sur des angles qui n'ont pas marché, par an" };
+  S.calc.note = { en: "Test the angle with statics first. Produce big only what works. Estimate based on your own figures.", fr: "Testez l'angle en statique d'abord. Produisez en gros seulement ce qui marche. Estimation basée sur vos chiffres." };
+})();
