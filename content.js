@@ -115,8 +115,8 @@ window.SITE = {
      Chaque carte : une image 4:5, un titre, une phrase. */
   uses: {
     label: { fr: "Fait main, avec l'IA", en: "Hand-crafted, with AI" },
-    title: { fr: "Des visuels parfaits pour *chaque* usage.", en: "Pixel-perfect visuals for *every* use." },
-    sub:   { fr: "Chaque image est dirigée et retouchée à la main, pour que tu publies sans hésiter.", en: "Every image is art-directed and retouched by hand, so you can publish with confidence." },
+    title: { fr: "Un angle gagnant, *décliné partout.*", en: "One winning angle, *every format.*" },
+    sub:   { fr: "Quand un angle marche, on le décline en pubs, fiches produit et posts.", en: "Once an angle works, we turn it into ads, product pages and social posts." },
     note:  { fr: "(oui, tout est fait par IA !)", en: "(yep, that's all AI!)" },
     row1: [
       { img: "images/fragrance-1.png", t: { fr: "Visuels de campagne", en: "Campaign visuals" }, p: { fr: "Des images fortes pour tes lancements et tes pubs.", en: "Strong images for launches and ads." } },
