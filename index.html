@@ -912,5 +912,44 @@ if(document.fonts&&document.fonts.ready) document.fonts.ready.then(placeBadges);
 placeBadges();
 setTimeout(placeBadges,300); setTimeout(placeBadges,1500);
 </script>
+<script>
+/* VS-INK2 : logos visibles quel que soit le fichier (blanc, transparent, fond gris) */
+(function(){
+  var INK=[110,115,130];
+  function ink2(im, src){
+    im.dataset.ink='1';
+    var o=new Image();
+    o.onload=function(){
+      try{
+        var c=document.createElement('canvas'); c.width=o.naturalWidth; c.height=o.naturalHeight;
+        var x=c.getContext('2d'); x.drawImage(o,0,0);
+        var d=x.getImageData(0,0,c.width,c.height), p=d.data, W=c.width, H=c.height;
+        var pts=[0,(W-1)*4,((H-1)*W)*4,((H-1)*W+W-1)*4], br=0,bg=0,bb=0,ba=0;
+        pts.forEach(function(k){br+=p[k];bg+=p[k+1];bb+=p[k+2];ba+=p[k+3];});
+        br/=4;bg/=4;bb/=4;ba/=4;
+        var transp=ba<128, dist=new Float32Array(W*H), dmax=0;
+        for(var i=0,j=0;i<p.length;i+=4,j++){
+          var v= transp ? p[i+3]/255 : Math.sqrt(Math.pow(p[i]-br,2)+Math.pow(p[i+1]-bg,2)+Math.pow(p[i+2]-bb,2))*(p[i+3]/255);
+          dist[j]=v; if(v>dmax) dmax=v;
+        }
+        var lim = transp ? 1 : Math.max(dmax*0.55, 12);
+        for(var i=0,j=0;i<p.length;i+=4,j++){
+          var a=Math.max(0,Math.min(1,dist[j]/lim)); if(!transp && dist[j]<6) a=0;
+          p[i]=INK[0];p[i+1]=INK[1];p[i+2]=INK[2];p[i+3]=Math.round(a*255);
+        }
+        x.putImageData(d,0,0); im.src=c.toDataURL('image/png'); im.style.filter='none'; im.style.mixBlendMode='normal'; im.style.opacity='1';
+      }catch(e){}
+    };
+    o.src=src;
+  }
+  function run(){
+    var L=((window.SITE&&window.SITE.logos)||[]).filter(function(l){return l.img;});
+    document.querySelectorAll('#logos img').forEach(function(im,i){ if(L[i] && im.dataset.ink2!==L[i].img){ im.dataset.ink2=L[i].img; ink2(im,L[i].img);} });
+  }
+  var host=document.getElementById('logos');
+  if(host) new MutationObserver(function(){ setTimeout(run,0); }).observe(host,{childList:true});
+  run(); window.addEventListener('load',run);
+})();
+</script>
 </body>
 </html>
