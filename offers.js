@@ -153,3 +153,26 @@ S.footerLine = L("Ad creatives for e-commerce brands.", "Des créations publicit
   S.calc.totalLabel = { en: "Spent on angles that didn't work, per year", fr: "Dépensé sur des angles qui n'ont pas marché, par an" };
   S.calc.note = { en: "Test the angle with statics first. Produce big only what works. Estimate based on your own figures.", fr: "Testez l'angle en statique d'abord. Produisez en gros seulement ce qui marche. Estimation basée sur vos chiffres." };
 })();
+
+/* VS-OFFER-DETAILS : ce que le client reçoit exactement */
+(function(){
+  var S=window.SITE; if(!S) return;
+  var D=[
+    { en:["12 static ad creatives every month","Every concept in 4:5 (Instagram & Facebook feed) and 9:16 (Stories & Reels)","Up to 3 variations per concept to A/B test","Angles, hooks and copywriting included","Delivered within 48 business hours per request","Kickoff call and review of your current ads","Every creative checked for on-brand art direction"],
+      fr:["12 créas publicitaires statiques par mois","Chaque concept en 4:5 (feed Instagram et Facebook) et 9:16 (stories et reels)","Jusqu'à 3 variations par concept pour tester","Angles, accroches et copywriting inclus","Livré sous 48h ouvrées par demande","Appel de lancement et analyse de vos pubs actuelles","Chaque créa validée en direction artistique, fidèle à votre marque"] },
+    { en:["24 static ad creatives every month","Every concept in 4:5 (feed) and 9:16 (Stories & Reels)","Up to 3 variations per concept to A/B test","Angles, hooks and copywriting included","Delivered within 48 business hours per request","Monthly angle plan: what to test next, and why","Monthly review call on your results"],
+      fr:["24 créas publicitaires statiques par mois","Chaque concept en 4:5 (feed) et 9:16 (stories et reels)","Jusqu'à 3 variations par concept pour tester","Angles, accroches et copywriting inclus","Livré sous 48h ouvrées par demande","Plan d'angles mensuel : quoi tester ensuite, et pourquoi","Appel mensuel de revue de vos résultats"] },
+    { en:["Brand strategy and positioning","Logo and visual identity","Art direction","Product and lifestyle visuals","Social media content (posts and stories)","Website design and development","Scope and timeline on quote"],
+      fr:["Stratégie et positionnement de marque","Logo et identité visuelle","Direction artistique","Visuels produit et lifestyle","Contenus réseaux sociaux (posts et stories)","Conception et développement du site","Périmètre et délais sur devis"] }
+  ];
+  var host=null;
+  Object.keys(S).forEach(function(k){ var v=S[k]; if(!host && v && Array.isArray(v.plans) && v.plans.length>=3) host=v; });
+  if(!host) return;
+  host.plans.forEach(function(p,i){
+    var d=D[i]; if(!d) return; var it=p.items;
+    if(Array.isArray(it)){
+      if(it.length && typeof it[0]==='object' && it[0]!==null && !Array.isArray(it[0])) p.items=d.en.map(function(e,k){return {en:e,fr:d.fr[k]};});
+      else p.items=d.en.slice();
+    } else { p.items={en:d.en,fr:d.fr}; }
+  });
+})();
