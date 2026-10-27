@@ -76,7 +76,7 @@ footer{max-width:var(--max);margin:0 auto;padding:34px var(--pad) 44px;color:var
 <header class="nav"><div class="in">
   <a href="../index.html" class="logo"><span class="lw">VIGNAU</span><span class="ls">STUDIO</span></a>
   <nav><a href="../#exemples">Exemples</a><a href="../#cas">Projets</a><a href="../#tarifs">Offres</a><a href="index.html">Journal</a></nav>
-  <span style="display:flex;gap:8px;align-items:center"><a href="../#top" class="btn">Aperçu gratuit</a><button type="button" class="burger" aria-label="Menu" aria-expanded="false" onclick="var n=this.closest('.nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)"><span></span></button></span>
+  <span style="display:flex;gap:8px;align-items:center"><span class="langsw" style="display:inline-flex;gap:4px;font-size:13px;margin-right:6px"><button type="button" data-l="fr" style="border:0;background:none;padding:6px 9px;border-radius:8px;cursor:pointer;font:inherit;color:#6B7080">FR</button><button type="button" data-l="en" style="border:0;background:none;padding:6px 9px;border-radius:8px;cursor:pointer;font:inherit;color:#6B7080">EN</button></span><a href="https://calendly.com/vignaustudio/brand-audit" class="btn" id="jcta" target="_blank" rel="noopener">Book a call</a><button type="button" class="burger" aria-label="Menu" aria-expanded="false" onclick="var n=this.closest('.nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)"><span></span></button></span>
 </div></header>
 <main class="frame">
   <section class="head">
@@ -86,25 +86,43 @@ footer{max-width:var(--max);margin:0 auto;padding:34px var(--pad) 44px;color:var
   </section>
   <div id="posts"></div>
 </main>
-<footer><span>© <span id="yr"></span> Vignau Studio, Paris</span><span><a href="../legal.html#mentions">Mentions légales</a> · <a href="../legal.html#cgv">CGV</a> · <a href="../legal.html#confidentialite">Confidentialité</a> · <a href="../index.html">Retour au site</a></span></footer>
+<footer><span>© <span id="yr"></span> Vignau Studio</span><span><a href="../legal.html#mentions">Mentions légales</a> · <a href="../legal.html#cgv">CGV</a> · <a href="../legal.html#confidentialite">Confidentialité</a> · <a href="../index.html">Retour au site</a></span></footer>
 <script>
+/* VS-JOURNAL-I18N */
 (function(){
-  const posts = (window.SITE && SITE.journal && SITE.journal.posts) || [];
-  const esc = s => String(s==null?'':s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  const t = v => typeof v === 'object' && v ? (v.fr || v.en || '') : (v || '');
-  const fmt = v => esc(t(v)).replace(/\*(.+?)\*/g,'<em>$1</em>');
-  const d = s => { try { return new Date(s).toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'}); } catch(e){ return s; } };
-  const u = p => '../' + p;
-  const img = (p) => '<img src="'+esc(u(p.img))+'" alt="'+esc(t(p.title))+'" loading="lazy" onerror="this.style.visibility=\'hidden\'">';
-  const meta = p => '<div class="meta"><span>'+esc(t(p.cat))+'</span><span>'+esc(d(p.date))+'</span>'+(p.minutes?'<span>'+p.minutes+' min</span>':'')+'</div>';
-  if (!posts.length) { document.getElementById('posts').innerHTML = '<p style="padding:60px var(--pad);color:var(--mute)">Premiers articles très bientôt.</p>'; }
-  else {
-    const [f, ...rest] = posts;
-    document.getElementById('posts').innerHTML =
-      '<a class="feat" href="'+esc(u(f.url))+'"><div class="fimg">'+img(f)+'</div><div>'+meta(f)+'<h2>'+fmt(f.title)+'</h2><p>'+fmt(f.excerpt)+'</p><span class="read">Lire l\'article →</span></div></a>' +
-      (rest.length ? '<div class="list">'+rest.map(p=>'<a class="card" href="'+esc(u(p.url))+'">'+meta(p)+'<div class="cimg">'+img(p)+'</div><h3>'+fmt(p.title)+'</h3><p>'+fmt(p.excerpt)+'</p></a>').join('')+'</div>' : '');
+  var S=window.SITE||{}, posts=(S.journal&&S.journal.posts)||[];
+  var lang; try{lang=localStorage.getItem('vs-lang');}catch(e){}
+  if(lang!=='fr'&&lang!=='en') lang=(S.defaultLang==='fr')?'fr':'en';
+  var L={
+    fr:{nav:['Exemples','Projets','Offres','Journal'],cta:'Réserver un appel',h1:'Le <em>Journal</em>',sub:"Stratégie de marque, direction artistique et créas qui vendent, pour les marques beauté, mode et luxe.",read:"Lire l'article →",empty:'Premiers articles très bientôt.',foot:['Mentions légales','CGV','Confidentialité','Retour au site'],loc:'fr-FR'},
+    en:{nav:['Examples','Work','Offers','Journal'],cta:'Book a call',h1:'The <em>Journal</em>',sub:'Brand strategy, art direction and creatives that sell, for beauty, fashion and luxury brands.',read:'Read the article →',empty:'First articles coming soon.',foot:['Legal notice','Terms','Privacy','Back to site'],loc:'en-US'}
+  };
+  var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+  function t(v){ return (v&&typeof v==='object')?(v[lang]||v.en||v.fr||''):(v||''); }
+  function fmt(v){ return esc(t(v)).replace(/\*(.+?)\*/g,'<em>$1</em>'); }
+  function d(s){ try{ return new Date(s).toLocaleDateString(L[lang].loc,{day:'numeric',month:'long',year:'numeric'}); }catch(e){ return s; } }
+  function u(p){ return '../'+t(p); }
+  function img(p){ return '<img src="'+esc('../'+p.img)+'" alt="'+esc(t(p.title))+'" loading="lazy" onerror="this.style.visibility=\'hidden\'">'; }
+  function meta(p){ return '<div class="meta"><span>'+esc(t(p.cat))+'</span><span>'+esc(d(p.date))+'</span>'+(p.minutes?'<span>'+p.minutes+' min</span>':'')+'</div>'; }
+  function draw(){
+    var T=L[lang]; document.documentElement.lang=lang;
+    document.querySelectorAll('.nav nav a').forEach(function(a,k){ if(T.nav[k]) a.textContent=T.nav[k]; });
+    var cta=document.getElementById('jcta'); if(cta){ cta.textContent=T.cta; if(S.callUrl) cta.href=S.callUrl; }
+    var h1=document.querySelector('.head h1'); if(h1) h1.innerHTML=T.h1;
+    var sp=document.querySelector('.head p'); if(sp) sp.textContent=T.sub;
+    var box=document.getElementById('posts');
+    if(!posts.length){ box.innerHTML='<p style="padding:60px var(--pad);color:var(--mute)">'+T.empty+'</p>'; }
+    else {
+      var f=posts[0], rest=posts.slice(1);
+      box.innerHTML='<a class="feat" href="'+esc(u(f.url))+'"><div class="fimg">'+img(f)+'</div><div>'+meta(f)+'<h2>'+fmt(f.title)+'</h2><p>'+fmt(f.excerpt)+'</p><span class="read">'+T.read+'</span></div></a>'+
+        (rest.length?'<div class="list">'+rest.map(function(p){return '<a class="card" href="'+esc(u(p.url))+'">'+meta(p)+'<div class="cimg">'+img(p)+'</div><h3>'+fmt(p.title)+'</h3><p>'+fmt(p.excerpt)+'</p></a>';}).join('')+'</div>':'');
+    }
+    document.querySelectorAll('footer a').forEach(function(a,k){ if(T.foot[k]) a.textContent=T.foot[k]; });
+    document.querySelectorAll('.langsw [data-l]').forEach(function(b){ var on=b.getAttribute('data-l')===lang; b.style.background=on?'#F3F4F7':'none'; b.style.color=on?'#0B0F1F':'#6B7080'; });
   }
-  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.querySelectorAll('.langsw [data-l]').forEach(function(b){ b.addEventListener('click',function(){ lang=b.getAttribute('data-l'); try{localStorage.setItem('vs-lang',lang);}catch(e){} draw(); }); });
+  draw();
+  var yr=document.getElementById('yr'); if(yr) yr.textContent=new Date().getFullYear();
 })();
 </script>
 <script>document.querySelectorAll('.nav nav a').forEach(function(a){a.addEventListener('click',function(){var n=document.querySelector('.nav');n.classList.remove('open');var b=n.querySelector('.burger');if(b)b.setAttribute('aria-expanded','false');});});</script>

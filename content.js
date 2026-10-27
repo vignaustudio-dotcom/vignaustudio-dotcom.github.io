@@ -14,7 +14,7 @@ window.SITE = {
   instagram: "https://www.instagram.com/vignaustudio/",
   linkedin: "",   // lien LinkedIn de la PAGE Vignau Studio (vide = masqué)
   siteUrl: "https://vignaustudio.com/",
-  defaultLang: "auto",
+  defaultLang: "en",
 
   /* ---------- MENU ---------- */
   nav: {
