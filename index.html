@@ -915,5 +915,41 @@ if(document.fonts&&document.fonts.ready) document.fonts.ready.then(placeBadges);
 placeBadges();
 setTimeout(placeBadges,300); setTimeout(placeBadges,1500);
 </script>
+<style>/* VS-ADS-GALLERY */
+#ads{padding:clamp(70px,9vw,120px) 0;border-top:1px solid var(--line)}
+#ads .adtrack{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px var(--pad) 18px;margin-top:clamp(36px,4vw,56px);scrollbar-width:none;max-width:1320px;margin-left:auto;margin-right:auto}
+#ads .adtrack::-webkit-scrollbar{display:none}
+#ads .adcard{flex:0 0 clamp(200px,22vw,250px);scroll-snap-align:start;text-decoration:none;color:inherit}
+#ads .adcard img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;display:block;box-shadow:0 18px 40px -24px rgba(11,22,64,.35);border:1px solid var(--line);background:#f4f5f8}
+#ads .adcard small{display:block;margin-top:12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+@media(min-width:1100px){#ads .adtrack{display:grid;grid-template-columns:repeat(6,1fr);overflow:visible}#ads .adcard{flex:none}}
+</style>
+<script>
+(function(){
+  var ADS={
+    label:{fr:"Pubs statiques",en:"Static ads"},
+    title:{fr:"Un angle par créa. <em>Testé, pas deviné.</em>",en:"One angle per creative. <em>Tested, not guessed.</em>"},
+    sub:{fr:"De vraies pubs créées pour Birushi, notre propre marque. Chaque visuel teste un angle différent.",en:"Real ads made for Birushi, our own brand. Each creative tests a different angle."},
+    items:[
+      {img:"images/ads-birushi/1.png",fr:"Le vécu quotidien",en:"Everyday pain"},
+      {img:"images/ads-birushi/2.png",fr:"Recherche → solution",en:"Search → solution"},
+      {img:"images/ads-birushi/3.png",fr:"Démonstration",en:"Product demo"},
+      {img:"images/ads-birushi/4.png",fr:"Bénéfices produit",en:"Product benefits"},
+      {img:"images/ads-birushi/5.png",fr:"En situation",en:"In use"},
+      {img:"images/ads-birushi/Ads_birushi.png",fr:"Checklist routine",en:"Routine checklist"}
+    ]
+  };
+  function L(){ return (document.documentElement.lang||'en').slice(0,2)==='fr'?'fr':'en'; }
+  function draw(){
+    var l=L(), sec=document.getElementById('ads');
+    if(!sec){ var cas=document.getElementById('cas'); if(!cas||!cas.parentNode) return;
+      sec=document.createElement('section'); sec.id='ads'; cas.parentNode.insertBefore(sec,cas); }
+    sec.innerHTML='<div class="in center"><span class="ilabel">'+ADS.label[l]+'</span><h2>'+ADS.title[l]+'</h2><p class="sub">'+ADS.sub[l]+'</p></div>'+
+      '<div class="adtrack">'+ADS.items.map(function(a){return '<a class="adcard" href="'+a.img+'" target="_blank" rel="noopener"><img src="'+a.img+'" alt="Birushi – '+a[l]+'" loading="lazy" onerror="this.closest(\'.adcard\').remove()"><small>'+a[l]+'</small></a>';}).join('')+'</div>';
+  }
+  draw();
+  new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+})();
+</script>
 </body>
 </html>
