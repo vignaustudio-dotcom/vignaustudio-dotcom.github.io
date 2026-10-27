@@ -860,7 +860,7 @@ function render(){
   if (!posts.length) { const js=$('journal'); if(js) js.remove(); }
   else {
     const d = s => { try { return new Date(s).toLocaleDateString(lang==='fr'?'fr-FR':'en-GB',{day:'numeric',month:'long',year:'numeric'}); } catch(e){ return s; } };
-    $('jgrid').innerHTML = posts.slice(0,3).map(p=>`<a class="jcard" href="${esc(p.url)}">
+    $('jgrid').innerHTML = posts.slice(0,3).map(p=>`<a class="jcard" href="${esc(tr(p.url))}">
       <div class="jmeta"><span>${esc(tr(p.cat))}</span><span>${esc(d(p.date))}</span></div>
       <div class="jimg"><img src="${esc(p.img)}" alt="${esc(tr(p.title))}" loading="lazy" onerror="this.style.visibility='hidden'"></div>
       <h3>${fmt(p.title)}</h3><p>${fmt(p.excerpt)}</p><span class="jread">${fmt(J.read)} →</span></a>`).join('');

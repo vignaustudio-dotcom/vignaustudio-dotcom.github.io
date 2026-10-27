@@ -245,7 +245,7 @@ window.SITE = {
     all:   { fr: "Tous les articles", en: "All articles" },
     read:  { fr: "Lire l'article", en: "Read the article" },
     posts: [
-      { url: "blog/construire-une-marque-forte.html", img: "images/blog/construire-une-marque-forte.jpg", date: "2026-10-27",
+      { url: { fr: "blog/construire-une-marque-forte.html", en: "blog/building-a-strong-brand.html" }, img: "images/blog/construire-une-marque-forte.jpg", date: "2026-10-27",
         cat: { fr: "Stratégie de marque", en: "Brand strategy" },
         title: { fr: "Construire une marque *forte* : les 7 fondations", en: "Building a *strong* brand: the 7 foundations" },
         excerpt: { fr: "Stratégie, identité, direction artistique, contenus, site, influence : l'ordre qui fait une marque forte.", en: "Strategy, identity, art direction, content, website, influence: the order that builds a strong brand." } },
