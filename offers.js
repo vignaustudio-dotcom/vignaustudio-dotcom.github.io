@@ -176,3 +176,28 @@ S.footerLine = L("Ad creatives for e-commerce brands.", "Des créations publicit
     } else { p.items={en:d.en,fr:d.fr}; }
   });
 })();
+
+/* VS-OFFER-CLEAN : sans délai, une ligne simple par offre, "Brand Launch" */
+(function(){
+  var S=window.SITE; if(!S) return;
+  var host=null;
+  Object.keys(S).forEach(function(k){ var v=S[k]; if(!host && v && Array.isArray(v.plans) && v.plans.length>=3) host=v; });
+  if(!host) return;
+  var MAP=[
+    [/^The Vignau System/i, {en:"Brand Launch", fr:"Lancement de marque"}],
+    [/^For brands launching/i, {en:"Tailored to your needs with the Vignau System™.", fr:"Sur mesure, avec le Vignau System™."}],
+    [/^For brands that need fresh/i, {en:"Fresh angles to test, every month.", fr:"De nouveaux angles à tester, chaque mois."}],
+    [/^For brands that need a larger/i, {en:"More volume to find your winners faster.", fr:"Plus de volume pour trouver vos gagnants plus vite."}]
+  ];
+  function en(v){ return typeof v==='string'? v : (v&&typeof v==='object'&&!Array.isArray(v)? v.en : null); }
+  host.plans.forEach(function(p){
+    Object.keys(p).forEach(function(key){
+      var t=en(p[key]); if(typeof t!=='string') return;
+      MAP.forEach(function(m){ if(m[0].test(t)) p[key]= (typeof p[key]==='string') ? m[1].en : {en:m[1].en, fr:m[1].fr}; });
+    });
+    var it=p.items, bad=function(s){ return /48/.test(String(s)); };
+    if(Array.isArray(it)) p.items=it.filter(function(x){ return !bad(typeof x==='object'?x.en:x); });
+    else if(it && it.en){ var keep=it.en.map(function(s,i){return bad(s)?-1:i;}).filter(function(i){return i>=0;});
+      p.items={en:keep.map(function(i){return it.en[i];}), fr:keep.map(function(i){return (it.fr||[])[i];})}; }
+  });
+})();
