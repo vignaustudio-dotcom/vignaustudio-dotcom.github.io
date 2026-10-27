@@ -79,25 +79,25 @@ window.SITE = {
   /* ---------- IMPACT (graphique façon Bup) ---------- */
   impact: {
     label: { fr: "Le problème", en: "The problem" },
-    title: { fr: "Tes pubs s'essoufflent ? C'est souvent *le visuel*.", en: "Ads running out of steam? It's often *the visual*." },
-    sub:   { fr: "Un même visuel diffusé trop longtemps finit par ne plus arrêter personne. Les clics baissent, le coût par vente grimpe, sans prévenir.", en: "The same visual shown too long stops catching anyone. Clicks drop, cost per sale climbs, without warning." },
-    chartTitle: { fr: "Un visuel s'use. Un flux, non.", en: "A visual wears out. A flow doesn't." },
-    lineA: { fr: "Mêmes visuels qui tournent", en: "Same visuals running" },
-    lineB: { fr: "Visuels Vignau renouvelés", en: "Renewed Vignau visuals" },
-    newTag: { fr: "NOUVEAUX VISUELS", en: "NEW VISUALS" },
-    axis: { fr: "CLICS", en: "CLICKS" },
-    weeks: { fr: ["SEM. 1","SEM. 4","SEM. 8"], en: ["WK 1","WK 4","WK 8"] },
-    withoutTitle: { fr: "Sans Vignau", en: "Without Vignau" },
+    title: { fr: "La plupart des pubs échouent sur l'angle, *pas sur le budget.*", en: "Most ads fail on the angle, *not the budget.*" },
+    sub:   { fr: "Impossible de savoir quel message va vendre avant de le tester. Le statique permet de tester beaucoup d'angles, vite, avant d'investir dans une grosse production.", en: "You can't know which message will sell before testing it. Statics let you test many angles fast, before investing in big production." },
+    chartTitle: { fr: "Testez large. Gardez les gagnants.", en: "Test wide. Keep the winners." },
+    lineA: { fr: "Angles qui n'accrochent pas", en: "Angles that don't land" },
+    lineB: { fr: "Angles gagnants", en: "Winning angles" },
+    newTag: { fr: "GAGNANT", en: "WINNER" },
+    axis: { fr: "PERFORMANCE PAR ANGLE", en: "PERFORMANCE PER ANGLE" },
+    weeks: { fr: ["12 ANGLES TESTÉS","3 GAGNANTS","DÉCLINÉS EN UGC, VIDÉO"], en: ["12 ANGLES TESTED","3 WINNERS","SCALED IN UGC, VIDEO"] },
+    withoutTitle: { fr: "La méthode classique", en: "The classic way" },
     withTitle:    { fr: "Avec Vignau", en: "With Vignau" },
     without: [
-      { fr: "Les mêmes photos partout, plus personne ne les voit", en: "Same photos everywhere, nobody sees them" },
-      { fr: "Un shooting à plusieurs milliers d'euros pour renouveler", en: "A shoot costing thousands to refresh" },
-      { fr: "Des visuels IA faits seul, qui font cheap", en: "DIY AI visuals that look cheap" }
+      { fr: "Un angle choisi au feeling", en: "One angle picked on gut feeling" },
+      { fr: "Des milliers dépensés en production avant la moindre donnée", en: "Thousands spent on production before any data" },
+      { fr: "Si ça ne marche pas, tout est perdu", en: "If it flops, it's all lost" }
     ],
     with: [
-      { fr: "Des visuels neufs avant que les anciens s'usent", en: "Fresh visuals before the old ones wear out" },
-      { fr: "Assez de volume pour tester plusieurs angles", en: "Enough volume to test several angles" },
-      { fr: "Un rendu premium, ton vrai produit", en: "Premium look, your real product" }
+      { fr: "12 à 24 angles testés en statique", en: "12 to 24 angles tested in statics" },
+      { fr: "Les données choisissent le gagnant, pas l'opinion", en: "Data picks the winner, not opinion" },
+      { fr: "On produit en grand seulement ce qui marche", en: "Produce big only what works" }
     ]
   },
 
