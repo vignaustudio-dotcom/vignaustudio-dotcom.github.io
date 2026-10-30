@@ -245,6 +245,10 @@ window.SITE = {
     all:   { fr: "Tous les articles", en: "All articles" },
     read:  { fr: "Lire l'article", en: "Read the article" },
     posts: [
+      { url: { fr: "blog/territoire-de-marque.html", en: "blog/brand-territory.html" }, img: "images/blog/territoire-de-marque.jpg", date: "2026-10-27",
+        cat: { fr: "Stratégie de marque", en: "Brand strategy" },
+        title: { fr: "Territoire de marque : être reconnu *sans logo*", en: "Brand territory: be recognised *without a logo*" },
+        excerpt: { fr: "Les 5 signaux d'une marque sans territoire, et comment devenir reconnaissable en une seconde.", en: "The 5 signs your brand has no territory yet, and how to become recognisable in one second." } },
       { url: { fr: "blog/construire-une-marque-forte.html", en: "blog/building-a-strong-brand.html" }, img: "images/blog/construire-une-marque-forte.jpg", date: "2026-10-27",
         cat: { fr: "Stratégie de marque", en: "Brand strategy" },
         title: { fr: "Construire une marque *forte* : les 7 fondations", en: "Building a *strong* brand: the 7 foundations" },
