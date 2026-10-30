@@ -245,6 +245,10 @@ window.SITE = {
     all:   { fr: "Tous les articles", en: "All articles" },
     read:  { fr: "Lire l'article", en: "Read the article" },
     posts: [
+      { url: { fr: "blog/difference-branding-design.html", en: "blog/branding-vs-design.html" }, img: "images/blog/branding-vs-design.jpg", date: "2026-10-27",
+        cat: { fr: "Branding", en: "Branding" },
+        title: { fr: "Branding ou design : la différence qui *change tout*", en: "Branding vs design: the difference that *changes everything*" },
+        excerpt: { fr: "Le design attire l'œil, le branding marque l'esprit. Pourquoi une marque a besoin des deux, dans le bon ordre.", en: "Design catches the eye, branding stays in the mind. Why a brand needs both, in the right order." } },
       { url: { fr: "blog/territoire-de-marque.html", en: "blog/brand-territory.html" }, img: "images/blog/territoire-de-marque.jpg", date: "2026-10-27",
         cat: { fr: "Stratégie de marque", en: "Brand strategy" },
         title: { fr: "Territoire de marque : être reconnu *sans logo*", en: "Brand territory: be recognised *without a logo*" },
